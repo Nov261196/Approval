@@ -32,7 +32,7 @@ body{
 
 .header__main{
     position: absolute;
-    top: 40%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     /* border: 1px solid #e6e4e4; */
@@ -40,17 +40,25 @@ body{
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
     width: 461px;
     border-radius: 6px;
-    height: 327px;
+    height: 461px;
 
 }
 
-
-h1{
+/* Logo */
+.header__logo{
+    position: relative;
+    margin-top: 18px;
     display: flex;
     justify-content: center;
     text-align: center;
-    margin: 10px 20px ;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+
+    
+}
+
+.header__logo img{
+    width: 70px;
+    /* margin: 10px 20px ; */
+    /* box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); */
 }
 
 .header__body h2{
@@ -65,64 +73,75 @@ h1{
 .header__body p{
     font-size: 16px;
     color: #333;
-    margin-top: 16px;
+    margin-top: 24px;
     text-align: center;
     font-weight: 600;
 }
 
-.header__body--input{
+/* end logo */
+
+
+
+/* Form login */
+.form__user{
     position: relative;
-}
-
-.header__body--username{
-    padding: 0 16px;
-    width: 250px;
-    height: 40px;
-    border:1px solid #d8d8e9;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
-    border-radius:4px;
-    line-height: 20px;
-    outline: none;
-    line-height: 20px;
-    font-size: 16px;
+    top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
 }
 
-.header__body--password{
-    padding: 0 16px;
-    width: 250px;
+.form__login--input{
+    margin: 10px;
+    padding: 0 32px;
+    font-size: 1.4rem;
+    width: 300px;
     height: 40px;
-    border: none;
-    border:1px solid #d8d8e9;
+    border: 1px solid #d8d8e9;
+    border-radius: 4px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
-    border-radius:4px;
-    font-size: 16px;
-    line-height: 20px;
+    line-height: 40px;
     outline: none;
 }
 
-.header__body-color:hover{
-    border-color: rgb(172, 173, 173);
+.form__login--input:hover{
+    border: 1px solid #7eb3f0;
+
 }
 
-.header__body--icon{
+.form__login--icon{
     position: absolute;
-    transform: translateY(60%);
-    font-size: 18px;
-    right: 120px;
-    color: #757575;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 90px;
+    line-height: 40px;
+    font-size: 1.4rem;
+    color: #8d8b8b;
+}
+
+.form__login--eye{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 90px;
+    line-height: 40px;
+    font-size: 1.4rem;
+    color: #8d8b8b;
+    cursor: pointer;
 }
 
 
 /* checkbox */
 
-.header__checkbox{
+.form__checkbox{
     position: relative;
-    padding: 1px 28px;
+    padding: 4px 32px;
     margin-bottom: 12px;
-    top: 10px;
-    left: 110px;
+    top: 24px;
+    left: 80px;
     cursor: pointer;
+
     font-size: 1.4rem;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -130,108 +149,96 @@ h1{
     user-select: none;
 }
 
-.header__checkbox label{
-    font-size: 1.4rem;
+.form__checkbox--main{
     font-family: 'Be Vietnam Pro', sans-serif;
-    cursor: pointer;
+    font-size: 1.4rem;
+    font-weight: 500;
 }
 
-
-.header__checkbox--input {
-    position: absolute;
-    cursor: pointer;
-    height: 0;
-    width:0;
-    opacity: 0;
-}
-
-.header__checkbox--color{
+.form__checkbox--main .form__checkbox--input{
     position: absolute;
     top: 0;
     left: 0;
-    height: 20px;
-    width: 20px;
-    background-color: #e6e3e3;
-
+    opacity: 0;
+    height: 0;
+    width: 0;
+}
+.checkmark{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #e6e2e2;
 }
 
 
-.header__checkbox--main:hover .header__checkbox--color{
-    background-color: #b6b4b4;
 
+.form__checkbox--main:hover  .checkmark{
+    background-color: #ccc9c9;
 }
 
-.header__checkbox--main .header__checkbox--input:checked ~ .header__checkbox--color {
-    background-color: #438ceb;
 
-}
 
-.header__checkbox--color:after{
+.form__checkbox--main .form__checkbox--input:checked ~ .checkmark {
+    background-color: #7EB3F0;
+  }
+  
+  .checkmark:after {
     content: "";
     position: absolute;
     display: none;
-
-}
-
-.header__checkbox--input:checked ~ .header__checkbox--color:after{
+  }
+  
+  .form__checkbox .form__checkbox--input:checked ~ .checkmark:after {
     display: block;
-}
-
-.header__checkbox .header__checkbox--color:after{
-    left: 6px;
-    top: 2px;
-    width: 6px;
+  }
+  
+  .form__checkbox--main .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
     height: 10px;
-    border: solid white;
+    border: solid rgb(243, 248, 246);
     border-width: 0 3px 3px 0;
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
-}
+  }
 
 /* end checkbox */
 
-.header__btn{
+/* btn */
+.form__btn{
+    position: relative;
+    top: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'Be Vietnam Pro', sans-serif;
-    box-sizing: border-box;
-
 }
-.header__btn--sgv{
-    padding: 8px 12px;
-    margin: 6px 0;
-    text-transform: uppercase;
-    font-weight: 700;
+
+.form__btn--login{
+    width: 300px;
+    height: 40px;
+    background-color: #7eb3f0;
     border-radius: 4px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
-    border: none;
-    outline: none;
-    width: 250px;
-    line-height: 20px;
-    margin-top: 10px;
-
-
-}
-
-.header__btn--sgv:hover{
-    background-color: transparent;
-}
-
-.header__text{
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    line-height: 20px;
+    line-height: 40px;
     font-size: 1.4rem;
-    font-weight: 500;
-    font-style:  italic;
-    margin-top: 10px;
-
-
+    font-weight: 400;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: #fff;
+    outline: none;
+    border: none;
 }
 
+.form__btn--login:hover{
+    background-color: #d6d6d6;
+}
+
+/* footer */
 footer {
     position: absolute;
     padding: 15px 20px;
