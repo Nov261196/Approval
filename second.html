@@ -5,92 +5,126 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="asset/css/main.css">
     <link rel="stylesheet" href="asset/font/fontawesome-free-6.6.0-web/css/all.min.css">
-    <title>Document</title>
+    <title>Dashboard</title>
 </head>
 <body>
-    <div class="main">
-        <header>
-            <div class="wrapbox">
-                <div class="wrapbox__head--left">
-                    <div class="wrapbox__head--logo">
-                        <img src="https://www.sagawa-vtm.com.vn/Content/assets/img/sgw/logoSGW.png" alt="Logo sgh" class="wrapbox__head--img">
-                    </div>
-                </div>
-    
-                <div class="wrapbox__head--right">
-                    <div class="wrapbox__head--user">
-                        <i class="wrapbox__head--icon fa-solid fa-user"></i>
-                        <span class="wrapbox__head--name">vu_danghoang</span>
-                    </div>
 
-                        <div class="wrapbox__sub">
-                            <h2 class="wrapbox__sub--header">Xin chào ,</h2>
-                            
-                            <p class="wrapbox__sub--department">Deparment:
-                                <span>IT HCM (HARD)</span> 
-                            </p>
+    <main class="main__content">  <!-- Dùng <main> thay vì <div class="main"> -->
+        <nav class="sidebar">
+            <ul class="sidebar__menu">
+                <li><a href="#" data-section="home">Home</a></li>
+                <li><a href="#" data-section="new-app">New Application</a></li>
+                <li><a href="#" data-section="your-app">Your Applications</a></li>
+                <li><a href="#" data-section="your-app">New Draft</a></li>
+                <li><a href="#" data-section="your-app">Your Drafts</a></li>
+                <li><a href="#" data-section="your-app">Your Task List</a></li>
+                <li><a href="#" data-section="your-app">Quick Task Response</a></li>
+                <li><a href="#" data-section="your-app">History</a></li>
+                <li><a href="#" data-section="your-app">Applications</a></li>
+                <li><a href="#" data-section="your-app">Options</a></li>
+                <li><a href="#" data-section="your-app">Change Password</a></li>
+                <li><a href="#" data-section="your-app">Your Applications</a></li>
+                <li><a href="#" id="logout-btn">Logout</a></li>
+                <p> Welcome, <span id="username-display">User</span></p>
 
-                            <p class="wrapbox__sub--text">
-                                <i class="wrapbox__sub--icon fa-solid fa-arrow-right-from-bracket"></i>  
-                                Log out
-                            </p>
+            </ul>
+        </nav>
+
+        <section class="content">
+            <div id="home" class="section active">
+                <form action="">
+                    <h2>Home</h2>
+                    
+                    <label for="">eApprove System
+                        <a href="">Manual</a>
+                    </label>
+                    <p>📅 Ngày: <span id="current-day"></span> ⏰ Giờ: <span id="current-time"></span></p>
+
+                    <p>You have:  task(s) waiting for your response</p>
+
+                    <p>You have: Applications Disapproved</p>
+
+                    <a href="">Click here to view Your Applications</a>
+
+                    <div class="container">
+                        <div class="category">
+                            <h3>ADM & HR</h3>
+                            <button onclick="showAlert('Finger Print')">Finger Print</button>
+                            <button onclick="showAlert('Check Salary')">Check Salary</button>
+                            <button onclick="showAlert('Annual Leave')">Annual Leave</button>
+                            <button onclick="showAlert('Company Form')">Company Form</button>
+                            <button onclick="showAlert('Evaluation')">Evaluation</button>
+                            <button onclick="showAlert('Overtime')">Overtime</button>
+                            <button onclick="showAlert('Security Training')">Security Training</button>
+                        </div>
+                
+                        <div class="category">
+                            <h3>Accounting</h3>
+                            <button onclick="showAlert('Tax Report')">Tax Report</button>
+                            <button onclick="showAlert('Financial Report')">Financial Report</button>
+                            <button onclick="showAlert('Invoice Processing')">Invoice Processing</button>
+                            <button onclick="showAlert('Budget Planning')">Budget Planning</button>
+                        </div>
+                
+                        <div class="category">
+                            <h3>Operation</h3>
+                            <button onclick="showAlert('Truck Repair')">Truck Repair</button>
+                            <button onclick="showAlert('Inventory Check')">Inventory Check</button>
+                            <button onclick="showAlert('Logistics Management')">Logistics Management</button>
+                            <button onclick="showAlert('Safety Inspection')">Safety Inspection</button>
                         </div>
                     </div>
-                </div>
-        </header>
-    <!-- end header -->
-
-        <div class="wrapbox__themes">
-            <div class="wrapbox__body">
-                <h2>eApprove System</h2>
-                <a href="http://app.sagawa-vtm.com.vn:84/(S(z34pd4l1ky3s5i5gl3ctnmqb))/Eapprove%20System.pptx" target="_blank" class="wrapbox__body--paper">Manual</a>
+                </form>
             </div>
 
-            <div class="wrapbox__body--time">
-                <p id="current-day">Today is</p>
-                <p id="current-time">Time </p>
+
+            <div id="new-app" class="section">
+                <h2>📝 New Application</h2>
+                <form>
+                    <table>
+                        <tr><td><label>Subject:</label></td>
+                            <td><input type="text" id="appSubject"><span class="error" id="subjectError"></span></td>
+                        </tr>
+                        <tr><td><label>Reason:</label></td>
+                            <td><textarea id="appReason"></textarea><span class="error" id="reasonError"></span></td>
+                        </tr>
+                        <tr><td><label>Amount:</label></td>
+                            <td><input type="number" id="appAmount"><span class="error" id="amountError"></span></td>
+                        </tr>
+                        <tr><td><label>Type:</label></td>
+                            <td>
+                                <input type="radio" name="appType" value="Deposit cash"> Deposit cash <br>
+                                <input type="radio" name="appType" value="Withdraw cash"> Withdraw cash
+                            </td>
+                        </tr>
+                    </table>
+                    <button type="submit">Create</button>
+                </form>
             </div>
 
-            <!-- start menu -->
-            <div class="wrapbox__menu">
-                <ul>
-                    <li><button class="wrapbox__menu--btn"><a href="">Home</a></button></li>
-                    <li><button class="wrapbox__menu--btn"><a href="">New Applications</a></button></li>
-                    <li><button class="wrapbox__menu--btn"><a href="">Your Applications</a></button></li>
-                    <li><button class="wrapbox__menu--btn"><a href="">New Draft</a></button></li>
-                    <li><button class="wrapbox__menu--btn"><a href="">Your Drafts</a></button></li>
-                    <li><button class="wrapbox__menu--btn"><a href="">Your Task List</a></button></li>
-                    <li><button class="wrapbox__menu--btn"><a href="">Quick Task Response</a></button></li>
-                    <li><button class="wrapbox__menu--btn"><a href="">History</a></button></li>
-                    <li><button class="wrapbox__menu--btn"><a href="">Applications</a></button></li>
-                    <li><button class="wrapbox__menu--btn"><a href="">Options</a></button></li>
-                    <li><button class="wrapbox__menu--btn"><a href="">Change Password</a></button></li>
-                    <li><button class="wrapbox__menu--btn" onclick="logout()"><a href="">Log out</a></button></li>
-                </ul>
-            <!-- end menu -->
-
+            <div id="your-app" class="section">
+                <h2>📂 Your Applications</h2>
+                <table border="1">
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Status</th>
+                    </tr>
+                    <tr>
+                        <td>01</td>
+                        <td>Project A</td>
+                        <td>Pending</td>
+                    </tr>
+                    <tr>
+                        <td>02</td>
+                        <td>Project B</td>
+                        <td>Approved</td>
+                    </tr>
+                </table>
             </div>
-            <!-- start content -->
+        </section>
+    </main>
 
-       
-        </div>
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <script src="asset/js/script.js">
-
-   
-    </script>
+    <script src="asset/js/dashboard.js"></script>
 </body>
 </html>

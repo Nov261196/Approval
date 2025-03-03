@@ -7,79 +7,55 @@
     <link rel="stylesheet" href="asset/css/main.css">
     <link rel="stylesheet" href="asset/font/fontawesome-free-6.6.0-web/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    
     <title>Login eApprove</title>
 </head>
 <body>
     <div class="main">
-
         <header>
-        <div id="particles-js"></div>
+            <div id="particles-js"></div>
             <div class="header__main">
                 <div class="header__body">
                     <div class="form__header">
-                        <h2>user login</h2>
+                        <h2>User Login</h2>
                         <div class="header__logo">
                             <img src="https://www.sagawa-vtm.com.vn/Content/assets/img/sgw/logoSGW.png" alt="logo">
                         </div>
                         <p>eApprove - Electronic Approval System</p>
                     </div>
-                    
-
-                    
-                    <div class="form__login">
-                        <div class="form__user">
-                            <input type="text" id="username" placeholder="Username" name="username" class="form__login--input " required="Please enter Username">
-                            <i class="form__login--icon fa-solid fa-user"></i>
-                            
+                    <form id="loginForm">
+                        <div class="form__login">
+                            <div class="form__user">
+                                <input type="text" id="username" placeholder="Username" name="username" class="form__login--input" required autocomplete="username">
+                                <i class="form__login--icon fa-solid fa-user"></i>
+                            </div>
+                            <div class="form__user">
+                                <input type="password" id="password" placeholder="Password" name="password" class="form__login--input" required autocomplete="current-password">
+                                <i class="form__login--icon fa-solid fa-lock"></i>
+                                <i class="form__login--eye fa-solid fa-eye-slash" id="togglePassword"></i>
+                            </div>
+                            <div class="form__checkbox">
+                                <label class="form__checkbox--main">
+                                    <input type="checkbox" id="rememberMe" class="form__checkbox--input">
+                                    <span class="checkmark"></span> Remember me
+                                </label>
+                            </div>
+                            <div class="form__btn">
+                                <button type="submit" class="form__btn--login">Login</button>
+                            </div>
                         </div>
-
-                        <div class="form__user">
-                            <input type="password" id="password" placeholder="Password" name="password" class="form__login--input " required="Please enter Password">
-                            <i class="form__login--icon fa-solid fa-lock"></i>
-                            <i class="form__login--eye fa-solid fa-eye-slash"></i>
-                        </div>
-                        
-                        <div class="form__checkbox">
-                            <label class="form__checkbox--main">Remember me
-                                <input type="checkbox"  class="form__checkbox--input">
-                                <span class="checkmark"></span>
-                            </label>
-
-                        </div>
-    
-                        <div class="form__btn">
-                            <button type="submit" class="form__btn--login" onclick="login()">Login</button>
-                        </div>  
-                        
-                        <!-- <div class="form__footer">
-                            <span class="header__text">Good morning<span>
-                        </div> -->
-                    </div>
-                    
-                    
-                    
-                    
-
-                    
+                    </form>
                 </div>
             </div>
         </header>
-
-
-
-
         <footer>
             <div class="footer__main">
                 <div class="footer__left">
-                    <p>© SG SAGAWA VIETNAM CO., LTD. All Rights Reserved.</p>
+                    <p>&copy; SG SAGAWA VIETNAM CO., LTD. All Rights Reserved.</p>
                 </div>
                 <div class="footer__right">
                     <ul>
                         <li class="footer__left--title">
-                            <a href="https://www.sagawa-vtm.com.vn/Home/Protection" target="_blank" >
-                                Chính sách bảo mật
-                            </a>
+                            <a href="https://www.sagawa-vtm.com.vn/Home/Protection" target="_blank">Chính sách bảo mật</a>
                         </li>
                         <li class="footer__left--title">
                             <a href="https://www.sagawa-vtm.com.vn/Home/PageTermsOfUse" target="_blank">Quy định trang web</a>
@@ -89,9 +65,6 @@
             </div>
         </footer>
     </div>
-
-
-
     <script src="asset/js/script.js"></script>
 </body>
 </html>
