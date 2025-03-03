@@ -171,6 +171,19 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
+          // 🟢 Kiểm tra tiêu đề trùng
+        let isDuplicate = false;
+        document.querySelectorAll("#your-app table tr td:first-child").forEach(td => {
+            if (td.textContent.toLowerCase() === subject.toLowerCase()) {
+                isDuplicate = true;
+            }
+        });
+
+        if (isDuplicate) {
+            alert("Tiêu đề đã tồn tại. Vui lòng nhập tiêu đề khác!");
+            return;
+        }
+
         let newRow = applicationTable.insertRow();
         newRow.innerHTML = `
             <td>${subject}</td>
