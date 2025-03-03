@@ -15,18 +15,15 @@
                 <li><a href="#" data-section="home">Home</a></li>
                 <li><a href="#" data-section="new-app">New Application</a></li>
                 <li><a href="#" data-section="your-app">Your Applications</a></li>
-                <li><a href="#" data-section="your-app">New Draft</a></li>
-                <li><a href="#" data-section="your-app">Your Drafts</a></li>
-                <li><a href="#" data-section="your-app">Your Task List</a></li>
-                <li><a href="#" data-section="your-app">Quick Task Response</a></li>
-                <li><a href="#" data-section="your-app">History</a></li>
-                <li><a href="#" data-section="your-app">Applications</a></li>
-                <li><a href="#" data-section="your-app">Options</a></li>
-                <li><a href="#" data-section="your-app">Change Password</a></li>
-                <li><a href="#" data-section="your-app">Your Applications</a></li>
-                <li><a href="#" id="logout-btn">Logout</a></li>
+                <li><a href="#" data-section="new-draft">New Draft</a></li>
+                <li><a href="#" data-section="your-drafts">Your Drafts</a></li>
+                <li><a href="#" data-section="your-task-list">Your Task List</a></li>
+                <li><a href="#" data-section="quick-task">Quick Task Response</a></li>
+                <li><a href="#" data-section="history">History</a></li>
+                <li><a href="#" data-section="applications">Applications</a></li>
+                <li><a href="#" data-section="options">Options</a></li>
+                <li><a href="#" data-section="change-password">Change Password</a></li>
                 <p> Welcome, <span id="username-display">User</span></p>
-                <p>You have: <span id="pending-task-count">0</span> task(s) waiting for your response</p>
 
             </ul>
         </nav>
@@ -41,9 +38,10 @@
                     </label>
                     <p>📅 Ngày: <span id="current-day"></span> ⏰ Giờ: <span id="current-time"></span></p>
 
-                    <p>You have:  task(s) waiting for your response</p>
+                    <p>You have: <span id="pending-task-count">0</span> task(s) waiting for your response</p>
 
-                    <p>You have: Applications Disapproved</p>
+
+                    <p>You have: <span id="disapproved-count">0</span> Applications Disapproved</p>
 
                     <a href="">Click here to view Your Applications</a>
 
@@ -82,6 +80,15 @@
             <div id="new-app" class="section">
                 <h2>📝 New Application</h2>
                 <form>
+                    <div class="category">
+                        <h3></h3>
+                        <button onclick="showAlert('Finger Print')">Administration</button>
+                        <button onclick="showAlert('Check Salary')">Accounting</button>
+                        <button onclick="showAlert('Annual Leave')">Human Resource</button>
+                        <button onclick="showAlert('Company Form')">Operation</button>
+                    </div>
+            
+
                     <table>
                         <tr><td><label>Subject:</label></td>
                             <td><input type="text" id="appSubject"><span class="error" id="subjectError"></span></td>
@@ -98,6 +105,7 @@
                                 <input type="radio" name="appType" value="Withdraw cash"> Withdraw cash
                             </td>
                         </tr>
+                        
                     </table>
                     <button type="submit">Create</button>
                 </form>
@@ -107,12 +115,41 @@
                 <h2>📂 Your Applications</h2>
                 <table border="1">
                     <tr>
-                        <th>ID</th>
-                        <th>Name</th>
+                        <th>App No.</th>
+                        <th>Subject</th>
+                        <th>Date</th>
+                        <th>Type</th>
                         <th>Status</th>
                     </tr>
                 </table>
             </div>
+
+            <div id="new-draft" class="section">
+                <h2>📂 New Draft</h2>
+                <table border="1">
+                    <tr>
+                        <th>App No.</th>
+                        <th>Subject</th>
+                        <th>Date</th>
+                        <th>Type</th>
+                        <th>Status</th>
+                    </tr>
+                </table>
+            </div>
+
+            <div id="your-drafts" class="section">
+                <h2>📂 Your Drafts</h2>
+                <table border="1">
+                    <tr>
+                        <th>App No.</th>
+                        <th>Subject</th>
+                        <th>Date</th>
+                        <th>Type</th>
+                        <th>Status</th>
+                    </tr>
+                </table>
+            </div>
+
         </section>
     </main>
 

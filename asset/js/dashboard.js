@@ -1,7 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
     console.log("Dashboard.js Loaded!");
 
-    // 🕒 Cập nhật ngày giờ
+    let applicationForm = document.querySelector("#new-app form");
+    let applicationTable = document.querySelector("#your-app table");
+    let deletedTable = document.querySelector("#deleted-tasks table");
+
+    // 🕒 Cập nhật ngày giờ real-time
     function updateTime() {
         const days = ["Chủ Nhật", "Thứ Hai", "Thứ Ba", "Thứ Tư", "Thứ Năm", "Thứ Sáu", "Thứ Bảy"];
         const now = new Date();
@@ -22,39 +26,8 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("current-day").textContent = `${day}, ${date}`;
         document.getElementById("current-time").textContent = time;
     }
-
     updateTime();
     setInterval(updateTime, 1000);
-
-    // 🛠 Lưu trạng thái menu đã chọn
-    let menuItems = document.querySelectorAll(".sidebar__menu a");
-    let sections = document.querySelectorAll(".section");
-
-    menuItems.forEach(item => {
-        item.addEventListener("click", function (event) {
-            event.preventDefault();
-            let sectionId = this.getAttribute("data-section");
-
-            if (sectionId) {
-                sections.forEach(section => section.classList.remove("active"));
-                let targetSection = document.getElementById(sectionId);
-                if (targetSection) {
-                    targetSection.classList.add("active");
-                    localStorage.setItem("activeSection", sectionId);
-                }
-            }
-        });
-    });
-
-    // Khôi phục menu đã chọn khi tải lại
-    let savedSection = localStorage.getItem("activeSection");
-    if (savedSection) {
-        sections.forEach(section => section.classList.remove("active"));
-        let targetSection = document.getElementById(savedSection);
-        if (targetSection) {
-            targetSection.classList.add("active");
-        }
-    }
 
     // 🔑 Ghi nhớ người dùng đăng nhập
     let username = localStorage.getItem("username");
@@ -76,14 +49,41 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // 📝 Quản lý danh sách ứng dụng
-    let applicationForm = document.querySelector("#new-app form");
-    let applicationTable = document.querySelector("#your-app table");
+    // 🎨 Hiệu ứng highlight menu đã chọn
+    let menuItems = document.querySelectorAll(".sidebar__menu a");
+    menuItems.forEach(item => {
+        item.addEventListener("click", function (event) {
+            event.preventDefault();
+            let sectionId = this.getAttribute("data-section");
 
+            if (sectionId) {
+                document.querySelectorAll(".section").forEach(section => section.classList.remove("active"));
+                document.getElementById(sectionId).classList.add("active");
+                localStorage.setItem("activeSection", sectionId);
+
+                menuItems.forEach(i => i.classList.remove("active-menu"));
+                this.classList.add("active-menu");
+            }
+        });
+    });
+
+    // Khôi phục menu đã chọn khi tải lại
+    let savedSection = localStorage.getItem("activeSection");
+    if (savedSection) {
+        document.querySelectorAll(".section").forEach(section => section.classList.remove("active"));
+        document.getElementById(savedSection).classList.add("active");
+
+        menuItems.forEach(item => item.classList.remove("active-menu"));
+        document.querySelector(`[data-section="${savedSection}"]`).classList.add("active-menu");
+    }
+
+    // 📝 Lưu danh sách ứng dụng & task bị xóa vào localStorage
     function saveApplications() {
         let applications = [];
+        let deletedTasks = [];
+
         document.querySelectorAll("#your-app table tr").forEach((row, index) => {
-            if (index !== 0) { // Bỏ qua dòng tiêu đề
+            if (index !== 0) {
                 let cells = row.getElementsByTagName("td");
                 applications.push({
                     subject: cells[0].textContent,
@@ -94,9 +94,25 @@ document.addEventListener("DOMContentLoaded", function () {
                 });
             }
         });
+
+        document.querySelectorAll("#deleted-tasks table tr").forEach((row, index) => {
+            if (index !== 0) {
+                let cells = row.getElementsByTagName("td");
+                deletedTasks.push({
+                    subject: cells[0].textContent,
+                    reason: cells[1].textContent,
+                    amount: cells[2].textContent,
+                    type: cells[3].textContent,
+                    status: cells[4].textContent
+                });
+            }
+        });
+
         localStorage.setItem("applications", JSON.stringify(applications));
+        localStorage.setItem("deletedTasks", JSON.stringify(deletedTasks));
     }
 
+    // 🏗 Tải danh sách ứng dụng khi trang load
     function loadApplications() {
         let storedApps = localStorage.getItem("applications");
         if (storedApps) {
@@ -119,48 +135,59 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         }
         updatePendingCount();
+        updateDisapprovedCount();
     }
 
-    // 🔄 Hiển thị số lượng task "Pending"
+    // 📌 Cập nhật số lượng task "Pending"
     function updatePendingCount() {
         let count = 0;
         document.querySelectorAll("#your-app table tr").forEach((row, index) => {
-            if (index !== 0) { // Bỏ qua tiêu đề bảng
-                let statusCell = row.cells[4];
-                if (statusCell && statusCell.textContent.trim() === "Pending") {
-                    count++;
-                }
+            if (index !== 0 && row.cells[4].textContent.trim() === "Pending") {
+                count++;
             }
         });
-        let pendingCountElement = document.getElementById("pending-task-count");
-        if (pendingCountElement) {
-            pendingCountElement.textContent = count;
-        }
+        document.getElementById("pending-task-count").textContent = count;
     }
 
+    // 📌 Cập nhật số lượng "Applications Disapproved"
+    function updateDisapprovedCount() {
+        let count = 0;
+        document.querySelectorAll("#your-app table tr").forEach((row, index) => {
+            if (index !== 0 && row.cells[4].textContent.trim() === "Rejected") {
+                count++;
+            }
+        });
+        document.getElementById("disapproved-count").textContent = count;
+        localStorage.setItem("disapprovedCount", count);
+    }
+
+    // 📌 Thêm sự kiện xử lý khi duyệt, từ chối, xóa ứng dụng
     function addEventListenersToRow(row) {
         row.querySelector(".approve-btn").addEventListener("click", function () {
             row.cells[4].textContent = "Approved";
             saveApplications();
             updatePendingCount();
+            updateDisapprovedCount();
         });
 
         row.querySelector(".reject-btn").addEventListener("click", function () {
             row.cells[4].textContent = "Rejected";
             saveApplications();
             updatePendingCount();
+            updateDisapprovedCount();
         });
 
         row.querySelector(".delete-btn").addEventListener("click", function () {
             row.remove();
             saveApplications();
             updatePendingCount();
+            updateDisapprovedCount();
         });
     }
 
+    // 📌 Xử lý tạo ứng dụng mới khi nhấn "Create"
     applicationForm.addEventListener("submit", function (event) {
         event.preventDefault();
-
         let subject = document.getElementById("appSubject").value.trim();
         let reason = document.getElementById("appReason").value.trim();
         let amount = document.getElementById("appAmount").value.trim();
@@ -170,8 +197,8 @@ document.addEventListener("DOMContentLoaded", function () {
             alert("Vui lòng nhập đầy đủ thông tin!");
             return;
         }
-
-          // 🟢 Kiểm tra tiêu đề trùng
+            
+     // 📌 Kiểm tra tiêu đề trùng
         let isDuplicate = false;
         document.querySelectorAll("#your-app table tr td:first-child").forEach(td => {
             if (td.textContent.toLowerCase() === subject.toLowerCase()) {
@@ -183,6 +210,8 @@ document.addEventListener("DOMContentLoaded", function () {
             alert("Tiêu đề đã tồn tại. Vui lòng nhập tiêu đề khác!");
             return;
         }
+            alert("Tao thanh cong")
+
 
         let newRow = applicationTable.insertRow();
         newRow.innerHTML = `
@@ -199,13 +228,10 @@ document.addEventListener("DOMContentLoaded", function () {
         `;
 
         addEventListenersToRow(newRow);
-
         saveApplications();
         updatePendingCount();
         applicationForm.reset();
-        alert("Ứng dụng đã được tạo thành công!");
     });
 
-    // Load dữ liệu khi tải trang
     loadApplications();
 });
