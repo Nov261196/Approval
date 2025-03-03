@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (username) {
         usernameDisplay.textContent = username;
     } else {
-        window.location.href = "login.html"; // Chuyển hướng nếu chưa đăng nhập
+        window.location.href = "index.html"; // Chuyển hướng nếu chưa đăng nhập
     }
 
     // 🏷 Xử lý đăng xuất
@@ -235,3 +235,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     loadApplications();
 });
+
+
+
