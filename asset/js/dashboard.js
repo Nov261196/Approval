@@ -3,7 +3,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let applicationForm = document.querySelector("#new-app form");
     let applicationTable = document.querySelector("#your-app table");
-    let deletedTable = document.querySelector("#deleted-tasks table");
+   
+
+    
 
     // 🕒 Cập nhật ngày giờ real-time
     function updateTime() {
@@ -94,6 +96,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 });
             }
         });
+
+     
 
         document.querySelectorAll("#deleted-tasks table tr").forEach((row, index) => {
             if (index !== 0) {
@@ -238,7 +242,48 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-    // 
+
+// time out session
+const TIMEOUT = 10 * 60 * 1000; // 1 phút
+
+function setLogoutTime() {
+    const expireTime = Date.now() + TIMEOUT; // Thời gian hết hạn
+    localStorage.setItem("logoutTime", expireTime);
+}
+
+function checkAutoLogout() {
+    const logoutTime = localStorage.getItem("logoutTime");
+
+    if (logoutTime && Date.now() > logoutTime) {
+        logoutUser();
+    } else {
+        setTimeout(checkAutoLogout, 1000); // Kiểm tra mỗi giây
+    }
+}
+
+function logoutUser() {
+    alert("Bạn đã bị đăng xuất do không hoạt động!");
+    localStorage.removeItem("loggedInUser"); // Xóa thông tin user
+    localStorage.removeItem("logoutTime"); // Xóa thời gian hết hạn
+    window.location.href = "index.html"; // Chuyển hướng về trang đăng nhập
+}
+
+function resetTimer() {
+    setLogoutTime(); // Cập nhật thời gian hết hạn
+}
+
+// Lắng nghe các sự kiện để reset thời gian
+window.onload = () => {
+    setLogoutTime();
+    checkAutoLogout();
+};
+
+document.addEventListener("mousemove", resetTimer);
+document.addEventListener("keypress", resetTimer);
+document.addEventListener("scroll", resetTimer);
+document.addEventListener("click", resetTimer);
+
+
 
 
 

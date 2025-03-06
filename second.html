@@ -10,158 +10,196 @@
 <body>
 
     <div class="main__content">  
-            <!-- Sidebar star -->
+        <header>
+            <nav class="second__header">
+                <!-- header right -->
+                <div class="">
+                    <a href="">
+                        <img src="https://www.sagawa-vtm.com.vn/Content/assets/img/sgw/logoSGW.png" alt="" class="second__header--img">
+                    </a>
+                </div>
+                <!-- header left -->
+                <div class="second__info">
+                    <p class=""> Welcome, 
+                        <i class="second__header--icon fa-solid fa-user"></i>
+                        <span id="username-display" class="second__header--user">
+                            User
+                        </span>
+                        <a href="#" id="logout-btn" class="second__header--logout">Logout</a>
+                    </p>
+                </div>
+            </nav>
+
+            
+        </header>
+        
+        <div class="second__sidebar">
             <nav class="sidebar">
                 <ul class="sidebar__menu">
-                    <li><a href="#" data-section="home">Home</a></li>
-                    <li><a href="#" data-section="new-app">New Application</a></li>
-                    <li><a href="#" data-section="your-app">Your Applications</a></li>
-                    <li><a href="#" data-section="new-draft">New Draft</a></li>
-                    <li><a href="#" data-section="your-drafts">Your Drafts</a></li>
-                    <li><a href="#" data-section="your-task-list">Your Task List</a></li>
-                    <li><a href="#" data-section="quick-task">Quick Task Response</a></li>
-                    <li><a href="#" data-section="history">History</a></li>
-                    <li><a href="#" data-section="applications">Applications</a></li>
-                    <li><a href="#" data-section="options">Options</a></li>
-                    <li><a href="#" data-section="change-password">Change Password</a></li>
-                    <li><a href="#" id="logout-btn">Logout</a></li>
-                    <p> Welcome, <span id="username-display">User</span></p>
+                    <li><a href="#" data-section="home"><i class="fa-solid fa-house"></i> Home</a></li>
+                    <li><a href="#" data-section="new-app"><i class="fas fa-file-circle-plus"></i> New Application</a></li>
+                    <li><a href="#" data-section="your-app"><i class="fas fa-folder-open"></i> Your Applications</a></li>
+                    <li><a href="#" data-section="new-draft"><i class="fas fa-edit"></i> New Draft</a></li>
+                    <li><a href="#" data-section="your-drafts"><i class="fas fa-folder"></i> Your Drafts</a></li>
+                    <li><a href="#" data-section="your-task-list"><i class="fas fa-tasks"></i> Your Task List</a></li>
+                    <li><a href="#" data-section="quick-task"><i class="fas fa-bolt"></i> Quick Task Response</a></li>
+                    <li><a href="#" data-section="history"><i class="fas fa-history"></i> History</a></li>
+                    <li><a href="#" data-section="applications"><i class="fas fa-list"></i> Applications</a></li>
+                    <li><a href="#" data-section="options"><i class="fas fa-cogs"></i> Options</a></li>
+                    <li><a href="#" data-section="change-password"><i class="fas fa-lock"></i> Change Password</a></li>
                 </ul>
-            </nav>
-            <!-- Sidebar end -->    
-        
+            </nav>                      
+        </div>
 
-
-        <section class="content">
-            <!-- Content star -->
-            <div id="home" class="section active home__page">
-                <form action="">
-                        <h2 class="home__page--header">
-                            <a href="">
-                                <img src="https://www.sagawa-vtm.com.vn/Content/assets/img/sgw/logoSGW.png" alt="" class="home__page-img">
-                                Home Page
-                            </a>
-                        </h2>
-
-                        <div class="home__page--title">
-                            <label for="">eApprove System <a href="">Manual</a></label>
-                            <div class="home__page--date">
-                                <p>Ngày: <span id="current-day"></span>, Giờ: <span id="current-time"></span></p>
-                            </div>
+        <div class=" content second__body">
+                <div id="home" class="section active second__body--page">
+                    <form action="">
+                            <h2 class="second__body--header">
+                                <a href="" class="second__body--logo">
+                                    <img src="https://www.sagawa-vtm.com.vn/Content/assets/img/sgw/logoSGW.png" alt="" class="second__body-img">
+                                </a>
+                            </h2>
                             
-                            <div class="home__page--task">
-                                <p>You have: <span id="pending-task-count">0</span> task(s) waiting for your response</p>
-                                <p>You have: <span id="disapproved-count">0</span> Applications Disapproved</p>
-                                <a href="#" target="_blank" >Click here to view Your Applications</a>
-                            </div> 
-                        </div>
-
-                        <div class="container">
-                            <div class="home__page--list">
-                                <h3 class="home__page--department">ADM & HR</h3>
-                                <button data-section="" class="home__page--btn" >Finger Print</button>
-                                <button data-section="" class="home__page--btn">Check Salary</button>
-                                <button data-section="" class="home__page--btn">Annual Leave</button>
-                                <button data-section="" class="home__page--btn">Company Form</button>
-                                <button data-section="" class="home__page--btn">Evaluation</button>
-                                <button data-section="" class="home__page--btn">Overtime</button>
-                                <button data-section="" class="home__page--btn">Security Training</button>
+    
+                            <div class="second__body--title">
+                                <label for="">eApprove System <a href="" class="second__body--mn">Manual</a></label>
+                                <div class="second__body--date">
+                                    <p>Ngày: <span id="current-day"></span>, Giờ: <span id="current-time"></span></p>
+                                </div>
+                                
+                                <div class="second__body--task">
+                                    <p>You have: <span id="pending-task-count">0</span> task(s) waiting for your response</p>
+                                    <p>You have: <span id="disapproved-count">0</span> Applications Disapproved</p>
+                                    <a href="#" target="_blank" >Click here to view Your Applications</a>
+                                </div> 
                             </div>
-                    
-                            <div class="home__page--list">
-                                <h3 class="home__page--department">Accounting</h3>
-                                <button data-section="" class="home__page--btn">Tax Report</button>
-                                <button data-section="" class="home__page--btn">Financial Report</button>
-                                <button data-section="" class="home__page--btn">Invoice Processing</button>
-                                <button data-section="" class="home__page--btn">Budget Planning</button>
-                            </div>
-                    
-                            <div class="home__page--list">
-                                <h3 class="home__page--department">Operation</h3>
-                                <button data-section="" class="home__page--btn">Truck Repair</button>
-                                <button data-section="" class="home__page--btn">Inventory Check</button>
-                                <button data-section="" class="home__page--btn">Logistics Management</button>
-                                <button data-section="" class="home__page--btn">Safety Inspection</button>
-                            </div>
-                        </div>
-                </form>
-            </div>
-
-
-            <div id="new-app" class="section">
-                <h2 class="home__page--header">📝 New Application</h2>
-                <div class="category">
-                    <h3></h3>
-                    <button data-section="" >Administration</button>
-                    <button data-section="">Accounting</button>
-                    <button data-section="">Human Resource</button>
-                    <button data-section="">Operation</button>
-                </div>
-        
-                <form>
-                    
-
-                    <table>
-                        <tr><td><label>Subject:</label></td>
-                            <td><input type="text" id="appSubject"><span class="error" id="subjectError"></span></td>
-                        </tr>
-                        <tr><td><label>Reason:</label></td>
-                            <td><textarea id="appReason"></textarea><span class="error" id="reasonError"></span></td>
-                        </tr>
-                        <tr><td><label>Amount:</label></td>
-                            <td><input type="number" id="appAmount"><span class="error" id="amountError"></span></td>
-                        </tr>
-                        <tr><td><label>Type:</label></td>
-                            <td>
-                                <input type="radio" name="appType" value="Deposit cash"> Deposit cash <br>
-                                <input type="radio" name="appType" value="Withdraw cash"> Withdraw cash
-                            </td>
-                        </tr>
+    
+                            <div class="container">
+                                <div class="second__body--list">
+                                    <h3 class="second__body--department">ADM & HR</h3>
+                                    <div class="second__body--box">
+                                        <button data-section="" class="second__body--btn" >Finger Print</button>
+                                        <button data-section="" class="second__body--btn">Check Salary</button>
+                                        <button data-section="" class="second__body--btn">Annual Leave</button>
+                                        <button data-section="" class="second__body--btn">Company Form</button>
+                                        <button data-section="" class="second__body--btn">Evaluation</button>
+                                        <button data-section="" class="second__body--btn">Overtime</button>
+                                        <button data-section="" class="second__body--btn">Security Training</button>
+                                    </div>
+                                </div>
                         
+                                <div class="second__body--list">
+                                    <h3 class="second__body--department">Accounting</h3>
+                                    <div class="second__body--box">
+                                        <button data-section="" class="second__body--btn">Tax Report</button>
+                                        <button data-section="" class="second__body--btn">Financial Report</button>
+                                        <button data-section="" class="second__body--btn">Invoice Processing</button>
+                                        <button data-section="" class="second__body--btn">Budget Planning</button>
+                                    </div>
+                                    
+                                </div>
+                        
+                                <div class="second__body--list">
+                                    <h3 class="second__body--department">Operation</h3>
+                                    <div class="second__body--box">
+                                        <button data-section="" class="second__body--btn">Truck Repair</button>
+                                        <button data-section="" class="second__body--btn">Inventory Check</button>
+                                        <button data-section="" class="second__body--btn">Logistics Management</button>
+                                        <button data-section="" class="second__body--btn">Safety Inspection</button>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                    </form>
+                </div>
+    
+    
+                <div id="new-app" class="section new__application">
+                    <h2 class="second__body--header">📝 New Application</h2>
+                    <div class="category">
+                        <h3></h3>
+                        <button data-section="administrator-dashboard" class="new__application--btn">Administrator</button>
+                        <button data-section="accounting-dashboard" class="new__application--btn">Accounting</button>
+                        <button data-section="human-resource-dashboard" class="new__application--btn">Human Resource</button>
+                        <button data-section="operation-dashboard" class="new__application--btn">Operation</button>
+                    </div>
+            
+    
+                   <div id="administrator-dashboard" class="section">
+                         <h2>hello</h2>
+                         
+                   </div>
+                    
+                   
+                   <form>
+                        <table>
+                            <tr><td><label>Subject:</label></td>
+                                <td><input type="text" id="appSubject"><span class="error" id="subjectError"></span></td>
+                            </tr>
+                            <tr><td><label>Reason:</label></td>
+                                <td><textarea id="appReason"></textarea><span class="error" id="reasonError"></span></td>
+                            </tr>
+                            <tr><td><label>Amount:</label></td>
+                                <td><input type="number" id="appAmount"><span class="error" id="amountError"></span></td>
+                            </tr>
+                            <tr><td><label>Type:</label></td>
+                                <td>
+                                    <input type="radio" name="appType" value="Deposit cash"> Deposit cash <br>
+                                    <input type="radio" name="appType" value="Withdraw cash"> Withdraw cash
+                                </td>
+                            </tr>
+                        </table>
+                        <button type="submit">Create</button>
+                    </form>
+                </div>
+    
+                
+    
+    
+                <div id="your-app" class="section" style="background-color: rgb(13, 14, 14);">
+                    <h2 class="second__body--header">📂 Your Applications</h2>
+                    <table border="1">
+                        <tr>
+                            <th>App No.</th>
+                            <th>Subject</th>
+                            <th>Date</th>
+                            <th>Type</th>
+                            <th>Status</th>
+                        </tr>
                     </table>
-                    <button type="submit">Create</button>
-                </form>
-            </div>
+                </div>
+    
+                <div id="new-draft" class="section">
+                    <h2 class="second__body--header">📂 New Draft</h2>
+                    <table border="1">
+                        <tr>
+                            <th>App No.</th>
+                            <th>Subject</th>
+                            <th>Date</th>
+                            <th>Type</th>
+                            <th>Status</th>
+                        </tr>
+                    </table>
+                </div>
+    
+                <div id="your-drafts" class="section">
+                    <h2 class="second__body--header">📂 Your Drafts</h2>
+                    <table border="1">
+                        <tr>
+                            <th>App No.</th>
+                            <th>Subject</th>
+                            <th>Date</th>
+                            <th>Type</th>
+                            <th>Status</th>
+                        </tr>
+                    </table>
+                </div>
+        </div>
+            
 
-            <div id="your-app" class="section">
-                <h2 class="home__page--header">📂 Your Applications</h2>
-                <table border="1">
-                    <tr>
-                        <th>App No.</th>
-                        <th>Subject</th>
-                        <th>Date</th>
-                        <th>Type</th>
-                        <th>Status</th>
-                    </tr>
-                </table>
-            </div>
 
-            <div id="new-draft" class="section">
-                <h2 class="home__page--header">📂 New Draft</h2>
-                <table border="1">
-                    <tr>
-                        <th>App No.</th>
-                        <th>Subject</th>
-                        <th>Date</th>
-                        <th>Type</th>
-                        <th>Status</th>
-                    </tr>
-                </table>
-            </div>
-
-            <div id="your-drafts" class="section">
-                <h2 class="home__page--header">📂 Your Drafts</h2>
-                <table border="1">
-                    <tr>
-                        <th>App No.</th>
-                        <th>Subject</th>
-                        <th>Date</th>
-                        <th>Type</th>
-                        <th>Status</th>
-                    </tr>
-                </table>
-            </div>
-        </section>
+        
+            
     </div>
 
     <script src="asset/js/dashboard.js"></script>
