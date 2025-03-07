@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let applicationForm = document.querySelector("#new-app form");
     let applicationTable = document.querySelector("#your-app table");
+    let admin = document.querySelector("administrator-dashboard table");
    
 
     
