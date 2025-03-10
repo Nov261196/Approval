@@ -1,0 +1,163 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+
+.page__header {
+    position:sticky;
+    top:0;
+    z-index: 1111;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.page__header--img {
+    height: 50px;
+}
+
+.page__header-right {
+    color: #007bff;
+    font-size: 1.2rem;
+}
+
+.page__header--btn {
+    background: none;
+    border: 2px solid #007bff;
+    color: #007bff;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.page__header--btn:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Sidebar */
+.box__sidebar {
+    position: fixed;
+    width: 250px;
+    height: 100vh;
+    padding: 20px;
+    background:#343a40;
+}
+
+.box__menu {
+    list-style: none;
+}
+
+.box__menu li {
+    margin-bottom: 10px;
+}
+
+.box__menu a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.box__menu a:hover {
+    background-color: #007bff;
+}
+
+/* Main Content */
+.box__body--main {
+    display: none;
+    margin-left: 240px;
+    padding: 20px;
+}
+
+.box__body--main.active {
+    display: block;
+}
+
+.box__body--sub-content {
+    display: none;
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background: #f9f9f9;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+.box__body--sub-content.active {
+    display: block;
+}
+
+
+/* .submenu{
+    display: none;
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background: #f9f9f9;
+} */
+
+.box__body--form {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.box__body--container{
+    display: flex;
+    padding: 20px;
+    margin: 20px;
+}
+
+.box__body--list{
+    width: 200px;
+    margin: 20px;
+
+}
+.box__body--department{
+    text-align: center;
+}
+
+
+.box__body--box{
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    background-color: rgb(226, 229, 230);
+}
+
+.box__body--btn{
+    width: 125px;
+    padding: 8px;
+    margin: 4px;
+    background-color: #969696;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.box__body--btn:hover{
+    box-shadow: 0 0 20px rgba(255, 87, 51, 0.8);
+
+}
+/* Section Visibility */
+/* .section {
+    display: none;
+}
+
+.section.active {
+    display: block;
+} */
