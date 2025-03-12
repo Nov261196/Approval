@@ -5,75 +5,226 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="asset/css/second.css">
     <link rel="stylesheet" href="asset/font/fontawesome-free-6.6.0-web/css/all.min.css">
+    <link rel="stylesheet" href="asset/font/themify-icons-font/themify-icons/themify-icons.css">
     <title>Dashboard</title>
 </head>
 <body>
     <div class="main__content">  
-        <header class="page__header">
-            <div class="page__header-left">
-                <a href="#">
-                    <img src="https://www.sagawa-vtm.com.vn/Content/assets/img/sgw/logoSGW.png" 
-                         alt="Company Logo" 
-                         class="page__header--img">
-                </a>
-            </div>
-            <div class="page__header-right">
-                <span>Welcome, 
-                    <i class="fa-solid fa-user"></i>
-                    <span id="username-display">User</span>
-                    <button id="logout-btn" class="page__header--btn">Logout</button>
-                </span>
-            </div>
-        </header>
-        
         <div class="content">
-            <div class="content__box">
-                <div class="box__body">
-                    <div class="box__sidebar">
-                        <ul class="box__menu" role="navigation">
-                            <li><a href="#" id="home"><i class="fa-solid fa-house"></i> Home</a></li>
+            <nav id="sidebar" class="sidebar-menu">
+                <ul>
+                    <li>
+                        <span class="sidebar-logo">
+                                SG SAGAWA
+                            <button onclick=toggleSidebar() id="toggle-btn" class="sidebar-toggle-btn">
+                                <i class="ti-menu"></i>
+                            </button>
+                        </span>
+                        
+                    </li>
+                    <li class="sidebar-home">
+                        <a href="#" id="home" class="sidebar-link">
+                            <i class="sidebar-icon fa-solid fa-house"></i>
+                            <span class="sidebar-tex" class="sidebar-tex">Home</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-home">
+                        <a href="#" id="new-app" onclick=toggleSubMenu(this) class="dropdown-btn sidebar-link">
+                            <i class="sidebar-icon fas fa-file-circle-plus"></i>
+                            <span class="sidebar-tex">New Application <i class=" sidebar-icon ti-angle-down"></i>
+                            </span>
+                        </a>
+                        <ul class="sub-menu">
+                          <div class="sidebar-sub">
                             <li>
-                                <a href="#" id="new-app"><i class="fas fa-file-circle-plus"></i> New Application</a>
-                                <!-- <div class="box__submenu">
-                                    <a href="#" id="administrator">
-                                        <i class="box__submenu--icon fas fa-user-cog"></i>
-                                        <span>
-                                            Administrator
-                                        </span>
-                                    </a>
-                                    <a href="#" id="accounting">
-                                        <i class=" box__submenu--icon fas fa-coins"></i>
-                                        <span>
-                                            Accounting
-                                        </span>
-                                    </a>
-                                    <a href="#" id="human">
-                                        <i class=" box__submenu--icon fas fa-id-badge"></i>
-                                        <span>
-                                            Human Resource
-                                        </span>
-                                    </a>
-                                    <a href="#" id="operation">
-                                        <i class=" box__submenu--icon fas fa-cogs"></i>
-                                        <span>
-                                            Operations
-                                        </span>
-                                    </a>
-                                </div> -->
+                                <a href="#" id="administrator">
+                                    <span>
+                                        Administrator
+                                    </span>
+                                </a>
                             </li>
-                            <li><a href="#" id="your-app"><i class="fas fa-folder-open"></i> Your Applications</a></li>
-                            <li><a href="#" id="new-draft"><i class="fas fa-edit"></i> New Draft</a></li>
-                            <li><a href="#" id="your-drafts"><i class="fas fa-folder"></i> Your Drafts</a></li>
-                            <li><a href="#" id="your-task-list"><i class="fas fa-tasks"></i> Your Task List</a></li>
-                            <li><a href="#" id="quick-task"><i class="fas fa-bolt"></i> Quick Task Response</a></li>
-                            <li><a href="#" id="history"><i class="fas fa-history"></i> History</a></li>
-                            <li><a href="#" id="applications"><i class="fas fa-list"></i> Applications</a></li>
-                            <li><a href="#" id="options"><i class="fas fa-cogs"></i> Options</a></li>
-                            <li><a href="#" id="change-password"><i class="fas fa-lock"></i> Change Password</a></li>
+                            <li>
+                                <a href="#" id="accounting">
+                                    <span>
+                                        Accounting
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" id="human">
+                                    <span>
+                                        Human Resource
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" id="operation">
+                                    <span>
+                                        Operations
+                                    </span>
+                                </a>
+                            </li>
+                          </div>
                         </ul>
-                    </div>
+                      </li>
+                    <li class="sidebar-home">
+                        <a href="#" id="your-app" class="sidebar-link">
+                            <i class="sidebar-icon fas fa-folder-open"></i>
+                            <span class="sidebar-tex">
+                                Your Applications
+                            </span>
+                        </a>    
+                        
+                    </li>
+                    <li class="sidebar-home">
+                        <a href="#" id="your-app" class="sidebar-link">
+                            <i class="sidebar-icon ti-folder"></i>
+                            <span class="sidebar-tex">
+                                New Draft
+                            </span>
+                        </a>    
+                    </li>
+                    <li class="sidebar-home">
+                        <a href="#" id="your-app" class="sidebar-link">
+                            <i class="sidebar-icon ti-archive"></i>
+                            <span class="sidebar-tex">
+                                Your Drafts
+                            </span>
+                        </a>    
+                    </li>
+                    <li class="sidebar-home">
+                        <a href="#" id="your-app" class="sidebar-link">
+                            <i class="sidebar-icon fas ti-write"></i>
+                            <span class="sidebar-tex">
+                                Your Task List
+                            </span>
+                        </a>    
+                    </li>
+                    <li class="sidebar-home">
+                        <a href="#" id="your-app" class="sidebar-link">
+                            <i class="sidebar-icon ti-menu-alt"></i>
+                            <span class="sidebar-tex">
+                                Quick Task Response
+                            </span>
+                        </a>    
+                    </li>
+                    <li class="sidebar-home">
+                        <a href="#" id="your-app" class="sidebar-link">
+                            <i class="sidebar-icon ti-timer"></i>
+                            <span class="sidebar-tex">
+                                History
+                            </span>
+                        </a>    
+                    </li>
 
-                    <div id="main-home" class="box__body--main active">   
+                    <li class="sidebar-home">
+                        <a href="#" id="your-app" class="sidebar-link">
+                            <i class="sidebar-icon ti-file"></i>
+                            <span class="sidebar-tex">
+                                Application
+                            </span>
+                        </a>    
+                    </li>
+                    <li class="sidebar-home">
+                        <a href="#" id="your-app" class="sidebar-link">
+                            <i class="sidebar-icon ti-settings"></i>
+                            <span class="sidebar-tex">
+                                Options
+                            </span>
+                        </a>    
+                    </li>
+                    <li class="sidebar-home">
+                        <a href="#" id="your-app" class="sidebar-link">
+                            <i class="sidebar-icon ti-lock"></i>
+                            <span class="sidebar-tex">
+                                Change Password
+                            </span>
+                        </a>    
+                    </li>
+
+
+
+                    
+                    <li class="sidebar-user">
+                        <a href="#" id="change-password" class="sidebar-link">
+                            <i class="sidebar-icon fa-solid fa-user"></i>    
+                             <span id="username-display" class="sidebar-name">User</span>
+                        </a>
+                        <a href="#" id="logout-btn" class="sidebar-link sidebar-log">
+                            <span>Logout</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+                    
+
+
+
+                    <!-- <nav id="sidebar">
+                        <ul>
+                          <li>
+                            <span class="logo">SG SAGAWA</span>
+                            <button onclick=toggleSidebar() id="toggle-btn">
+                            </button>
+                          </li>
+                          <li class="active">
+                            <a href="index.html">
+                              <span>Home</span>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="dashboard.html">
+                              <span>Dashboard</span>
+                            </a>
+                          </li>
+                          <li>
+                            <button onclick=toggleSubMenu(this) class="dropdown-btn">
+                              <span>Create</span>
+                            </button>
+                            <ul class="sub-menu">
+                              <div>
+                                <li><a href="#">Folder</a></li>
+                                <li><a href="#">Document</a></li>
+                                <li><a href="#">Project</a></li>
+                              </div>
+                            </ul>
+                          </li>
+                          <li>
+                            <button onclick=toggleSubMenu(this) class="dropdown-btn">
+                              <span>Todo-Lists</span>
+                            </button>
+                            <ul class="sub-menu">
+                              <div>
+                                <li><a href="#">Work</a></li>
+                                <li><a href="#">Private</a></li>
+                                <li><a href="#">Coding</a></li>
+                                <li><a href="#">Gardening</a></li>
+                                <li><a href="#">School</a></li>
+                              </div>
+                            </ul>
+                          </li>
+                          <li>
+                            <a href="calendar.html">
+                              <span>Calendar</span>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="profile.html">
+                              <span>Profile</span>
+                            </a>
+                          </li>
+                        </ul>
+                    </nav> -->
+
+
+
+
+
+
+
+
+                    <!-- <div id="main-home" class="box__body--main active">   
                         <div  class="box__body--form">
                             <h2 class="box__body--header">
                                 <a href="#" class="box__body--logo">
@@ -390,14 +541,14 @@
                                 <th>Status</th>
                             </tr>
                         </table>
-                    </div>
+                    </div> -->
         
                    
         
                     
-                </div> 
-            </div>
         </div>
+
+        
     </div>    
 
     <script>
@@ -416,26 +567,26 @@
 
 
 
-        const currentDay = document.getElementById('current-day');
-        console.log(currentDay);
-        const date = new Date().toLocaleDateString('en-us',
-            {   weekday: 'long', 
-                year: 'numeric', 
-                month: 'long', 
-                day: 'numeric', 
-            });
-        console.log(date);
-        currentDay.textContent = date;
+        // const currentDay = document.getElementById('current-day');
+        // console.log(currentDay);
+        // const date = new Date().toLocaleDateString('en-us',
+        //     {   weekday: 'long', 
+        //         year: 'numeric', 
+        //         month: 'long', 
+        //         day: 'numeric', 
+        //     });
+        // console.log(date);
+        // currentDay.textContent = date;
 
-        const currentTime = document.getElementById('current-time');
-        console.log(currentTime);
-        const time = new Date().toLocaleTimeString('en-us',
-            {   hour:"2-digit",
-                second:"2-digit",
-                minute:"2-digit",
-            });
-        console.log(currentTime);
-        currentTime.textContent = time;
+        // const currentTime = document.getElementById('current-time');
+        // console.log(currentTime);
+        // const time = new Date().toLocaleTimeString('en-us',
+        //     {   hour:"2-digit",
+        //         second:"2-digit",
+        //         minute:"2-digit",
+        //     });
+        // console.log(currentTime);
+        // currentTime.textContent = time;
 
         // function updateTime() {
         //     const time = new Date().toLocaleTimeString('en-us',
@@ -452,62 +603,62 @@
         
 
        
-        function showSection(sectionId) {
-        const sections = document.querySelectorAll('.box__body--main');
-        sections.forEach(section => section.classList.remove('active'));
+        // function showSection(sectionId) {
+        // const sections = document.querySelectorAll('.box__body--main');
+        // sections.forEach(section => section.classList.remove('active'));
 
-        const currentSection = document.getElementById(sectionId);
-            if (currentSection) {
-                currentSection.classList.add('active');
-            } else {
-                console.error("Section not found:", sectionId);
-            }
-        }
-        document.getElementById('home').addEventListener('click', (e) => {
-            e.preventDefault();
-            showSection('main-home');
-        });
+        // const currentSection = document.getElementById(sectionId);
+        //     if (currentSection) {
+        //         currentSection.classList.add('active');
+        //     } else {
+        //         console.error("Section not found:", sectionId);
+        //     }
+        // }
+        // document.getElementById('home').addEventListener('click', (e) => {
+        //     e.preventDefault();
+        //     showSection('main-home');
+        // });
 
-        document.getElementById('new-app').addEventListener('click', (e) => {
-            e.preventDefault();
-            showSection('main-new-app');
-        });
+        // document.getElementById('new-app').addEventListener('click', (e) => {
+        //     e.preventDefault();
+        //     showSection('main-new-app');
+        // });
 
-        document.getElementById('your-app').addEventListener('click', (e) => {
-            e.preventDefault();
-            showSection('main-your-app');
-        });
+        // document.getElementById('your-app').addEventListener('click', (e) => {
+        //     e.preventDefault();
+        //     showSection('main-your-app');
+        // });
 
 
-        function showSubMenu(subMenuId) {
-            const subMenus = document.querySelectorAll('.box__body--sub-content');
-            subMenus.forEach(subMenu => subMenu.classList.remove('active'));
+        // function showSubMenu(subMenuId) {
+        //     const subMenus = document.querySelectorAll('.box__body--sub-content');
+        //     subMenus.forEach(subMenu => subMenu.classList.remove('active'));
 
-            const currentSubMenu = document.getElementById(subMenuId);
-            if (currentSubMenu) {
-                currentSubMenu.classList.add('active');
-            } else {
-                console.error("Sub Menu not found:", subMenuId);
-            }
-        }
+        //     const currentSubMenu = document.getElementById(subMenuId);
+        //     if (currentSubMenu) {
+        //         currentSubMenu.classList.add('active');
+        //     } else {
+        //         console.error("Sub Menu not found:", subMenuId);
+        //     }
+        // }
         
-        document.getElementById('administrator').addEventListener('click', (e) => {
-            e.preventDefault();
-            showSubMenu('administrator-dashboard');
-        });
+        // document.getElementById('administrator').addEventListener('click', (e) => {
+        //     e.preventDefault();
+        //     showSubMenu('administrator-dashboard');
+        // });
         
-        document.getElementById('accounting').addEventListener('click', (e) => {
-            e.preventDefault();
-            showSubMenu('accounting-dashboard');
-        });
-        document.getElementById('human').addEventListener('click', (e) => {
-            e.preventDefault();
-            showSubMenu('human-resource-dashboard');
-        });
-        document.getElementById('operation').addEventListener('click', (e) => {
-            e.preventDefault();
-            showSubMenu('operation-dashboard');
-        });
+        // document.getElementById('accounting').addEventListener('click', (e) => {
+        //     e.preventDefault();
+        //     showSubMenu('accounting-dashboard');
+        // });
+        // document.getElementById('human').addEventListener('click', (e) => {
+        //     e.preventDefault();
+        //     showSubMenu('human-resource-dashboard');
+        // });
+        // document.getElementById('operation').addEventListener('click', (e) => {
+        //     e.preventDefault();
+        //     showSubMenu('operation-dashboard');
+        // });
        
 
         
@@ -543,53 +694,53 @@
 
 
         // Hàm ẩn tất cả các danh sách con
-    function hideAllDashboards() {
-        document.querySelectorAll('.box__body--sub-content').forEach(subMenu => {
-            subMenu.style.display = 'none';
-        });
-    }
+    // function hideAllDashboards() {
+    //     document.querySelectorAll('.box__body--sub-content').forEach(subMenu => {
+    //         subMenu.style.display = 'none';
+    //     });
+    // }
 
     // Hàm hiển thị hoặc ẩn danh sách con được chọn
-    function toggleSubMenu(subMenuId) {
-        const subMenu = document.getElementById(subMenuId);
+    // function toggleSubMenu(subMenuId) {
+    //     const subMenu = document.getElementById(subMenuId);
 
         // Nếu submenu đang mở thì ẩn nó
-        if (subMenu.style.display === 'block') {
-            subMenu.style.display = 'none';
-        } else {
+        // if (subMenu.style.display === 'block') {
+        //     subMenu.style.display = 'none';
+        // } else {
             // Ẩn tất cả trước khi mở submenu được chọn
-            hideAllDashboards();
-            subMenu.style.display = 'block';
-        }
-    }
+    //         hideAllDashboards();
+    //         subMenu.style.display = 'block';
+    //     }
+    // }
 
     // Sự kiện click cho từng nút
-    document.getElementById('administrator').addEventListener('click', function (e) {
-        e.preventDefault();
-        toggleSubMenu('administrator-dashboard');
-    });
+    // document.getElementById('administrator').addEventListener('click', function (e) {
+    //     e.preventDefault();
+    //     toggleSubMenu('administrator-dashboard');
+    // });
 
-    document.getElementById('accounting').addEventListener('click', function (e) {
-        e.preventDefault();
-        toggleSubMenu('accounting-dashboard');
-    });
+    // document.getElementById('accounting').addEventListener('click', function (e) {
+    //     e.preventDefault();
+    //     toggleSubMenu('accounting-dashboard');
+    // });
 
-    document.getElementById('human').addEventListener('click', function (e) {
-        e.preventDefault();
-        toggleSubMenu('human-resource-dashboard');
-    });
+    // document.getElementById('human').addEventListener('click', function (e) {
+    //     e.preventDefault();
+    //     toggleSubMenu('human-resource-dashboard');
+    // });
 
-    document.getElementById('operation').addEventListener('click', function (e) {
-        e.preventDefault();
-        toggleSubMenu('operation-dashboard');
-    });
+    // document.getElementById('operation').addEventListener('click', function (e) {
+    //     e.preventDefault();
+    //     toggleSubMenu('operation-dashboard');
+    // });
 
     // Ẩn tất cả danh sách con khi chọn mục khác trên menu
-    document.querySelectorAll('.box__menu a').forEach(item => {
-        item.addEventListener('click', function () {
-            hideAllDashboards();
-        });
-    });
+    // document.querySelectorAll('.box__menu a').forEach(item => {
+    //     item.addEventListener('click', function () {
+    //         hideAllDashboards();
+    //     });
+    // });
 
 
 
@@ -598,6 +749,37 @@
 
 
 
+    const toggleButton = document.getElementById('toggle-btn')
+    const sidebar = document.getElementById('sidebar')
+
+    function toggleSidebar(){
+    sidebar.classList.toggle('close')
+    toggleButton.classList.toggle('rotate')
+
+    closeAllSubMenus()
+    }
+
+    function toggleSubMenu(button){
+
+    if(!button.nextElementSibling.classList.contains('show')){
+        closeAllSubMenus()
+    }
+
+    button.nextElementSibling.classList.toggle('show')
+    button.classList.toggle('rotate')
+
+    if(sidebar.classList.contains('close')){
+        sidebar.classList.toggle('close')
+        toggleButton.classList.toggle('rotate')
+    }
+    }
+
+    function closeAllSubMenus(){
+    Array.from(sidebar.getElementsByClassName('show')).forEach(ul => {
+        ul.classList.remove('show')
+        ul.previousElementSibling.classList.remove('rotate')
+    })
+    }
 
 
 
