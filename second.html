@@ -15,61 +15,62 @@
                 <ul>
                     <li>
                         <span class="sidebar-logo">
-                                SG SAGAWA
-                            <button onclick=toggleSidebar() id="toggle-btn" class="sidebar-toggle-btn">
-                                <i class="ti-menu"></i>
+                            <button onclick="toggleSidebar()" id="toggle-btn" class="sidebar-toggle-btn">
+                                <span>SG SAGAWA</span> 
+                                <i class="fa-solid fa-rotate-left left-icon"></i>
                             </button>
                         </span>
-                        
                     </li>
                     <li class="sidebar-home">
                         <a href="#" id="home" class="sidebar-link">
-                            <i class="sidebar-icon fa-solid fa-house"></i>
-                            <span class="sidebar-tex" class="sidebar-tex">Home</span>
+                            <i class="sidebar-icon ti-home"></i>
+                            <span class="sidebar-tex">Home</span>
                         </a>
                     </li>
                     <li class="sidebar-home">
-                        <a href="#" id="new-app" onclick=toggleSubMenu(this) class="dropdown-btn sidebar-link">
-                            <i class="sidebar-icon fas fa-file-circle-plus"></i>
-                            <span class="sidebar-tex">New Application <i class=" sidebar-icon ti-angle-down"></i>
-                            </span>
-                        </a>
+                        
+
+                        <button id="new-app" onclick="toggleSubMenu(this)" class="sidebar-toggle-btn ">
+                            <i class="sidebar-icon ti-files"></i>
+                            <span class="sidebar-tex">New Application</span>
+                            <i class="ti-angle-up arrow-icon"></i>
+                        </button>
+                        
+                        
                         <ul class="sub-menu">
-                          <div class="sidebar-sub">
-                            <li>
+                            <li class="sidebar-sub">
                                 <a href="#" id="administrator">
                                     <span>
                                         Administrator
                                     </span>
                                 </a>
                             </li>
-                            <li>
+                            <li class="sidebar-sub">
                                 <a href="#" id="accounting">
                                     <span>
                                         Accounting
                                     </span>
                                 </a>
                             </li>
-                            <li>
+                            <li class="sidebar-sub">
                                 <a href="#" id="human">
                                     <span>
                                         Human Resource
                                     </span>
                                 </a>
                             </li>
-                            <li>
+                            <li class="sidebar-sub">
                                 <a href="#" id="operation">
                                     <span>
                                         Operations
                                     </span>
                                 </a>
                             </li>
-                          </div>
                         </ul>
                       </li>
                     <li class="sidebar-home">
                         <a href="#" id="your-app" class="sidebar-link">
-                            <i class="sidebar-icon fas fa-folder-open"></i>
+                            <i class="sidebar-icon ti-clipboard"></i>
                             <span class="sidebar-tex">
                                 Your Applications
                             </span>
@@ -94,7 +95,7 @@
                     </li>
                     <li class="sidebar-home">
                         <a href="#" id="your-app" class="sidebar-link">
-                            <i class="sidebar-icon fas ti-write"></i>
+                            <i class="sidebar-icon  ti-write"></i>
                             <span class="sidebar-tex">
                                 Your Task List
                             </span>
@@ -145,13 +146,19 @@
 
 
                     
-                    <li class="sidebar-user">
-                        <a href="#" id="change-password" class="sidebar-link">
+                    <li class="sidebar-user sidebar-profile">
+                        <a href="#" id="change-password" class="sidebar-link ">
                             <i class="sidebar-icon fa-solid fa-user"></i>    
                              <span id="username-display" class="sidebar-name">User</span>
                         </a>
+                    </li>
+
+                    <li class="sidebar-logout">
                         <a href="#" id="logout-btn" class="sidebar-link sidebar-log">
-                            <span>Logout</span>
+                            <span>
+                                <i class="sidebar-icon fa-solid fa-power-off"></i>
+                                Logout
+                            </span>
                         </a>
                     </li>
                 </ul>
@@ -161,388 +168,330 @@
 
 
 
-                    <!-- <nav id="sidebar">
-                        <ul>
-                          <li>
-                            <span class="logo">SG SAGAWA</span>
-                            <button onclick=toggleSidebar() id="toggle-btn">
-                            </button>
-                          </li>
-                          <li class="active">
-                            <a href="index.html">
-                              <span>Home</span>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="dashboard.html">
-                              <span>Dashboard</span>
-                            </a>
-                          </li>
-                          <li>
-                            <button onclick=toggleSubMenu(this) class="dropdown-btn">
-                              <span>Create</span>
-                            </button>
-                            <ul class="sub-menu">
-                              <div>
-                                <li><a href="#">Folder</a></li>
-                                <li><a href="#">Document</a></li>
-                                <li><a href="#">Project</a></li>
-                              </div>
-                            </ul>
-                          </li>
-                          <li>
-                            <button onclick=toggleSubMenu(this) class="dropdown-btn">
-                              <span>Todo-Lists</span>
-                            </button>
-                            <ul class="sub-menu">
-                              <div>
-                                <li><a href="#">Work</a></li>
-                                <li><a href="#">Private</a></li>
-                                <li><a href="#">Coding</a></li>
-                                <li><a href="#">Gardening</a></li>
-                                <li><a href="#">School</a></li>
-                              </div>
-                            </ul>
-                          </li>
-                          <li>
-                            <a href="calendar.html">
-                              <span>Calendar</span>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="profile.html">
-                              <span>Profile</span>
-                            </a>
-                          </li>
-                        </ul>
-                    </nav> -->
-
-
-
-
-
-
-
-
-                    <!-- <div id="main-home" class="box__body--main active">   
-                        <div  class="box__body--form">
-                            <h2 class="box__body--header">
-                                <a href="#" class="box__body--logo">
-                                    <img src="https://www.sagawa-vtm.com.vn/Content/assets/img/sgw/logoSGW.png" alt="Company Logo" class="box__body-img">
-                                </a>
-                            </h2>
-                            
-                            <div class="box__body--title">
-                                <label>eApprove System <a href="#" class="box__body--mn">Manual</a></label>
-                                <div class="box__body--date">
-                                    <p>Ngày: <span id="current-day"></span>, Giờ: <span id="current-time"></span></p>
-                                </div>
-                                <div class="box__body--task">
-                                    <p>You have: <span id="pending-task-count">0</span> pending tasks.</p>
-                                    <p>You have: <span id="disapproved-count">0</span> Applications Disapproved.</p>
-                                    <a href="#" target="_blank">Click here to view Your Applications</a>
-                                </div>
-
-
-
-                                <div class="box__body--container">
-                                    <div class="box__body--list">
-                                        <h3 class="box__body--department">ADM & HR</h3>
-                                        <div class="box__body--box">
-                                            <button data-section="" class="box__body--btn" >Finger Print</button>
-                                            <button data-section="" class="box__body--btn">Check Salary</button>
-                                            <button data-section="" class="box__body--btn">Annual Leave</button>
-                                            <button data-section="" class="box__body--btn">Company Form</button>
-                                            <button data-section="" class="box__body--btn">Evaluation</button>
-                                            <button data-section="" class="box__body--btn">Overtime</button>
-                                            <button data-section="" class="box__body--btn">Security Training</button>
-                                        </div>
-                                    </div>
-    
-                                    <div class="box__body--list">
-                                        <h3 class="box__body--department">Accounting</h3>
-                                        <div class="box__body--box">
-                                            <button data-section="" class="box__body--btn">Tax Report</button>
-                                            <button data-section="" class="box__body--btn">Financial Report</button>
-                                            <button data-section="" class="box__body--btn">Invoice Processing</button>
-                                            <button data-section="" class="box__body--btn">Budget Planning</button>
-                                        </div>
-                                        
-                                    </div>
-                                    
-                                    <div class="box__body--list">
-                                        <h3 class="box__body--department">Operation</h3>
-                                        <div class="box__body--box">
-                                            <button data-section="" class="box__body--btn">Truck Repair</button>
-                                            <button data-section="" class="box__body--btn">Inventory Check</button>
-                                            <button data-section="" class="box__body--btn">Logistics Management</button>
-                                            <button data-section="" class="box__body--btn">Safety Inspection</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                       
-                        </div> 
-                    </div>
-
+                   
                     
 
-                    <div id="main-new-app" class="box__body--main">
-                        <h2 class="box__body-h2">📝 New Application</h2>
-                        <div class="box__body--sub">
-                            <button id="administrator" class="box__body--btn">Administrator</button>
-                            <button id="accounting" class="box__body--btn">Accounting</button>
-                            <button id="human" class="box__body--btn">Human Resource</button>
-                            <button id="operation" class="box__body--btn">Operation</button>
-                        </div>
-                
-                        
-                        <div id="administrator-dashboard" class="box__body--sub-content">
-                                <table>
-                                    <tr>
-                                        <td>Asset transfer / Chuyển giao tài sản</td>
-                                        <td><a href="#" class="box__body--create">Create New</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Assets disposal / Thanh lý tài sản</td>
-                                        <td><a href="#" class="box__body--create">Create New</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Assets write-off / Xóa tài sản</td>
-                                        <td><a href="#" class="box__body--create">Create New</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Business Trip Plan / Kế hoạch đi công tác</td>
-                                        <td><a href="#" class="box__body--create">Create New</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Company stamp customer contract / Đóng dấu công ty hợp đồng khách hàng</td>
-                                        <td><a href="#" class="box__body--create">Create New</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Company stamp on notice/ official letter/ other documents - Đóng dấu công ty dành cho thông báo/ công văn/ các loại văn bản chứng từ</td>
-                                        <td><a href="#" class="box__body--create">Create New</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Entertainment application / Đề xuất chi phí giao tế</td>
-                                        <td><a href="#" class="box__body--create">Create New</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Fuel norm / Định mức nhiên liệu</td>
-                                        <td><a href="#" class="box__body--create">Create New</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Modify eApprove process / Thay đổi hệ thống eApprove</td>
-                                        <td><a href="#" class="box__body--create">Create New</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Purchase Goods And Repair / Mua sắm hàng hóa, sửa chữa</td>
-                                        <td><a href="#" class="box__body--create">Create New</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Software using application / Phê duyệt sử dụng phần mềm</td>
-                                        <td><a href="#" class="box__body--create">Create New</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Supplier / Sub-Contractor contract company stamp - Đóng dấu hợp đồng nhà cung cấp / nhà thầu phụ</td>
-                                        <td><a href="#" class="box__body--create">Create New</a></td>
-                                    </tr>
-                                </table>
-                            
-                        </div>
 
 
-                        <div id="accounting-dashboard" class="box__body--sub-content ">
-                            <table >
-                                <tr>
-                                    <td>Accounting withdraw, deposit cash / Kế toán rút, nộp tiền</td>
-                                    <td><a href="#" class="box__body--create">Create New</a></td>
-                                </tr>
-                                <tr>
-                                    <td>Adjust credit limit application / Đề xuất điều chỉnh hạn mức tín dụng</td>
-                                    <td><a href="#" class="box__body--create">Create New</a></td>
-                                </tr>
-                                <tr>
-                                    <td>Amend Debit note & VAT invoice / Điều chỉnh invoice, Debit note & hoá đơn GTGT</td>
-                                    <td><a href="#" class="box__body--create">Create New</a></td>
-                                </tr>
-                                <tr>
-                                    <td>New Customer registration / Đăng ký khách hàng mới</td>
-                                    <td><a href="#" class="box__body--create">Create New</a></td>
-                                </tr>
-                                <tr>
-                                    <td>New Supplier/ Contractor registration / Đăng ký nhà cung cấp/ nhà thầu mới</td>
-                                    <td><a href="#" class="box__body--create">Create New</a></td>
-                                </tr>
-                                <tr>
-                                    <td>Open guarantee letter / Mở thư bảo lãnh</td>
-                                    <td><a href="#" class="box__body--create">Create New</a></td>
-                                </tr>
-                                <tr>
-                                    <td>Payment application / Đề xuất thanh toán</td>
-                                    <td><a href="#" class="box__body--create">Create New</a></td>
-                                </tr>
-                                <tr>
-                                    <td>Reverse expenses / Điều chỉnh tăng / giảm chi phí</td>
-                                    <td><a href="#" class="box__body--create">Create New</a></td>
-                                </tr>
-                                <tr>
-                                    <td>Tax payment application / Đề xuất thanh toán thuế	</td>
-                                    <td><a href="#" class="box__body--create">Create New</a></td>
-                                </tr>
-                            </table>
-                        </div>
-                        
-                        <div id="human-resource-dashboard" class="box__body--sub-content ">
-                            <table >
-                                <tr>
-                                    <td>Company stamp (HR) / Đóng dấu công ty (Nhân sự)</td>
-                                    <td><a href="#" class="box__body--create">Create New</a></td>
-                                </tr>
-                                <tr>
-                                    <td>General application / Đề xuất tổng hợp</td>
-                                    <td><a href="#" class="box__body--create">Create New</a></td>
-                                </tr>
-                                <tr>
-                                    <td>Going Directly To Customer / Đi thẳng đến khách hàng</td>
-                                    <td><a href="#" class="box__body--create">Create New</a></td>
-                                </tr>
-                                <tr>
-                                    <td>Leave / Nghỉ phép</td>
-                                    <td><a href="#" class="box__body--create">Create New</a></td>
-                                </tr>
-                                <tr>
-                                    <td>Official employment / Tuyển dụng chính thức</td>
-                                    <td><a href="#" class="box__body--create">Create New</a></td>
-                                </tr>
-                                <tr>
-                                    <td>Outsource hiring / Sử dụng nguồn nhân lực bên ngoài</td>
-                                    <td><a href="#" class="box__body--create">Create New</a></td>
-                                </tr>
-                                <tr>
-                                    <td>Overtime / Tăng ca</td>
-                                    <td><a href="#" class="box__body--create">Create New</a></td>
-                                </tr>
-                                <tr>
-                                    <td>Probation/Part_time / Thử việc/Thời vụ</td>
-                                    <td><a href="#" class="box__body--create">Create New</a></td>
-                                </tr>
-                                <tr>
-                                    <td>Promotion / Thăng cấp</td>
-                                    <td><a href="#" class="box__body--create">Create New</a></td>
-                                </tr>
-                                <tr>
-                                    <td>Recruitment / Tuyển nhân viên</td>
-                                    <td><a href="#" class="box__body--create">Create New</a></td>
-                                </tr>
-                                <tr>
-                                    <td>Renewal labor contract / Gia hạn Hợp đồng lao động</td>
-                                    <td><a href="#" class="box__body--create">Create New</a></td>
-                                </tr>
-                                <tr>
-                                    <td>Resignation And Employment Contract Termination / Nghỉ việc và chấm dứt hợp đồng lao động</td>
-                                    <td><a href="#" class="box__body--create">Create New</a></td>
-                                </tr>
-                                <tr>
-                                    <td>Service contract / Hợp đồng dịch vụ</td>
-                                    <td><a href="#" class="box__body--create">Create New</a></td>
-                                </tr>
-                                <tr>
-                                    <td>Structure of Departments change / Thay đổi cơ cấu bộ phận</td>
-                                    <td><a href="#" class="box__body--create">Create New</a></td>
-                                </tr>
-                                <tr>
-                                    <td>Training proposal / Thực hiện đào tạo</td>
-                                    <td><a href="#" class="box__body--create">Create New</a></td>
-                                </tr>
-                                <tr>
-                                    <td>Transfer / Chuyển nhân sự</td>
-                                    <td><a href="#" class="box__body--create">Create New</a></td>
-                                </tr>
 
-                            </table>
-                        </div>
 
-                        <div id="operation-dashboard" class="box__body--sub-content ">
-                            <table >
-                                <tr>
-                                    <td>Cash collect / payment on behalf / Phí thu hộ, chi hộ</td>
-                                    <td><a href="#" class="box__body--create">Create New</a></td>
-                                </tr>
-                                <tr>
-                                    <td>Compensation payment application / Đề xuất bồi thường tổn thất cho khách hàng</td>
-                                    <td><a href="#" class="box__body--create">Create New</a></td>
-                                </tr>
-                                <tr>
-                                    <td>Expense application(CC) / Chi phí hải quan	</td>
-                                    <td><a href="#" class="box__body--create">Create New</a></td>
-                                </tr>
-                                <tr>
-                                    <td>Expense application(TR) / Chi phí vận tải	</td>
-                                    <td><a href="#" class="box__body--create">Create New</a></td>
-                                </tr>
-                                <tr>
-                                    <td>Incentive commencement application / Đề xuất duyệt hoa hồng	</td>
-                                    <td><a href="#" class="box__body--create">Create New</a></td>
-                                </tr>
-                                <tr>
-                                    <td>Incentive payment application / Đề xuất thanh toán hoa hồng	</td>
-                                    <td><a href="#" class="box__body--create">Create New</a></td>
-                                </tr>
-                                <tr>
-                                    <td>Payment forwarding application / Đề xuất thanh toán phí Forwarding	</td>
-                                    <td><a href="#" class="box__body--create">Create New</a></td>
-                                </tr>
-                                <tr>
-                                    <td>Quotation approval / Phê duyệt báo giá</td>
-                                    <td><a href="#" class="box__body--create">Create New</a></td>
-                                </tr>
-                                <tr>
-                                    <td>Write Off Bad Debt / Xóa nợ xấu</td>
-                                    <td><a href="#" class="box__body--create">Create New</a></td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-        
+
+
+<!-- 
+            <div id="main-home" class="box__body--main active">   
+                <div  class="box__body--form">
+                    <h2 class="box__body--header">
+                        <a href="#" class="box__body--logo">
+                            <img src="https://www.sagawa-vtm.com.vn/Content/assets/img/sgw/logoSGW.png" alt="Company Logo" class="box__body-img">
+                        </a>
+                    </h2>
                     
-                    <div id="main-your-app" class="box__body--main">
-                        <h2 class="">📂 Your Applications</h2>
-                        <div class="table__input">
-                            <h2>My Applications</h2>
-                            <div>
-                                <span>Application No:</span>
-                                <input type="text" placeholder="AP...">
-                                <select name="" id=""></select>
-                                <select name="" id=""></select>
-
-                            </div>
-                            <div>
-                                <span>Forms:</span>
-                                <select name="" id=""></select>
-                            </div>
-
-                            
-
-                            <div>
-                                <span>Subject:</span>
-                                <input type="text" placeholder="Search...">
-                                <button>Search</button>
-                            </div>
+                    <div class="box__body--title">
+                        <label>eApprove System <a href="#" class="box__body--mn">Manual</a></label>
+                        <div class="box__body--date">
+                            <p>Ngày: <span id="current-day"></span>, Giờ: <span id="current-time"></span></p>
                         </div>
-                        <table border="1">
+                        <div class="box__body--task">
+                            <p>You have: <span id="pending-task-count">0</span> pending tasks.</p>
+                            <p>You have: <span id="disapproved-count">0</span> Applications Disapproved.</p>
+                            <a href="#" target="_blank">Click here to view Your Applications</a>
+                        </div>
+
+
+
+                        <div class="box__body--container">
+                            <div class="box__body--list">
+                                <h3 class="box__body--department">ADM & HR</h3>
+                                <div class="box__body--box">
+                                    <button data-section="" class="box__body--btn" >Finger Print</button>
+                                    <button data-section="" class="box__body--btn">Check Salary</button>
+                                    <button data-section="" class="box__body--btn">Annual Leave</button>
+                                    <button data-section="" class="box__body--btn">Company Form</button>
+                                    <button data-section="" class="box__body--btn">Evaluation</button>
+                                    <button data-section="" class="box__body--btn">Overtime</button>
+                                    <button data-section="" class="box__body--btn">Security Training</button>
+                                </div>
+                            </div>
+
+                            <div class="box__body--list">
+                                <h3 class="box__body--department">Accounting</h3>
+                                <div class="box__body--box">
+                                    <button data-section="" class="box__body--btn">Tax Report</button>
+                                    <button data-section="" class="box__body--btn">Financial Report</button>
+                                    <button data-section="" class="box__body--btn">Invoice Processing</button>
+                                    <button data-section="" class="box__body--btn">Budget Planning</button>
+                                </div>
                                 
+                            </div>
+                            
+                            <div class="box__body--list">
+                                <h3 class="box__body--department">Operation</h3>
+                                <div class="box__body--box">
+                                    <button data-section="" class="box__body--btn">Truck Repair</button>
+                                    <button data-section="" class="box__body--btn">Inventory Check</button>
+                                    <button data-section="" class="box__body--btn">Logistics Management</button>
+                                    <button data-section="" class="box__body--btn">Safety Inspection</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                </div> 
+            </div>
 
+            
+
+            <div id="main-new-app" class="box__body--main">
+                <h2 class="box__body-h2">📝 New Application</h2>
+                
+        
+                
+                <div id="administrator-dashboard" class="box__body--sub-content">
+                        <table>
                             <tr>
-                                <th>App No.</th>
-                                <th>Subject</th>
-                                <th>Date</th>
-                                <th>Type</th>
-                                <th>Status</th>
+                                <td>Asset transfer / Chuyển giao tài sản</td>
+                                <td><a href="#" class="box__body--create">Create New</a></td>
+                            </tr>
+                            <tr>
+                                <td>Assets disposal / Thanh lý tài sản</td>
+                                <td><a href="#" class="box__body--create">Create New</a></td>
+                            </tr>
+                            <tr>
+                                <td>Assets write-off / Xóa tài sản</td>
+                                <td><a href="#" class="box__body--create">Create New</a></td>
+                            </tr>
+                            <tr>
+                                <td>Business Trip Plan / Kế hoạch đi công tác</td>
+                                <td><a href="#" class="box__body--create">Create New</a></td>
+                            </tr>
+                            <tr>
+                                <td>Company stamp customer contract / Đóng dấu công ty hợp đồng khách hàng</td>
+                                <td><a href="#" class="box__body--create">Create New</a></td>
+                            </tr>
+                            <tr>
+                                <td>Company stamp on notice/ official letter/ other documents - Đóng dấu công ty dành cho thông báo/ công văn/ các loại văn bản chứng từ</td>
+                                <td><a href="#" class="box__body--create">Create New</a></td>
+                            </tr>
+                            <tr>
+                                <td>Entertainment application / Đề xuất chi phí giao tế</td>
+                                <td><a href="#" class="box__body--create">Create New</a></td>
+                            </tr>
+                            <tr>
+                                <td>Fuel norm / Định mức nhiên liệu</td>
+                                <td><a href="#" class="box__body--create">Create New</a></td>
+                            </tr>
+                            <tr>
+                                <td>Modify eApprove process / Thay đổi hệ thống eApprove</td>
+                                <td><a href="#" class="box__body--create">Create New</a></td>
+                            </tr>
+                            <tr>
+                                <td>Purchase Goods And Repair / Mua sắm hàng hóa, sửa chữa</td>
+                                <td><a href="#" class="box__body--create">Create New</a></td>
+                            </tr>
+                            <tr>
+                                <td>Software using application / Phê duyệt sử dụng phần mềm</td>
+                                <td><a href="#" class="box__body--create">Create New</a></td>
+                            </tr>
+                            <tr>
+                                <td>Supplier / Sub-Contractor contract company stamp - Đóng dấu hợp đồng nhà cung cấp / nhà thầu phụ</td>
+                                <td><a href="#" class="box__body--create">Create New</a></td>
                             </tr>
                         </table>
-                    </div> -->
-        
+                    
+                </div>
+
+
+                <div id="accounting-dashboard" class="box__body--sub-content ">
+                    <table >
+                        <tr>
+                            <td>Accounting withdraw, deposit cash / Kế toán rút, nộp tiền</td>
+                            <td><a href="#" class="box__body--create">Create New</a></td>
+                        </tr>
+                        <tr>
+                            <td>Adjust credit limit application / Đề xuất điều chỉnh hạn mức tín dụng</td>
+                            <td><a href="#" class="box__body--create">Create New</a></td>
+                        </tr>
+                        <tr>
+                            <td>Amend Debit note & VAT invoice / Điều chỉnh invoice, Debit note & hoá đơn GTGT</td>
+                            <td><a href="#" class="box__body--create">Create New</a></td>
+                        </tr>
+                        <tr>
+                            <td>New Customer registration / Đăng ký khách hàng mới</td>
+                            <td><a href="#" class="box__body--create">Create New</a></td>
+                        </tr>
+                        <tr>
+                            <td>New Supplier/ Contractor registration / Đăng ký nhà cung cấp/ nhà thầu mới</td>
+                            <td><a href="#" class="box__body--create">Create New</a></td>
+                        </tr>
+                        <tr>
+                            <td>Open guarantee letter / Mở thư bảo lãnh</td>
+                            <td><a href="#" class="box__body--create">Create New</a></td>
+                        </tr>
+                        <tr>
+                            <td>Payment application / Đề xuất thanh toán</td>
+                            <td><a href="#" class="box__body--create">Create New</a></td>
+                        </tr>
+                        <tr>
+                            <td>Reverse expenses / Điều chỉnh tăng / giảm chi phí</td>
+                            <td><a href="#" class="box__body--create">Create New</a></td>
+                        </tr>
+                        <tr>
+                            <td>Tax payment application / Đề xuất thanh toán thuế	</td>
+                            <td><a href="#" class="box__body--create">Create New</a></td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div id="human-resource-dashboard" class="box__body--sub-content ">
+                    <table >
+                        <tr>
+                            <td>Company stamp (HR) / Đóng dấu công ty (Nhân sự)</td>
+                            <td><a href="#" class="box__body--create">Create New</a></td>
+                        </tr>
+                        <tr>
+                            <td>General application / Đề xuất tổng hợp</td>
+                            <td><a href="#" class="box__body--create">Create New</a></td>
+                        </tr>
+                        <tr>
+                            <td>Going Directly To Customer / Đi thẳng đến khách hàng</td>
+                            <td><a href="#" class="box__body--create">Create New</a></td>
+                        </tr>
+                        <tr>
+                            <td>Leave / Nghỉ phép</td>
+                            <td><a href="#" class="box__body--create">Create New</a></td>
+                        </tr>
+                        <tr>
+                            <td>Official employment / Tuyển dụng chính thức</td>
+                            <td><a href="#" class="box__body--create">Create New</a></td>
+                        </tr>
+                        <tr>
+                            <td>Outsource hiring / Sử dụng nguồn nhân lực bên ngoài</td>
+                            <td><a href="#" class="box__body--create">Create New</a></td>
+                        </tr>
+                        <tr>
+                            <td>Overtime / Tăng ca</td>
+                            <td><a href="#" class="box__body--create">Create New</a></td>
+                        </tr>
+                        <tr>
+                            <td>Probation/Part_time / Thử việc/Thời vụ</td>
+                            <td><a href="#" class="box__body--create">Create New</a></td>
+                        </tr>
+                        <tr>
+                            <td>Promotion / Thăng cấp</td>
+                            <td><a href="#" class="box__body--create">Create New</a></td>
+                        </tr>
+                        <tr>
+                            <td>Recruitment / Tuyển nhân viên</td>
+                            <td><a href="#" class="box__body--create">Create New</a></td>
+                        </tr>
+                        <tr>
+                            <td>Renewal labor contract / Gia hạn Hợp đồng lao động</td>
+                            <td><a href="#" class="box__body--create">Create New</a></td>
+                        </tr>
+                        <tr>
+                            <td>Resignation And Employment Contract Termination / Nghỉ việc và chấm dứt hợp đồng lao động</td>
+                            <td><a href="#" class="box__body--create">Create New</a></td>
+                        </tr>
+                        <tr>
+                            <td>Service contract / Hợp đồng dịch vụ</td>
+                            <td><a href="#" class="box__body--create">Create New</a></td>
+                        </tr>
+                        <tr>
+                            <td>Structure of Departments change / Thay đổi cơ cấu bộ phận</td>
+                            <td><a href="#" class="box__body--create">Create New</a></td>
+                        </tr>
+                        <tr>
+                            <td>Training proposal / Thực hiện đào tạo</td>
+                            <td><a href="#" class="box__body--create">Create New</a></td>
+                        </tr>
+                        <tr>
+                            <td>Transfer / Chuyển nhân sự</td>
+                            <td><a href="#" class="box__body--create">Create New</a></td>
+                        </tr>
+
+                    </table>
+                </div>
+
+                <div id="operation-dashboard" class="box__body--sub-content ">
+                    <table >
+                        <tr>
+                            <td>Cash collect / payment on behalf / Phí thu hộ, chi hộ</td>
+                            <td><a href="#" class="box__body--create">Create New</a></td>
+                        </tr>
+                        <tr>
+                            <td>Compensation payment application / Đề xuất bồi thường tổn thất cho khách hàng</td>
+                            <td><a href="#" class="box__body--create">Create New</a></td>
+                        </tr>
+                        <tr>
+                            <td>Expense application(CC) / Chi phí hải quan	</td>
+                            <td><a href="#" class="box__body--create">Create New</a></td>
+                        </tr>
+                        <tr>
+                            <td>Expense application(TR) / Chi phí vận tải	</td>
+                            <td><a href="#" class="box__body--create">Create New</a></td>
+                        </tr>
+                        <tr>
+                            <td>Incentive commencement application / Đề xuất duyệt hoa hồng	</td>
+                            <td><a href="#" class="box__body--create">Create New</a></td>
+                        </tr>
+                        <tr>
+                            <td>Incentive payment application / Đề xuất thanh toán hoa hồng	</td>
+                            <td><a href="#" class="box__body--create">Create New</a></td>
+                        </tr>
+                        <tr>
+                            <td>Payment forwarding application / Đề xuất thanh toán phí Forwarding	</td>
+                            <td><a href="#" class="box__body--create">Create New</a></td>
+                        </tr>
+                        <tr>
+                            <td>Quotation approval / Phê duyệt báo giá</td>
+                            <td><a href="#" class="box__body--create">Create New</a></td>
+                        </tr>
+                        <tr>
+                            <td>Write Off Bad Debt / Xóa nợ xấu</td>
+                            <td><a href="#" class="box__body--create">Create New</a></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            
+            <div id="main-your-app" class="box__body--main">
+                <h2 class="">📂 Your Applications</h2>
+                <div class="table__input">
+                    <h2>My Applications</h2>
+                    <div>
+                        <span>Application No:</span>
+                        <input type="text" placeholder="AP...">
+                        <select name="" id=""></select>
+                        <select name="" id=""></select>
+
+                    </div>
+                    <div>
+                        <span>Forms:</span>
+                        <select name="" id=""></select>
+                    </div>
+
+                    
+
+                    <div>
+                        <span>Subject:</span>
+                        <input type="text" placeholder="Search...">
+                        <button>Search</button>
+                    </div>
+                </div>
+                <table border="1">
+                        
+
+                    <tr>
+                        <th>App No.</th>
+                        <th>Subject</th>
+                        <th>Date</th>
+                        <th>Type</th>
+                        <th>Status</th>
+                    </tr>
+                </table>
+            </div> -->
+         
                    
         
                     
@@ -551,260 +500,6 @@
         
     </div>    
 
-    <script>
-        const logoutBtn = document.getElementById('logout-btn');
-        console.log(logoutBtn);
-        logoutBtn.addEventListener('click', () => {
-            window.location.href = 'index.html';
-        });
-
-
-        const usernameDisplay = document.getElementById('username-display');
-        console.log(usernameDisplay);
-        const username = localStorage.getItem('username');
-        console.log(username);
-        usernameDisplay.textContent = username;
-
-
-
-        // const currentDay = document.getElementById('current-day');
-        // console.log(currentDay);
-        // const date = new Date().toLocaleDateString('en-us',
-        //     {   weekday: 'long', 
-        //         year: 'numeric', 
-        //         month: 'long', 
-        //         day: 'numeric', 
-        //     });
-        // console.log(date);
-        // currentDay.textContent = date;
-
-        // const currentTime = document.getElementById('current-time');
-        // console.log(currentTime);
-        // const time = new Date().toLocaleTimeString('en-us',
-        //     {   hour:"2-digit",
-        //         second:"2-digit",
-        //         minute:"2-digit",
-        //     });
-        // console.log(currentTime);
-        // currentTime.textContent = time;
-
-        // function updateTime() {
-        //     const time = new Date().toLocaleTimeString('en-us',
-        //         {   hour:"2-digit",
-        //             second:"2-digit",
-        //             minute:"2-digit",
-        //         });
-        //     console.log(time);
-        //     currentTime.textContent = time;
-        // }
-        // updateTime();
-        // setInterval(updateTime, 1000);
-        
-        
-
-       
-        // function showSection(sectionId) {
-        // const sections = document.querySelectorAll('.box__body--main');
-        // sections.forEach(section => section.classList.remove('active'));
-
-        // const currentSection = document.getElementById(sectionId);
-        //     if (currentSection) {
-        //         currentSection.classList.add('active');
-        //     } else {
-        //         console.error("Section not found:", sectionId);
-        //     }
-        // }
-        // document.getElementById('home').addEventListener('click', (e) => {
-        //     e.preventDefault();
-        //     showSection('main-home');
-        // });
-
-        // document.getElementById('new-app').addEventListener('click', (e) => {
-        //     e.preventDefault();
-        //     showSection('main-new-app');
-        // });
-
-        // document.getElementById('your-app').addEventListener('click', (e) => {
-        //     e.preventDefault();
-        //     showSection('main-your-app');
-        // });
-
-
-        // function showSubMenu(subMenuId) {
-        //     const subMenus = document.querySelectorAll('.box__body--sub-content');
-        //     subMenus.forEach(subMenu => subMenu.classList.remove('active'));
-
-        //     const currentSubMenu = document.getElementById(subMenuId);
-        //     if (currentSubMenu) {
-        //         currentSubMenu.classList.add('active');
-        //     } else {
-        //         console.error("Sub Menu not found:", subMenuId);
-        //     }
-        // }
-        
-        // document.getElementById('administrator').addEventListener('click', (e) => {
-        //     e.preventDefault();
-        //     showSubMenu('administrator-dashboard');
-        // });
-        
-        // document.getElementById('accounting').addEventListener('click', (e) => {
-        //     e.preventDefault();
-        //     showSubMenu('accounting-dashboard');
-        // });
-        // document.getElementById('human').addEventListener('click', (e) => {
-        //     e.preventDefault();
-        //     showSubMenu('human-resource-dashboard');
-        // });
-        // document.getElementById('operation').addEventListener('click', (e) => {
-        //     e.preventDefault();
-        //     showSubMenu('operation-dashboard');
-        // });
-       
-
-        
-        // document.getElementById('administrator').addEventListener('click', function (e) {
-        // e.preventDefault();
-        //     toggleSubMenu('administrator-dashboard');
-            
-        // });
-
-        // // Hàm ẩn/hiện danh sách con của Administrator
-        // function toggleSubMenu(subMenuId) {
-        //     const subMenu = document.getElementById(subMenuId);
-        //     const allSubMenus = document.querySelectorAll('.box__body--sub-content');
-
-        //     // Kiểm tra nếu submenu đang mở thì ẩn nó
-        //     if (subMenu.style.display === 'block') {
-        //         subMenu.style.display = 'none';
-        //     } else {
-        //         // Đóng tất cả submenu trước khi mở submenu được chọn
-        //         allSubMenus.forEach(menu => menu.style.display = 'none');
-        //         subMenu.style.display = 'block';
-        //     }
-        // }
-
-        // // Ẩn danh sách con khi chuyển qua mục khác trên menu
-        // const menuItems = document.querySelectorAll('.box__menu a');
-        // menuItems.forEach(item => {
-        //     item.addEventListener('click', function () {
-        //         document.getElementById('administrator-dashboard').style.display = 'none';
-                
-        //     });
-        // });
-
-
-        // Hàm ẩn tất cả các danh sách con
-    // function hideAllDashboards() {
-    //     document.querySelectorAll('.box__body--sub-content').forEach(subMenu => {
-    //         subMenu.style.display = 'none';
-    //     });
-    // }
-
-    // Hàm hiển thị hoặc ẩn danh sách con được chọn
-    // function toggleSubMenu(subMenuId) {
-    //     const subMenu = document.getElementById(subMenuId);
-
-        // Nếu submenu đang mở thì ẩn nó
-        // if (subMenu.style.display === 'block') {
-        //     subMenu.style.display = 'none';
-        // } else {
-            // Ẩn tất cả trước khi mở submenu được chọn
-    //         hideAllDashboards();
-    //         subMenu.style.display = 'block';
-    //     }
-    // }
-
-    // Sự kiện click cho từng nút
-    // document.getElementById('administrator').addEventListener('click', function (e) {
-    //     e.preventDefault();
-    //     toggleSubMenu('administrator-dashboard');
-    // });
-
-    // document.getElementById('accounting').addEventListener('click', function (e) {
-    //     e.preventDefault();
-    //     toggleSubMenu('accounting-dashboard');
-    // });
-
-    // document.getElementById('human').addEventListener('click', function (e) {
-    //     e.preventDefault();
-    //     toggleSubMenu('human-resource-dashboard');
-    // });
-
-    // document.getElementById('operation').addEventListener('click', function (e) {
-    //     e.preventDefault();
-    //     toggleSubMenu('operation-dashboard');
-    // });
-
-    // Ẩn tất cả danh sách con khi chọn mục khác trên menu
-    // document.querySelectorAll('.box__menu a').forEach(item => {
-    //     item.addEventListener('click', function () {
-    //         hideAllDashboards();
-    //     });
-    // });
-
-
-
-        
-
-
-
-
-    const toggleButton = document.getElementById('toggle-btn')
-    const sidebar = document.getElementById('sidebar')
-
-    function toggleSidebar(){
-    sidebar.classList.toggle('close')
-    toggleButton.classList.toggle('rotate')
-
-    closeAllSubMenus()
-    }
-
-    function toggleSubMenu(button){
-
-    if(!button.nextElementSibling.classList.contains('show')){
-        closeAllSubMenus()
-    }
-
-    button.nextElementSibling.classList.toggle('show')
-    button.classList.toggle('rotate')
-
-    if(sidebar.classList.contains('close')){
-        sidebar.classList.toggle('close')
-        toggleButton.classList.toggle('rotate')
-    }
-    }
-
-    function closeAllSubMenus(){
-    Array.from(sidebar.getElementsByClassName('show')).forEach(ul => {
-        ul.classList.remove('show')
-        ul.previousElementSibling.classList.remove('rotate')
-    })
-    }
-
-
-
-
-
-     
-
-
-        
-
-
-
-        
-       
-        
-        
-
-        
-
-        
-
-
-      
-     
-
-    </script>
+    <script src="./asset/js/dashboard.js"></script>
 </body>
 </html>
