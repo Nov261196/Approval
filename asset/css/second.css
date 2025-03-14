@@ -277,18 +277,26 @@ body {
 .home__title{
     color: var(--text-clr);
     margin:0 20px;
+    margin-top: 20px;
     line-height: 2;
-
+   
+    letter-spacing: 2px;
 }
 
-.home__label{
+.home__top{
+    margin: 0 20px;
+    font-size: 1.1rem;
+    font-weight: 500;
     line-height: 2;
-    font-size: 1.6rem;
+}
+
+.home__top label{
+    font-size: 1.4rem;
     font-weight: 500;
 }
 
 .home__date{
-    line-height: 3;
+    line-height: 2;
     font-size: 1.2rem;
     font-weight: 500;
 }
@@ -304,11 +312,11 @@ body {
 }
 
 .home__link{
-
     color:#007bff;
     text-decoration: none;
     font-size: 1.2rem;
     font-weight: 500;
+    line-height: 3;
 }
 
 .home__link:hover{
