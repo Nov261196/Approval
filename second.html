@@ -11,7 +11,6 @@
 <body>
     <div class="main__content">  
         <div class="content">
-            <!-- Start sidebar -->
             <nav id="sidebar" class="sidebar-menu">
                 <ul>
                     <li>
@@ -25,22 +24,22 @@
                     <li class="sidebar-home">
                         <a href="#" id="home" class="sidebar-link">
                             <i class="sidebar-icon ti-home"></i>
-                            <span class="sidebar-tex">Home</span>
+                            <span class="sidebar-text">Home</span>
                         </a>
                     </li>
                     <li class="sidebar-home">
                         
 
-                        <button id="new-app" onclick="toggleSubMenu(this)" class="sidebar-toggle-btn ">
+                        <button id="new-app" type="button" onclick="toggleSubMenu(this)" class="sidebar-toggle-btn ">
                             <i class="sidebar-icon ti-files"></i>
-                            <span class="sidebar-tex">New Application</span>
+                            <span class="sidebar-text">New Application</span>
                             <i class="ti-angle-down arrow-icon"></i>
                         </button>
                         
                         
                         <ul class="sub-menu">
                             <li class="sidebar-sub">
-                                <a href="#" id="administrator">
+                                <a href="#"  id="administrator">
                                     <span>
                                         Administrator
                                     </span>
@@ -72,73 +71,73 @@
                     <li class="sidebar-home">
                         <a href="#" id="your-app" class="sidebar-link">
                             <i class="sidebar-icon ti-clipboard"></i>
-                            <span class="sidebar-tex">
+                            <span class="sidebar-text">
                                 Your Applications
                             </span>
                         </a>    
                         
                     </li>
                     <li class="sidebar-home">
-                        <a href="#" id="your-app" class="sidebar-link">
+                        <a href="#" id="newdraft-app" class="sidebar-link">
                             <i class="sidebar-icon ti-folder"></i>
-                            <span class="sidebar-tex">
+                            <span class="sidebar-text">
                                 New Draft
                             </span>
                         </a>    
                     </li>
                     <li class="sidebar-home">
-                        <a href="#" id="your-app" class="sidebar-link">
+                        <a href="#" id="yourdrafts-app" class="sidebar-link">
                             <i class="sidebar-icon ti-archive"></i>
-                            <span class="sidebar-tex">
+                            <span class="sidebar-text">
                                 Your Drafts
                             </span>
                         </a>    
                     </li>
                     <li class="sidebar-home">
-                        <a href="#" id="your-app" class="sidebar-link">
+                        <a href="#" id="tasklist-app" class="sidebar-link">
                             <i class="sidebar-icon  ti-write"></i>
-                            <span class="sidebar-tex">
+                            <span class="sidebar-text">
                                 Your Task List
                             </span>
                         </a>    
                     </li>
                     <li class="sidebar-home">
-                        <a href="#" id="your-app" class="sidebar-link">
+                        <a href="#" id="quicktask-app" class="sidebar-link">
                             <i class="sidebar-icon ti-menu-alt"></i>
-                            <span class="sidebar-tex">
+                            <span class="sidebar-text">
                                 Quick Task Response
                             </span>
                         </a>    
                     </li>
                     <li class="sidebar-home">
-                        <a href="#" id="your-app" class="sidebar-link">
+                        <a href="#" id="history-app" class="sidebar-link">
                             <i class="sidebar-icon ti-timer"></i>
-                            <span class="sidebar-tex">
+                            <span class="sidebar-text">
                                 History
                             </span>
                         </a>    
                     </li>
 
                     <li class="sidebar-home">
-                        <a href="#" id="your-app" class="sidebar-link">
+                        <a href="#" id="application-app" class="sidebar-link">
                             <i class="sidebar-icon ti-file"></i>
-                            <span class="sidebar-tex">
+                            <span class="sidebar-text">
                                 Application
                             </span>
                         </a>    
                     </li>
                     <li class="sidebar-home">
-                        <a href="#" id="your-app" class="sidebar-link">
+                        <a href="#" id="options-app" class="sidebar-link">
                             <i class="sidebar-icon ti-settings"></i>
-                            <span class="sidebar-tex">
+                            <span class="sidebar-text">
                                 Options
                             </span>
                         </a>    
                     </li>
                     <li class="sidebar-home">
-                        <a href="#" id="your-app" class="sidebar-link">
+                        <a href="#" id="change-password" class="sidebar-link">
                             <i class="sidebar-icon ti-lock"></i>
-                            <span class="sidebar-tex">
+                            <span class="sidebar-text">
                                 Change Password
                             </span>
                         </a>    
@@ -148,7 +147,7 @@
 
                     
                     <li class="sidebar-user sidebar-profile">
-                        <a href="#" id="change-password" class="sidebar-link ">
+                        <a href="#" id="" class="sidebar-link ">
                             <i class="sidebar-icon fa-solid fa-user"></i>    
                              <span id="username-display" class="sidebar-name">User</span>
                         </a>
@@ -165,21 +164,19 @@
                 </ul>
             </nav>
         </div>
-            <!-- End sidebar -->
 
 
 
-            <!-- Start container -->
         <div class="container">
-            <div class="home__page">
+            <div id="main-home" class="home__page main__box active">
                 <div class="home__header">
                     <a href="#" class="">
-                        <img src="https://cdn.pixabay.com/photo/2023/03/25/10/00/flowers-7875532_1280.jpg" alt="Company Logo" class="home__logo">
+                        <!-- <img src="https://cdn.pixabay.com/photo/2023/03/25/10/00/flowers-7875532_1280.jpg" alt="Company Logo" class="home__logo"> -->
                     </a>
                 </div>
                 
                 
-                <div class="home__title">
+                <div class="home__title ">
                     <div class="home__top">
                         <label>eApprove System <a href="#" class="home__link">Manual</a></label>
                         <div class="home__date">
@@ -190,48 +187,261 @@
                             <p>You have: <span id="disapproved-count">0</span> Applications Disapproved.</p>
                             <a href="#" target="_blank" class="home__link">Click here to view Your Applications</a>
                         </div>
-                    </div>
-                    
     
     
-                    <div class="home__btn">
-                        <div class="home__menu">
-                            <h3 class="home__btn--title">ADM & HR</h3>
-                            <div class="home__btn-list">
-                                <button onclick="btnhome()" id="home-btn" class="home__btn--click" >Finger Print</button>
-                                <button onclick="btnhome()" id="home-btn" class="home__btn--click">Check Salary</button>
-                                <button onclick="btnhome()" id="home-btn" class="home__btn--click">Annual Leave</button>
-                                <button onclick="btnhome()" id="home-btn" class="home__btn--click">Company Form</button>
-                                <button onclick="btnhome()" id="home-btn" class="home__btn--click">Evaluation</button>
-                                <button onclick="btnhome()" id="home-btn" class="home__btn--click">Overtime</button>
-                                <button onclick="btnhome()" id="home-btn" class="home__btn--click">Security Training</button>
+                        <div class="home__btn">
+                            <div class="home__menu">
+                                <h3 class="home__btn--title">ADM HR</h3>
+                                <div class="home__btn-list">
+                                    <button onclick="" id="" class="home__btn--click" >Finger Print</button>
+                                    <button onclick="" id="" class="home__btn--click">Check Salary</button>
+                                    <button onclick="" id="" class="home__btn--click">Annual Leave</button>
+                                    <button onclick="" id="" class="home__btn--click">Company Form</button>
+                                    <button onclick="" id="" class="home__btn--click">Evaluation</button>
+                                    <button onclick="" id="" class="home__btn--click">Overtime</button>
+                                    <button onclick="" id="" class="home__btn--click">Security Training</button>
+                                </div>
                             </div>
-                        </div>
-    
-                        <div class="home__menu">
-                            <h3 class="home__btn--title">Accounting</h3>
-                            <div class="home__btn-list">
-                                <button onclick="btnhome()" id="home-btn" class="home__btn--click">Tax Report</button>
-                                <button onclick="btnhome()" id="home-btn" class="home__btn--click">Financial Report</button>
-                                <button onclick="btnhome()" id="home-btn" class="home__btn--click">Invoice Processing</button>
-                                <button onclick="btnhome()" id="home-btn" class="home__btn--click">Budget Planning</button>
+            
+                            <div class="home__menu">
+                                <h3 class="home__btn--title">Accounting</h3>
+                                <div class="home__btn-list">
+                                    <button onclick="" id="" class="home__btn--click">Tax Report</button>
+                                    <button onclick="" id="" class="home__btn--click">Financial Report</button>
+                                    <button onclick="" id="" class="home__btn--click">Invoice Processing</button>
+                                    <button onclick="" id="" class="home__btn--click">Budget Planning</button>
+                                </div>
                             </div>
                             
-                        </div>
-                        
-                        <div class="home__menu">
-                            <h3 class="home__btn--title">Operation</h3>
-                            <div class="home__btn-list">
-                                <button onclick="btnhome()" id="home-btn" class="home__btn--click">Truck Repair</button>
-                                <button onclick="btnhome()" id="home-btn" class="home__btn--click">Inventory Check</button>
-                                <button onclick="btnhome()" id="home-btn" class="home__btn--click">Logistics Management</button>
-                                <button onclick="btnhome()" id="home-btn" class="home__btn--click">Safety Inspection</button>
+                            <div class="home__menu">
+                                <h3 class="home__btn--title">Operation</h3>
+                                <div class="home__btn-list">
+                                    <button onclick="" id="" class="home__btn--click">Truck Repair</button>
+                                    <button onclick="" id="" class="home__btn--click">Inventory Check</button>
+                                    <button onclick="" id="" class="home__btn--click">Logistics Management</button>
+                                    <button onclick="" id="" class="home__btn--click">Safety Inspection</button>
+                                </div>
                             </div>
+
                         </div>
                     </div>
-
+                </div>    
             </div>
-        </div>
+
+            <div id="main-new-app" class="application__page main__box">
+                <div>
+                    <h2  class="application__header">
+                        NEW APPLICATION
+                    </h2>
+                </div>
+                
+                <div id="administrator-dashboard" class="application__body main__box">
+                    <table>
+                        <tr>
+                            <td>Asset transfer / Chuyển giao tài sản</td>
+                            <td><a href="#" class="application__btn--create">Create New</a></td>
+                        </tr>
+                        <tr>
+                            <td>Assets disposal / Thanh lý tài sản</td>
+                            <td><a href="#" class="application__btn--create">Create New</a></td>
+                        </tr>
+                        <tr>
+                            <td>Assets write-off / Xóa tài sản</td>
+                            <td><a href="#" class="application__btn--create">Create New</a></td>
+                        </tr>
+                        <tr>
+                            <td>Business Trip Plan / Kế hoạch đi công tác</td>
+                            <td><a href="#" class="application__btn--create">Create New</a></td>
+                        </tr>
+                        <tr>
+                            <td>Company stamp customer contract / Đóng dấu công ty hợp đồng khách hàng</td>
+                            <td><a href="#" class="application__btn--create">Create New</a></td>
+                        </tr>
+                        <tr>
+                            <td>Company stamp on notice/ official letter/ other documents - Đóng dấu công ty dành cho thông báo/ công văn/ các loại văn bản chứng từ</td>
+                            <td><a href="#" class="application__btn--create">Create New</a></td>
+                        </tr>
+                        <tr>
+                            <td>Entertainment application / Đề xuất chi phí giao tế</td>
+                            <td><a href="#" class="application__btn--create">Create New</a></td>
+                        </tr>
+                        <tr>
+                            <td>Fuel norm / Định mức nhiên liệu</td>
+                            <td><a href="#" class="application__btn--create">Create New</a></td>
+                        </tr>
+                        <tr>
+                            <td>Modify eApprove process / Thay đổi hệ thống eApprove</td>
+                            <td><a href="#" class="application__btn--create">Create New</a></td>
+                        </tr>
+                        <tr>
+                            <td>Purchase Goods And Repair / Mua sắm hàng hóa, sửa chữa</td>
+                            <td><a href="#" class="application__btn--create">Create New</a></td>
+                        </tr>
+                        <tr>
+                            <td>Software using application / Phê duyệt sử dụng phần mềm</td>
+                            <td><a href="#" class="application__btn--create">Create New</a></td>
+                        </tr>
+                        <tr>
+                            <td>Supplier / Sub-Contractor contract company stamp - Đóng dấu hợp đồng nhà cung cấp / nhà thầu phụ</td>
+                            <td><a href="#" class="application__btn--create">Create New</a></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div id="accounting-dashboard" class="application__body main__box">
+                    <table >
+                        <tr>
+                            <td>Accounting withdraw, deposit cash / Kế toán rút, nộp tiền</td>
+                            <td><a href="#" class="application__btn--create">Create New</a></td>
+                        </tr>
+                        <tr>
+                            <td>Adjust credit limit application / Đề xuất điều chỉnh hạn mức tín dụng</td>
+                            <td><a href="#" class="application__btn--create">Create New</a></td>
+                        </tr>
+                        <tr>
+                            <td>Amend Debit note  VAT invoice / Điều chỉnh invoice, Debit note  hoá đơn GTGT</td>
+                            <td><a href="#" class="application__btn--create">Create New</a></td>
+                        </tr>
+                        <tr>
+                            <td>New Customer registration / Đăng ký khách hàng mới</td>
+                            <td><a href="#" class="application__btn--create">Create New</a></td>
+                        </tr>
+                        <tr>
+                            <td>New Supplier/ Contractor registration / Đăng ký nhà cung cấp/ nhà thầu mới</td>
+                            <td><a href="#" class="application__btn--create">Create New</a></td>
+                        </tr>
+                        <tr>
+                            <td>Open guarantee letter / Mở thư bảo lãnh</td>
+                            <td><a href="#" class="application__btn--create">Create New</a></td>
+                        </tr>
+                        <tr>
+                            <td>Payment application / Đề xuất thanh toán</td>
+                            <td><a href="#" class="application__btn--create">Create New</a></td>
+                        </tr>
+                        <tr>
+                            <td>Reverse expenses / Điều chỉnh tăng / giảm chi phí</td>
+                            <td><a href="#" class="application__btn--create">Create New</a></td>
+                        </tr>
+                        <tr>
+                            <td>Tax payment application / Đề xuất thanh toán thuế	</td>
+                            <td><a href="#" class="application__btn--create">Create New</a></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div id="human-resource-dashboard" class="application__body  main__box">
+                    <table >
+                        <tr>
+                            <td>Company stamp (HR) / Đóng dấu công ty (Nhân sự)</td>
+                            <td><a href="#" class="application__btn--create">Create New</a></td>
+                        </tr>
+                        <tr>
+                            <td>General application / Đề xuất tổng hợp</td>
+                            <td><a href="#" class="application__btn--create">Create New</a></td>
+                        </tr>
+                        <tr>
+                            <td>Going Directly To Customer / Đi thẳng đến khách hàng</td>
+                            <td><a href="#" class="application__btn--create">Create New</a></td>
+                        </tr>
+                        <tr>
+                            <td>Leave / Nghỉ phép</td>
+                            <td><a href="#" class="application__btn--create">Create New</a></td>
+                        </tr>
+                        <tr>
+                            <td>Official employment / Tuyển dụng chính thức</td>
+                            <td><a href="#" class="application__btn--create">Create New</a></td>
+                        </tr>
+                        <tr>
+                            <td>Outsource hiring / Sử dụng nguồn nhân lực bên ngoài</td>
+                            <td><a href="#" class="application__btn--create">Create New</a></td>
+                        </tr>
+                        <tr>
+                            <td>Overtime / Tăng ca</td>
+                            <td><a href="#" class="application__btn--create">Create New</a></td>
+                        </tr>
+                        <tr>
+                            <td>Probation/Part_time / Thử việc/Thời vụ</td>
+                            <td><a href="#" class="application__btn--create">Create New</a></td>
+                        </tr>
+                        <tr>
+                            <td>Promotion / Thăng cấp</td>
+                            <td><a href="#" class="application__btn--create">Create New</a></td>
+                        </tr>
+                        <tr>
+                            <td>Recruitment / Tuyển nhân viên</td>
+                            <td><a href="#" class="application__btn--create">Create New</a></td>
+                        </tr>
+                        <tr>
+                            <td>Renewal labor contract / Gia hạn Hợp đồng lao động</td>
+                            <td><a href="#" class="application__btn--create">Create New</a></td>
+                        </tr>
+                        <tr>
+                            <td>Resignation And Employment Contract Termination / Nghỉ việc và chấm dứt hợp đồng lao động</td>
+                            <td><a href="#" class="application__btn--create">Create New</a></td>
+                        </tr>
+                        <tr>
+                            <td>Service contract / Hợp đồng dịch vụ</td>
+                            <td><a href="#" class="application__btn--create">Create New</a></td>
+                        </tr>
+                        <tr>
+                            <td>Structure of Departments change / Thay đổi cơ cấu bộ phận</td>
+                            <td><a href="#" class="application__btn--create">Create New</a></td>
+                        </tr>
+                        <tr>
+                            <td>Training proposal / Thực hiện đào tạo</td>
+                            <td><a href="#" class="application__btn--create">Create New</a></td>
+                        </tr>
+                        <tr>
+                            <td>Transfer / Chuyển nhân sự</td>
+                            <td><a href="#" class="application__btn--create">Create New</a></td>
+                        </tr>
+
+                    </table>
+                </div>
+
+                <div id="operation-dashboard" class="application__body main__box">
+                    <table >
+                        <tr>
+                            <td>Cash collect / payment on behalf / Phí thu hộ, chi hộ</td>
+                            <td><a href="#" class="application__btn--create">Create New</a></td>
+                        </tr>
+                        <tr>
+                            <td>Compensation payment application / Đề xuất bồi thường tổn thất cho khách hàng</td>
+                            <td><a href="#" class="application__btn--create">Create New</a></td>
+                        </tr>
+                        <tr>
+                            <td>Expense application(CC) / Chi phí hải quan	</td>
+                            <td><a href="#" class="application__btn--create">Create New</a></td>
+                        </tr>
+                        <tr>
+                            <td>Expense application(TR) / Chi phí vận tải	</td>
+                            <td><a href="#" class="application__btn--create">Create New</a></td>
+                        </tr>
+                        <tr>
+                            <td>Incentive commencement application / Đề xuất duyệt hoa hồng	</td>
+                            <td><a href="#" class="application__btn--create">Create New</a></td>
+                        </tr>
+                        <tr>
+                            <td>Incentive payment application / Đề xuất thanh toán hoa hồng	</td>
+                            <td><a href="#" class="application__btn--create">Create New</a></td>
+                        </tr>
+                        <tr>
+                            <td>Payment forwarding application / Đề xuất thanh toán phí Forwarding	</td>
+                            <td><a href="#" class="application__btn--create">Create New</a></td>
+                        </tr>
+                        <tr>
+                            <td>Quotation approval / Phê duyệt báo giá</td>
+                            <td><a href="#" class="application__btn--create">Create New</a></td>
+                        </tr>
+                        <tr>
+                            <td>Write Off Bad Debt / Xóa nợ xấu</td>
+                            <td><a href="#" class="application__btn--create">Create New</a></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+        </div>    
     </div>    
 
     <script src="./asset/js/dashboard.js"></script>

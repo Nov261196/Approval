@@ -85,9 +85,9 @@ html{
     /* border: 1px solid #e6e4e4; */
     background-color: #fff;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-    width: 461px;
+    width: 461px; /* doi thanh 400px */
     border-radius: 6px;
-    height: 461px;
+    height: 461px; /* doi thanh 315px */
 
 }
 
