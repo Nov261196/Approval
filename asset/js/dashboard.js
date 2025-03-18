@@ -47,174 +47,25 @@
         }
 
       
-
-        function showSection(sectionId) {
-            const sections = document.querySelectorAll('.main__box');
-            sections.forEach(section => section.classList.remove('active'));
-           
-            const currentSection = document.getElementById(sectionId);
-            if (currentSection) {
-                currentSection.classList.add('active');
-                currentSection.style.display = 'block'; 
-            } else {
-                console.error("Section not found:", sectionId);
-            }
+        function showTab(tabId) {
+            document.querySelectorAll('.main__box').forEach(tab => tab.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
         }
-            document.getElementById('home').addEventListener('click', (e) => {
-                e.preventDefault();
-                showSection('main-home');
-            });
-    
-            document.getElementById('new-app').addEventListener('click', (e) => {
-                e.preventDefault();
-                showSection('main-new-app');
-            });
-    
-            // document.getElementById('your-app').addEventListener('click', (e) => {
-            //     e.preventDefault();
-            //     showSection('main-your-app');
-            // });
-    
-    
-            function showSubMenu(subMenuId) {
-                const subMenus = document.querySelectorAll('.sub-menu');
-                subMenus.forEach(subMenu => subMenu.classList.remove('active'));
-               
+        
 
-    
-                const currentSubMenu = document.getElementById(subMenuId);
-                if (currentSubMenu) {
-                    currentSubMenu.classList.add('active');
-                } else {
-                    console.error("Sub Menu not found:", subMenuId);
-                }
-            }
-
-            const menuItems = {
-                'administrator': 'administrator-dashboard',
-                'accounting': 'accounting-dashboard',
-                'human': 'human-resource-dashboard',
-                'operation': 'operation-dashboard'
-            };
-            
-            // Lặp qua từng menu item và thêm sự kiện click
-            Object.keys(menuItems).forEach(menuId => {
-                document.getElementById(menuId).addEventListener('click', (e) => {
-                    e.preventDefault();
-                    
-                    // Hiển thị "New Application"
-                    showSection('main-new-app');
-            
-                    // Ẩn tất cả các bảng dashboard
-                    document.querySelectorAll('.application__body').forEach(dashboard => {
-                        dashboard.classList.remove('active');
-                        dashboard.style.display = 'none';
-                    });
-            
-                    // Hiển thị đúng dashboard được chọn
-                    const selectedDashboard = document.getElementById(menuItems[menuId]);
-                    if (selectedDashboard) {
-                        selectedDashboard.classList.add('active');
-                        selectedDashboard.style.display = 'block';
-                    } else {
-                        console.error("Không tìm thấy phần:", menuItems[menuId]);
-                    }
-                });
-            });
-            
-
+        
+        
+        
+        
             
            
-            // document.getElementById('administrator').addEventListener('click', (e) => {
-            //     e.preventDefault();
-            //     showSection('main-new-app'); // Hiển thị giao diện "New Application"
-                
-            //     // Hiển thị tab Administrator Dashboard
-            //     const allDashboards = document.querySelectorAll('.application__body');
-            //     allDashboards.forEach(dashboard => dashboard.classList.remove('active'));
             
-            //     const adminDashboard = document.getElementById('administrator-dashboard');
-            //     if (adminDashboard) {
-            //         adminDashboard.classList.add('active');
-            //         adminDashboard.style.display = 'block';
-            //     } else {
-            //         console.error("Không tìm thấy phần Administrator Dashboard");
-            //     }
-            // });
-
-            // document.getElementById('accounting').addEventListener('click', (e) => {
-            //     e.preventDefault();
-            //     showSection('main-new-app'); // Hiển thị giao diện "New Application"
-                
-            //     // Hiển thị tab Administrator Dashboard
-            //     const allDashboards = document.querySelectorAll('.application__body');
-            //     allDashboards.forEach(dashboard => dashboard.classList.remove('active'));
-            
-            //     const accountingDashboard = document.getElementById('accounting-dashboard');
-            //     if (accountingDashboard) {
-            //         accountingDashboard.classList.add('active');
-            //         accountingDashboard.style.display = 'block';
-            //     } else {
-            //         console.error("Không tìm thấy phần accounting-dashboard");
-            //     }
-            // });
-            
-            // document.getElementById('human').addEventListener('click', (e) => {
-            //     e.preventDefault();
-            //     showSection('main-new-app'); // Hiển thị giao diện "New Application"
-                
-            //     // Hiển thị tab Administrator Dashboard
-            //     const allDashboards = document.querySelectorAll('.application__body');
-            //     allDashboards.forEach(dashboard => dashboard.classList.remove('active'));
-            
-            //     const humanDashboard = document.getElementById('human-resource-dashboard');
-            //     if (humanDashboard) {
-            //         humanDashboard.classList.add('active');
-            //         humanDashboard.style.display = 'block';
-            //     } else {
-            //         console.error("Không tìm thấy phần accounting-dashboard");
-            //     }
-            // });
-
-            // document.getElementById('operation').addEventListener('click', (e) => {
-            //     e.preventDefault();
-            //     showSection('main-new-app'); // Hiển thị giao diện "New Application"
-                
-            //     // Hiển thị tab Administrator Dashboard
-            //     const allDashboards = document.querySelectorAll('.application__body');
-            //     allDashboards.forEach(dashboard => dashboard.classList.remove('active'));
-            
-            //     const operationDashboard = document.getElementById('operation-dashboard');
-            //     if (operationDashboard) {
-            //         operationDashboard.classList.add('active');
-            //         operationDashboard.style.display = 'block';
-            //     } else {
-            //         console.error("Không tìm thấy phần accounting-dashboard");
-            //     }
-            // });
             
 
 
 
 
-            // document.getElementById('administrator').addEventListener('click', (e) => {
-            //     e.preventDefault();
-            //     showSection('administrator-dashboard'); // Hiển thị tab Administrator
-            // });
             
-            
-            // document.getElementById('accounting').addEventListener('click', (e) => {
-            //     e.preventDefault();
-            //     showSection('accounting-dashboard');
-            // });
-            // document.getElementById('human').addEventListener('click', (e) => {
-            //     e.preventDefault();
-            //     showSection('human-resource-dashboard');
-            // });
-            // document.getElementById('operation').addEventListener('click', (e) => {
-            //     e.preventDefault();
-            //     showSection('operation-dashboard');
-            // });
             
             
             

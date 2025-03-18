@@ -22,7 +22,6 @@ html{
 }
 
 body {
-    
     font-family: "Inter", sans-serif;
     background-color: #f8f9fa;
     color: #333;
@@ -37,7 +36,7 @@ body {
 .container{
     width: 1220px;
     max-width: 100%;
-    margin: 0 2px;
+    margin: 0 1px;
     background-color: var(--base-clr);
     box-shadow: 0 10px 0px 0px rgba(0, 0, 0, 0.3);
 }
@@ -58,16 +57,8 @@ body {
     box-sizing: border-box;
     text-wrap: nowrap;
     overflow-x: hidden;
-    overflow-y: auto
+    overflow-y: auto;
 }
-
-/* .application__body {
-    display: none;
-}
-
-.application__body.active {
-    display: block;
-} */
 
 
 
@@ -82,27 +73,21 @@ body {
     opacity: 1;
 }
 
+h2{
+    background: #007bff;
+    color: #fff;
+    height: 62px;
+    display: flex;
+    text-transform: uppercase;
+    justify-content: center;
+    line-height: 60px;
+    font-size: 1.2rem;
+}
+
 .sidebar-menu.close{
     width: 55px;
 }
 
-
-.sidebar-menu ul , li a{
-    text-decoration: none;
-    list-style: none;
-}
-
-
-.sidebar-menu:hover{
-    background-color: #003d80;
-}
-
-
-.sidebar-home:hover{
-    margin-left: 2px;
-    transition: ease-in 0.3s;
-    background: linear-gradient(to right, #0056b3, #007bff);
-}
 
 .sidebar-logo{
     display: flex;
@@ -117,7 +102,6 @@ body {
     font-weight: 600;
 }
 
-
 .sidebar-toggle-btn{
     position: relative;
     color: var(--text-clr);
@@ -127,7 +111,6 @@ body {
     cursor: pointer;
     background-color: transparent;
 }
-
 
 
 /* ICON  */
@@ -156,22 +139,42 @@ body {
 }
 /* end ICON */
 
-.sidebar-home{
+.sidebar-home {
     padding: 10px 0;
     color: var(--text-clr);
 }
 
-.sidebar-link{
-    color: var(--text-clr);
-
+.sidebar-home:hover{
+    margin-left: 2px;
+    transition: ease-in 0.3s;
+    background: linear-gradient(to right, #0056b3, #007bff);
 }
+
+.sidebar-link{
+    display: flex;
+    width: 100%;
+    font-size: 1rem;
+    outline: none;
+    border: none;
+    color: #fff;
+    background-color: transparent;
+    color: var(--text-clr);
+    cursor: pointer;
+}
+
+
+.sidebar-menu ul , li a{
+    text-decoration: none;
+    list-style: none;
+}
+
 
 .sidebar-icon{
     position: relative;
     top: 2px;
     font-size: 1.2rem;
     padding-left: 20px;
-    margin-right: 12px;
+    margin-right: 20px;
     color: var(--text-clr);
 }
 
@@ -205,25 +208,13 @@ body {
     padding: 20px 0;
     color: var(--text-clr);
     font-size: 1.2rem;
-    
-}
-
-.sidebar-name{
-    margin-top: 2px;
-}
-
-
-.sidebar-text{
-    margin-top: 2px;
-    font-size: 1rem;
-
 }
 
 /* end sidebar */
 
 
 /* start sidebar sub */
-.sub-menu{
+.sidebar__sub--menu{
     list-style-type: none;
     line-height: 2;
     width: 350px;
@@ -233,36 +224,35 @@ body {
 }
 
 
-#sidebar .sub-menu{
+#sidebar .sidebar__sub--menu{
     max-height: 0;
     overflow: hidden;
     transition: max-height 300ms ease-in-out;
 }
-#sidebar .sub-menu.show{
+#sidebar .sidebar__sub--menu.show{
     max-height: 300px;
 }
   
-#sidebar .sub-menu a{
+#sidebar .sidebar__sub--menu button{
+    display: flex; 
+    width: 100%; 
+    height: 30px;
+    line-height: 30px;
     color: #fff;
-    text-decoration:none;
-    padding-left: 54px;
+    font-size: 1.0rem;
+    margin: 8px 0px;
+    margin-left: 60px;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
 }
-  
-  
-.sidebar-sub{
-    align-items: center;
-    padding-left:10px;
-    padding-right:10px ;
-    
-} 
 
-.sub-menu li:hover{
-    width: 100%;
+.sidebar__sub--menu li:hover{
     margin-left: 2px;
     transition: ease-in-out 0.3s;
     background: linear-gradient(to left, #0056b3, #007bff);
     border-radius: 6px;
-        
 } 
 /* end sidebar sub */
 
@@ -283,7 +273,6 @@ body {
     width: 100%;
     max-width: 100%;
     background: linear-gradient(to right, #0056b3, #007bff);
-
 }
 
 .home__logo{
@@ -366,7 +355,6 @@ body {
 }
 
 .home__btn--click{
-    color: var(--text-clr);
     padding:  2px 6px;
     margin:6px;
     margin-bottom: 8px;
@@ -376,6 +364,7 @@ body {
     font-size: 0.9rem;
     font-weight: 500;
     cursor: pointer;
+    color: var(--text-clr);
     letter-spacing: 1px;
 }
 
@@ -393,6 +382,8 @@ body {
 }
 
 .application__header{
+    position: relative;
+    top: 0;
     display: flex;
     justify-content: center;
     text-align: center;
@@ -402,12 +393,10 @@ body {
 }
 
 .application__body{
-    width: 100%; 
-    max-width: 100%;
-    min-height: 400px;
     padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+
 }
+
 
 .application__btn--create{
     color: #fff;
@@ -422,6 +411,7 @@ body {
 table{  
     width: 100%;
     max-width: 100%;
+    min-height: 400px;
     border-collapse: collapse;
     border: 1px solid #fff;
     background-color: #333;
