@@ -21,8 +21,13 @@
         sidebar.classList.toggle('close')
         toggleButton.classList.toggle('rotate')
 
-        closeAllSubMenus()
+        closeAllSubMenus();
+        if (sidebar.classList.contains('close')) {
+            // sidebar.style.opacity = "0.5";
+        } else {
+            // sidebar.style.opacity = "1"; 
         }
+    }
 
         function toggleSubMenu(button){
 
@@ -59,12 +64,29 @@
         
             
            
+        const dayselect = document.getElementById("daySelect");
+        for (let i = 1; i <= 31; i++) {
+            let option = document.createElement("option");
+            option.text = i.toString().padStart(2, "0"); // Định dạng 01, 02, ..., 31
+            dayselect.appendChild(option);
+        }
             
-            
 
 
+        const monthSelect = document.getElementById("monthSelect");
+        for (let i = 1; i <= 12; i++) {
+            let option = document.createElement("option");
+            option.text = i.toString().padStart(2, "0");
+            monthSelect.appendChild(option);
+        }
 
-
+        const yearSelect = document.getElementById("yearSelect");
+        const currentYear = new Date().getFullYear();
+        for (let i = 2025; i <= currentYear + 10; i++) {
+            let option = document.createElement("option");
+            option.text = i;
+            yearSelect.appendChild(option);
+        }
             
             
             

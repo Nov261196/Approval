@@ -66,7 +66,7 @@
                     </li>
 
                     <li class="sidebar-home">
-                        <button id="your-app" type="button" onclick="showTab('your-app')" class="sidebar-link">
+                        <button id="your-app" type="button" onclick="showTab('main-yours-draft')" class="sidebar-link">
                             <i class="sidebar-icon ti-clipboard"></i>
                             <span class="sidebar-text">
                                 Your Applications
@@ -235,7 +235,7 @@
                         <table>
                             <tr>
                                 <td>Asset transfer / Chuyển giao tài sản</td>
-                                <td><a href="#" class="application__btn--create">Create New</a></td>
+                                <td><a href="#" onclick="showTab('main-create')" class="application__btn--create">Create New</a></td>
                             </tr>
                             <tr>
                                 <td>Assets disposal / Thanh lý tài sản</td>
@@ -448,12 +448,118 @@
                 </div>
             </div>
 
-            <div id="main-your-app" class="main__box active">
+           
+
+            <div id="main-create" class="main__box active">
+                    <h2>Asset transfer / Chuyển giao tài sản</h2>
+                    <div class="create__page">
+                        <div class="section-header">Step 2: Fill in the Form</div>
+                            <table class="create__table">
+                                <tr>
+                                    <td><label>Applicant</label></td>
+                                    <td><input type="text" value="" disabled></td>
+                                </tr>
+                                <tr>
+                                    <td><label>Department</label></td>
+                                    <td><input type="text" value="" disabled></td>
+                                </tr>
+                                <tr>
+                                    <td><label>Subject <span class="required">*</span></label></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                            </table>
+
+                        <div class="section-header">Step 3: Assets transfer application / Đề xuất chuyển tài sản</div>
+                             <table class="assets__table">
+                                <tr>
+                                    <td><label>Asset Type / Loại tài sản <span class="required">*</span></label></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td><label>Asset Code / Mã tài sản <span class="required">*</span></label></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td><label>Current Place / Department / Bộ phận hiện tại <span class="required">*</span></label></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td><label>Current staff in charge / Nhân viên sử dụng</label></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td><label>Reason of the transfer / Lý do di chuyển tài sản <span class="required">*</span></label></td>
+                                    <td><textarea name="" id=""></textarea></td>
+                                </tr>
+                            </table>
                 
+                        <div class="section-header">Step 4: Transfer to</div> 
+                            <table class="assets__table">
+                                <tr>
+                                    <td><label>Place / Department to be transferred / Bộ phận tiếp nhận</label></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td><label>Staff who will use / Nhân viên sử dụng</label></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td><label>Date transfer / Ngày di chuyển</label></td>
+                                    <td>
+                                        <label>Day / Ngày <select name="day" id="daySelect" class="assets__select"></select> Month / Tháng <select name="month" id="monthSelect" class="assets__select"></select> Years / Năm <select name="years" id="yearSelect" class="assets__select"></select></label>
+                                    </td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td><label>Approval process</label></td>
+                                    <td>
+                                        <select class="assets__select">
+                                            <option value="">---</option>
+                                            <option value="">Asset transfer</option>
+                                            <option value="">Asset Transfer ( IT Equipment : CPU, Monitor, Printer...)</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <button class="assets__btn" id="" onclick="showTab('main-yours-draft')" >
+                                Next
+                            </button>
+                    </div>
             </div>
 
-        </div>    
 
+            <div id="main-yours-draft" class="main__box">
+                <h2>Your Applications</h2>
+                <table class="assets__table">
+                    <tr>
+                        <td><label>Place / Department to be transferred / Bộ phận tiếp nhận</label></td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td><label>Staff who will use / Nhân viên sử dụng</label></td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td><label>Date transfer / Ngày di chuyển</label></td>
+                        <td>
+                            <label>Day / Ngày <select name="day" id="daySelect" class="assets__select"></select> Month / Tháng <select name="month" id="monthSelect" class="assets__select"></select> Years / Năm <select name="years" id="yearSelect" class="assets__select"></select></label>
+                        </td>
+                        
+                    </tr>
+                    <tr>
+                        <td><label>Approval process</label></td>
+                        <td>
+                            <select class="assets__select">
+                                <option value="">---</option>
+                                <option value="">Asset transfer</option>
+                                <option value="">Asset Transfer ( IT Equipment : CPU, Monitor, Printer...)</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>    
     </div>    
 
     <script src="./asset/js/dashboard.js"></script>
