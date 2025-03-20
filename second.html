@@ -452,9 +452,9 @@
 
             <div id="main-create" class="main__box active">
                     <h2>Asset transfer / Chuyển giao tài sản</h2>
-                    <div class="create__page">
+                    <div class="asset__page">
                         <div class="section-header">Step 2: Fill in the Form</div>
-                            <table class="create__table">
+                            <table class="assets__table">
                                 <tr>
                                     <td><label>Applicant</label></td>
                                     <td><input type="text" value="" disabled></td>
@@ -470,7 +470,7 @@
                             </table>
 
                         <div class="section-header">Step 3: Assets transfer application / Đề xuất chuyển tài sản</div>
-                             <table class="assets__table">
+                            <table class="assets__table">
                                 <tr>
                                     <td><label>Asset Type / Loại tài sản <span class="required">*</span></label></td>
                                     <td><input type="text"></td>
@@ -506,7 +506,7 @@
                                 <tr>
                                     <td><label>Date transfer / Ngày di chuyển</label></td>
                                     <td>
-                                        <label>Day / Ngày <select name="day" id="daySelect" class="assets__select"></select> Month / Tháng <select name="month" id="monthSelect" class="assets__select"></select> Years / Năm <select name="years" id="yearSelect" class="assets__select"></select></label>
+                                        <label>Day <select name="day" id="daySelect" class="assets__select"></select> Month<select name="month" id="monthSelect" class="assets__select"></select> Years<select name="years" id="yearSelect" class="assets__select"></select></label>
                                     </td>
                                     
                                 </tr>
@@ -521,10 +521,10 @@
                                     </td>
                                 </tr>
                             </table>
-                            <button class="assets__btn" id="" onclick="showTab('administrator')" >
+                            <button class="assets__table--btn" id="" onclick="showTab('administrator')" >
                                 Back
                             </button>
-                            <button class="assets__btn" id="" onclick="showTab('main-yours-draft')" >
+                            <button class="assets__table--btn" id="" onclick="showTab('main-yours-draft')" >
                                 Next
                             </button>
                     </div>

@@ -20,6 +20,8 @@
         function toggleSidebar(){
         sidebar.classList.toggle('close')
         toggleButton.classList.toggle('rotate')
+        sidebar.classList.toggle('open')
+
 
         closeAllSubMenus();
         if (sidebar.classList.contains('close')) {
@@ -146,7 +148,64 @@
 
         
 
-
+        document.addEventListener("DOMContentLoaded", function () {
+            const daySelect = document.getElementById("daySelect");
+            const monthSelect = document.getElementById("monthSelect");
+            const yearSelect = document.getElementById("yearSelect");
+        
+            function populateDays(month, year) {
+                daySelect.innerHTML = ""; // Xóa ngày cũ
+                let daysInMonth = new Date(year, month, 0).getDate(); // Lấy số ngày trong tháng
+        
+                for (let i = 1; i <= daysInMonth; i++) {
+                    let option = document.createElement("option");
+                    option.value = i;
+                    option.textContent = i;
+                    daySelect.appendChild(option);
+                }
+            }
+        
+            function populateMonths() {
+                monthSelect.innerHTML = "";
+                for (let i = 1; i <= 12; i++) {
+                    let option = document.createElement("option");
+                    option.value = i;
+                    option.textContent = i;
+                    monthSelect.appendChild(option);
+                }
+            }
+        
+            function populateYears() {
+                yearSelect.innerHTML = "";
+                let currentYear = new Date().getFullYear();
+                for (let i = currentYear - 10; i <= currentYear + 10; i++) {
+                    let option = document.createElement("option");
+                    option.value = i;
+                    option.textContent = i;
+                    yearSelect.appendChild(option);
+                }
+            }
+        
+            function updateDays() {
+                populateDays(monthSelect.value, yearSelect.value);
+            }
+        
+            // Khởi tạo dropdown
+            populateMonths();
+            populateYears();
+        
+            // Set mặc định là ngày hiện tại
+            let today = new Date();
+            yearSelect.value = today.getFullYear();
+            monthSelect.value = today.getMonth() + 1;
+            populateDays(today.getMonth() + 1, today.getFullYear());
+            daySelect.value = today.getDate();
+        
+            // Sự kiện thay đổi tháng/năm để cập nhật ngày hợp lệ
+            monthSelect.addEventListener("change", updateDays);
+            yearSelect.addEventListener("change", updateDays);
+        });
+        
 
 
     
