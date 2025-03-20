@@ -104,38 +104,38 @@
 
 
 
-        // const currentDay = document.getElementById('current-day');
-        // console.log(currentDay);
-        // const date = new Date().toLocaleDateString('en-us',
-        //     {   weekday: 'long', 
-        //         year: 'numeric', 
-        //         month: 'long', 
-        //         day: 'numeric', 
-        //     });
-        // console.log(date);
-        // currentDay.textContent = date;
+        const currentDay = document.getElementById('current-day');
+        console.log(currentDay);
+        const date = new Date().toLocaleDateString('en-us',
+            {   weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric', 
+            });
+        console.log(date);
+        currentDay.textContent = date;
 
-        // const currentTime = document.getElementById('current-time');
-        // console.log(currentTime);
-        // const time = new Date().toLocaleTimeString('en-us',
-        //     {   hour:"2-digit",
-        //         second:"2-digit",
-        //         minute:"2-digit",
-        //     });
-        // console.log(currentTime);
-        // currentTime.textContent = time;
+        const currentTime = document.getElementById('current-time');
+        console.log(currentTime);
+        const time = new Date().toLocaleTimeString('en-us',
+            {   hour:"2-digit",
+                second:"2-digit",
+                minute:"2-digit",
+            });
+        console.log(currentTime);
+        currentTime.textContent = time;
 
-        // function updateTime() {
-        //     const time = new Date().toLocaleTimeString('en-us',
-        //         {   hour:"2-digit",
-        //             second:"2-digit",
-        //             minute:"2-digit",
-        //         });
-        //     console.log(time);
-        //     currentTime.textContent = time;
-        // }
-        // updateTime();
-        // setInterval(updateTime, 1000);
+        function updateTime() {
+            const time = new Date().toLocaleTimeString('en-us',
+                {   hour:"2-digit",
+                    second:"2-digit",
+                    minute:"2-digit",
+                });
+            console.log(time);
+            currentTime.textContent = time;
+        }
+        updateTime();
+        setInterval(updateTime, 1000);
         
         
 

@@ -29,8 +29,9 @@ body {
 }
 
 .main__content{
-    transition: ease-in-out 0.4s;
     display: flex;
+    transition: margin-left 0.3s ease-in-out;
+
 }
  
 
@@ -51,7 +52,9 @@ body {
     position: sticky;
     top: 0;
     width: 250px;
-    height: 100vh;
+    left: -250px;
+    height: 100%;
+    max-height: 100%;
     max-height: 100vh;
     background: var(--base-clr);
     transition: 0.5s;
@@ -64,6 +67,9 @@ body {
     transition: width 0.3s ease-in-out;
 
 }
+
+
+
 
 
 
@@ -340,13 +346,18 @@ h2{
 
 /* btn */
 .home__btn{
-    display: grid;
-    margin: 40px 0;
+    /* display: grid;
+    margin: 40px 0; */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 15px;
 }
 
 .home__menu{
     margin: 20px 0;
     padding: 0 20px ;
+    
 }
 
 .home__btn--title{
@@ -354,6 +365,7 @@ h2{
     font-weight: 500;
     font-size: 1.2rem;
     margin: 0 8px;
+  
 }
 
 .home__btn-list{
@@ -374,11 +386,14 @@ h2{
     cursor: pointer;
     color: var(--text-clr);
     letter-spacing: 1px;
+
+    
 }
 
 .home__btn--click:hover{
-    margin: 0 2px;
-    transition: ease-in 0.35s;
+    padding-right: 40px;
+    background-color: #007BFF;
+    transition: ease-in 0.4s;
 }
 
 
@@ -553,6 +568,7 @@ textarea:focus {
 .assets__btn{
     position: relative;
     top: 10px;
+    display: inline-block;   
     left: 50%;
     right: 50%;
     width: 70px;
@@ -577,27 +593,29 @@ textarea:focus {
 
 
 @media screen and (max-width: 768px) {
-    /* Sidebar */
-    .sidebar-menu {
+    .sidebar-menu{
         position: fixed;
         width: 250px;
-        left: -250px;
+        left:-250px;
         max-width: 100%;
+        height: 100%;
+        max-height: 100%;
+        transition:  0.3s ease-in-out;
     }
-    .sidebar-menu.open {
-        right: 0;
-    }
-    
-    .sidebar-toggle-btn {
-       position: relative;
 
+
+    .sidebar-toggle-btn {
     }
-    
-    /* Adjust content area */
+
+    h2{
+        font-size: 1rem;
+    }
     .container {
         margin-left: 0;
         width: 100%;
         height: 100%;
+        max-width: 100%;
+        max-height: 100%;
     }
     
     /* Home Page Adjustments */
@@ -612,9 +630,52 @@ textarea:focus {
         font-size: 0.9rem;
         padding: 10px;
     }
+    
+    
+    .home__title{
+        max-width: 100%;
+    }
+    
+    .home__top{
+        width: 100%;
+        max-width: 100%;
+        font-size: 0.8rem;
+        font-weight: 500;
+    }
+    .home__link{
+        font-size: 0.8rem;
+        font-weight: 500;
+    }
+    .home__date{
+        font-size: 0.9rem;
+        line-height: 2.5;
+        font-weight: 500;
+    }
+    
+    .home__btn{
+        flex: 1 1 100%;
+    }
 
-    h2{
-        font-size: 1rem;
+    .home__btn--title{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        user-select: none;
+
+    }
+
+    .home__menu{
+        padding: 15px 20px;
+        text-align: left;
+        border-radius: 12px;
+        color: #fff;
+        font-weight: bold;
+        text-align: center;
+        transition: 0.3s ease-in-out;
+        cursor: pointer;
+        flex: 1 1 calc(50% - 12px);
+        max-width: 250px;
+        box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
     }
     
     /* Table adjustments */
@@ -623,26 +684,53 @@ textarea:focus {
         width: 100%;
         overflow-x: auto;
     }
+
+    .create__page{
+
+    }
+
+    .create__table{
+        width:100%;
+        max-width: 100%;
+    }
+
+    .assets__table{
+        
+    }
     
     th, td {
-        font-size: 0.9rem;
-        padding: 8px;
+        font-size: 1rem;
+        /* padding: 8px; */
     }
     
     /* Labels adjustments */
     label {
         font-size: 1rem;
         display: block;
-        margin-bottom: 8px;
+        /* margin-bottom: 8px; */
     }
-    
+
     /* Select adjustments */
     .assets__select {
-        margin-top: 5px;
-        padding: 6px;
+        /* margin-top: 5px; */
+        /* padding: 6px; */
         width: 100%;
+        
     }
+
+    .assets__btn{
+        position: relative;
+        bottom: 20px;
+        top: 10px;
+        left:33%;
+        right:0;
+
+    }
+
 }
+    
+  
+   
 
 
 
@@ -662,6 +750,7 @@ textarea:focus {
         max-height: 100%;
         position: relative;
         left: 0;
+    
     }
     
     .home__btn-list {
