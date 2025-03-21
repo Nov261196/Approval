@@ -28,7 +28,7 @@ body {
     user-select: none;
 }
 
-.main__content{
+.main{
     display: flex;
     transition: margin-left 0.3s ease-in-out;
 
@@ -37,7 +37,7 @@ body {
 
  
 
-.container{
+.content{
     width: 1220px;
     max-width: 100%;
     margin: 0 1px;
@@ -361,6 +361,7 @@ h2{
 .home__menu{
     margin: 20px 0;
     padding: 0 20px ;
+    display: none;
     
 }
 
@@ -583,6 +584,179 @@ textarea:focus {
 }
 
 
+.yourdraft__page{
+    padding: 20px;
+}
+
+.yourdraft__table{
+    width: 100%;
+}
+
+
+.yourdraft__table td:first-child{
+    width:20%;
+    word-break: break-word;
+}
+
+.yourdraft__table td:last-child{
+    width: 80%;
+    text-align: left;
+}
+
+.yourdraft__table--input{
+    font-weight: 600;
+    width: 60%;
+    height: 31px;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    padding: 8px 6px;
+
+}
+.yourdraft__table--input:hover{
+    background-color: #dadada;
+}
+
+.yourdraft__table--filter{
+    text-align: left;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    padding: 8px 6px;
+
+}
+
+
+.yourdraft__table--select{
+    padding: 8px 6px;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+}
+
+.yourdraft__table--search{
+    font-weight: 600;
+    width: 85%;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    padding: 8px 6px;
+}
+
+.yourdraft__table--btn{
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    font-weight: 700;
+    padding: 8px 6px;
+    cursor: pointer;
+    margin:0px 26px;
+    background-color: #007BFF;
+    color: #fff;
+}
+
+.yourdraft__table--btn:hover{
+    background-color: #fff;
+    color: #333;
+}
+
+.yourdraft__table--display{
+    padding:20px 0;
+    text-align: center;
+    white-space: normal; 
+    word-wrap: break-word;
+    text-overflow: ellipsis;
+}
+
+
+.yourdraft__table--display th:nth-child(1){
+    width: 14%;
+}
+
+.yourdraft__table--display th:nth-child(2){
+    width: 35%;
+}
+
+.yourdraft__table--display th:nth-child(3){
+    width: 10%;
+}
+
+.yourdraft__table--display th:nth-child(4){
+    width: 8%;
+}
+
+.yourdraft__table--display th:nth-child(5){
+    width: 5%;
+}
+
+.yourdraft__table--display th:nth-child(6){
+    width: 5%;
+}
+.yourdraft__table--display th:nth-child(7){
+    width: 5%;
+}
+
+.yourdraft__table--display th:nth-child(8){
+    width: 6%;
+}
+
+
+
+
+
+
+
+
+.yourdraft__table--icon{
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    background: none;
+}
+
+.yourdraft__table--icon:hover{
+    color: #42434a;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+.notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 15px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+
+.notification.success {
+    background-color: #28a745; /* Xanh lá */
+}
+
+.notification.error {
+    background-color: #dc3545; /* Đỏ */
+}
+
+.notification.show {
+    display: block;
+    opacity: 1;
+}
+
+
 
 
 @media screen and (max-width: 768px) {
@@ -693,7 +867,7 @@ textarea:focus {
 
 /* Responsive for Desktop */
 @media screen and (min-width: 1025px) {
-    .container {
+    .content {
         width: 2048px;
         max-width: 100%;
         height: 1280px;

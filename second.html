@@ -9,8 +9,8 @@
     <title>Dashboard</title>
 </head>
 <body>
-    <div class="main__content">  
-        <div class="content">
+    <div class="main">  
+        <header class="">
             <nav id="sidebar" class="sidebar-menu">
                 <ul>
                     <li>
@@ -160,12 +160,12 @@
                     </li>
                 </ul>
             </nav>
-        </div>
+        </header>
 
 
 
-        <div class="container">
-            <div id="main-home" class="home__page main__box active ">
+        <div class="content">
+            <div id="main-home" class="home__page main__box">
                 <div class="home__header">
                     <a href="#" class="">
                         <!-- <img src="https://cdn.pixabay.com/photo/2023/03/25/10/00/flowers-7875532_1280.jpg" alt="Company Logo" class="home__logo"> -->
@@ -285,7 +285,7 @@
                     </div>
                 </div>
     
-                <div id="accounting" class="main__box ">
+                <!-- <div id="accounting" class="main__box ">
                     <h2>accounting</h2>
                     <div class="application__body">
                         <table >
@@ -445,7 +445,7 @@
                             </tr>
                         </table>
                     </div>
-                </div>
+                </div> -->
             </div>
 
            
@@ -465,7 +465,7 @@
                                 </tr>
                                 <tr>
                                     <td><label>Subject <span class="required">*</span></label></td>
-                                    <td><input type="text"></td>
+                                    <td><input type="text" id="subjectInput"></td>
                                 </tr>
                             </table>
 
@@ -504,9 +504,27 @@
                                     <td><input type="text"></td>
                                 </tr>
                                 <tr>
-                                    <td><label>Date transfer / Ngày di chuyển</label></td>
+                                    <td><label >Date transfer / Ngày di chuyển</label></td>
                                     <td>
-                                        <label>Day <select name="day" id="daySelect" class="assets__select"></select> Month<select name="month" id="monthSelect" class="assets__select"></select> Years<select name="years" id="yearSelect" class="assets__select"></select></label>
+                                        <select name="day" id="daySelect" class="assets__select">
+                                            <option value="">Ngày</option>
+                                            <option value="01">01</option>
+                                            <option value="02">02</option>
+                                            <option value="03">03</option>
+
+                                        </select>
+                                        <select name="month" id="monthSelect" class="assets__select">
+                                            <option value="">Tháng</option>
+                                            <option value="01">01</option>
+                                            <option value="02">02</option>
+                                            <option value="03">03</option>
+                                        </select> 
+                                        <select name="years" id="yearSelect" class="assets__select">
+                                            <option value="">Năm</option>
+                                            <option value="2024">2024</option>
+                                            <option value="2025">2025</option>
+                                            <option value="2026">2026</option>
+                                        </select>
                                     </td>
                                     
                                 </tr>
@@ -524,46 +542,132 @@
                             <button class="assets__table--btn" id="" onclick="showTab('administrator')" >
                                 Back
                             </button>
-                            <button class="assets__table--btn" id="" onclick="showTab('main-yours-draft')" >
+                            <button class="assets__table--btn" id="next-btn" onclick="saveApplication();">
                                 Next
                             </button>
                     </div>
             </div>
 
 
-            <div id="main-yours-draft" class="main__box">
+            <div id="main-yours-draft" class="main__box active">
                 <h2>Your Applications</h2>
-                <table class="assets__table">
-                    <tr>
-                        <td><label>Place / Department to be transferred / Bộ phận tiếp nhận</label></td>
-                        <td><input type="text"></td>
-                    </tr>
-                    <tr>
-                        <td><label>Staff who will use / Nhân viên sử dụng</label></td>
-                        <td><input type="text"></td>
-                    </tr>
-                    <tr>
-                        <td><label>Date transfer / Ngày di chuyển</label></td>
-                        <td>
-                            <label>Day / Ngày <select name="day" id="daySelect" class="assets__select"></select> Month / Tháng <select name="month" id="monthSelect" class="assets__select"></select> Years / Năm <select name="years" id="yearSelect" class="assets__select"></select></label>
-                        </td>
+                <div class="yourdraft__page">
+                    <div class="yourdraft__table" style="color: #fff;">
+                        <table>
+                            <tr>
+                                <td><label for="" >Application No.</label></td>
+                                <td>
+                                    <input type="text" placeholder="Please confirm application no." class="yourdraft__table--input">
+                                            <select name="" id="" class="yourdraft__table--select">
+                                                <option value="">Tháng</option>
+                                                <option value="01">01</option>
+                                                <option value="02">02</option>
+                                                <option value="03">03</option>
+                                            </select>
+                                            <select name="" id="" class="yourdraft__table--select">
+                                                <option value="">Ngày</option>
+                                                <option value="01">01</option>
+                                                <option value="02">02</option>
+                                                <option value="03">03</option>
+                                            </select>
+                                            <select name="" id="" class="yourdraft__table--select">
+                                                <option value="">Năm</option>
+                                                <option value="2024">2024</option>
+                                                <option value="2025">2025</option>
+                                                <option value="2026">2026</option>
+                                            </select>
+                                        
+                                    <select id="statusFilter" class="yourdraft__table--filter" onchange="filterApplications()">
+                                        <option value="all">Tất cả</option>
+                                        <option value="Pending">Pending</option>
+                                        <option value="Approved">Approved</option>
+                                        <option value="Rejected">Rejected</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </table>
+                        <table>
+                            <tr>
+                                <td>
+                                    <label for="">Forms</label>
+                                </td>
+                                <td>
+                                    <select name="" id="" class="yourdraft__table--input">
+                                        <option value="" >Over / Tăng ca</option>
+                                        <option value="">Business Trip Plan / Kế hoạch đi công tác</option>
+                                        <option value="">Leave / Nghỉ phép</option>
+                                        <option value="">Going Directly To Customer / Đi thẳng đến khách hàng</option>
+                                        <option value="">Purchase Goods And Repair / Mua sắm hàng hóa, sửa chữa</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </table>
+                        <table>
+                            <tr>
+                                <td>
+                                    <label for="">Subject</label>
+                                </td>
+                                <td>
+                                    <input type="text" id="searchInput" class="yourdraft__table--search"  placeholder="Please confirm application and subject" onkeyup="updateYourApplicationsTable()">
+                                    <button type="button" class="yourdraft__table--btn">Search</button>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    
+
+                    <div class="yourdraft__table--display" style="color:#fff" >
+                        <table>
+                            <tr>
+                                <th>
+                                    <label for="">App No.</label>
+                                </th>
+                                <th>
+                                    <label for="" >Subject</label>
+                                </th>
+                                <th>
+                                    <label for="">Date</label>
+                                </th>
+                                <th>
+                                    <label for="">Status</label>
+                                </th>
+                                <th>
+                                    <label for="">View</label>
+                                </th>
+                                <th>
+                                    <label for="">Copy</label>
+                                </th>
+                                <th>
+                                    <label for="">Print</label>
+                                </th>
+                                <th>
+                                    <label for="">Delete</label>
+                                </th>
+                            </tr>
+                            <tbody id="yourApplicationsTable">
+                                <!-- Dữ liệu sẽ được thêm vào đây -->
+                            </tbody>
+                        </table>
                         
-                    </tr>
-                    <tr>
-                        <td><label>Approval process</label></td>
-                        <td>
-                            <select class="assets__select">
-                                <option value="">---</option>
-                                <option value="">Asset transfer</option>
-                                <option value="">Asset Transfer ( IT Equipment : CPU, Monitor, Printer...)</option>
-                            </select>
-                        </td>
-                    </tr>
-                </table>
+
+                        
+                    </div>
+                </div>
+                
+                
+               
+
+
+
+                
             </div>
+
+
         </div>    
     </div>    
 
     <script src="./asset/js/dashboard.js"></script>
+    <div id="notification" class="notification"></div>
+
 </body>
 </html>
