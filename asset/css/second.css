@@ -606,6 +606,7 @@ textarea:focus {
 .yourdraft__table--input{
     font-weight: 600;
     width: 60%;
+    color: #757575;
     height: 31px;
     border-radius: 4px;
     border: none;
@@ -662,6 +663,7 @@ textarea:focus {
 
 .yourdraft__table--display{
     padding:20px 0;
+    font-size: 0.9rem;
     text-align: center;
     white-space: normal; 
     word-wrap: break-word;
@@ -670,7 +672,7 @@ textarea:focus {
 
 
 .yourdraft__table--display th:nth-child(1){
-    width: 14%;
+    width: 15%;
 }
 
 .yourdraft__table--display th:nth-child(2){
@@ -678,30 +680,30 @@ textarea:focus {
 }
 
 .yourdraft__table--display th:nth-child(3){
-    width: 10%;
+    width: 12%;
 }
 
 .yourdraft__table--display th:nth-child(4){
-    width: 8%;
+    width: 10%;
 }
 
 .yourdraft__table--display th:nth-child(5){
-    width: 5%;
+    width: 14%;
 }
-
 .yourdraft__table--display th:nth-child(6){
-    width: 5%;
+    width: 6%;
 }
 .yourdraft__table--display th:nth-child(7){
-    width: 5%;
+    width: 6%;
 }
 
 .yourdraft__table--display th:nth-child(8){
     width: 6%;
 }
 
-
-
+.yourdraft__table--display th:nth-child(9){
+    width: 7%;
+}
 
 
 
@@ -720,13 +722,44 @@ textarea:focus {
 }
 
 
+/* start projects */
+.yourdraft__table--icon i.fa-check {
+    color: green;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
 
+.yourdraft__table--icon i.fa-check:hover {
+    color: darkgreen;
+}
 
+.yourdraft__table--icon i.fa-xmark {
+    color: red;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
 
+.yourdraft__table--icon i.fa-xmark:hover {
+    color: darkred;
+}
 
+.yourdraft__table--icon i.fa-undo {
+    color: blue;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
 
+.yourdraft__table--icon i.fa-undo:hover {
+    color: darkblue;
+}
 
+.yourdraft__table--icon.disabled {
+    pointer-events: none; /* Không thể nhấn */
+    opacity: 0.5; /* Làm mờ */
+    cursor: not-allowed; /* Hiển thị dấu "🚫" khi di chuột vào */
+}
 
+/* end projects */
 
 .notification {
     position: fixed;
@@ -749,6 +782,11 @@ textarea:focus {
 
 .notification.error {
     background-color: #dc3545; /* Đỏ */
+}
+
+.notification.info{
+    background-color: #0056b3; /* Xanh */
+
 }
 
 .notification.show {

@@ -20,7 +20,6 @@
         function toggleSidebar(){
         sidebar.classList.toggle('close')
         toggleButton.classList.toggle('rotate')
-        sidebar.classList.toggle('open')
 
 
         closeAllSubMenus();
@@ -59,35 +58,8 @@
             document.getElementById(tabId).classList.add('active');
         }
         
-
-        
-        
-            
            
-        // const dayselect = document.getElementById("daySelect");
-        // for (let i = 1; i <= 31; i++) {
-        //     let option = document.createElement("option");
-        //     option.text = i.toString().padStart(2, "0"); 
-        //     dayselect.appendChild(option);
-        // }
-            
-
-
-        // const monthSelect = document.getElementById("monthSelect");
-        // for (let i = 1; i <= 12; i++) {
-        //     let option = document.createElement("option");
-        //     option.text = i.toString().padStart(2, "0");
-        //     monthSelect.appendChild(option);
-        // }
-
-        // const yearSelect = document.getElementById("yearSelect");
-        // const currentYear = new Date().getFullYear();
-        // for (let i = 2025; i <= currentYear + 10; i++) {
-        //     let option = document.createElement("option");
-        //     option.text = i;
-        //     yearSelect.appendChild(option);
-        // }
-            
+    
 
         const currentDay = document.getElementById('current-day');
         console.log(currentDay);
@@ -100,17 +72,8 @@
         console.log(date);
         currentDay.textContent = date;
 
-        const currentTime = document.getElementById('current-time');
-        console.log(currentTime);
-        const time = new Date().toLocaleTimeString('en-us',
-            {   hour:"2-digit",
-                second:"2-digit",
-                minute:"2-digit",
-            });
-        console.log(currentTime);
-        currentTime.textContent = time;
-
         function updateTime() {
+           const currentTime = document.getElementById('current-time');
             const time = new Date().toLocaleTimeString('en-us',
                 {   hour:"2-digit",
                     second:"2-digit",
@@ -123,61 +86,20 @@
         setInterval(updateTime, 1000);
         
         
+        // Han che ky tu la 
+        document.addEventListener("DOMContentLoaded", function () {
+            // Lấy tất cả input và textarea trong bảng
+            let tableInputs = document.querySelectorAll(".assets__table input, .assets__table textarea");
+        
+            tableInputs.forEach(input => {
+                input.addEventListener("input", function () {
+                    this.value = this.value.replace(/[^a-zA-Z0-9\s().\/]/g, ""); // Chỉ cho phép chữ cái, số và khoảng trắng
+                });
+            });
+        });
+        
 
-        // document.addEventListener("DOMContentLoaded", function () {
-        //     const daySelect = document.getElementById("daySelect");
-        //     const monthSelect = document.getElementById("monthSelect");
-        //     const yearSelect = document.getElementById("yearSelect");
-        
-        //     function populateDays(month, year) {
-        //         daySelect.innerHTML = ""; 
-        //         let daysInMonth = new Date(year, month, 0).getDate(); 
-        
-        //         for (let i = 1; i <= daysInMonth; i++) {
-        //             let option = document.createElement("option");
-        //             option.value = i;
-        //             option.textContent = i;
-        //             daySelect.appendChild(option);
-        //         }
-        //     }
-        
-        //     function populateMonths() {
-        //         monthSelect.innerHTML = "";
-        //         for (let i = 1; i <= 12; i++) {
-        //             let option = document.createElement("option");
-        //             option.value = i;
-        //             option.textContent = i;
-        //             monthSelect.appendChild(option);
-        //         }
-        //     }
-        
-        //     function populateYears() {
-        //         yearSelect.innerHTML = "";
-        //         let currentYear = new Date().getFullYear();
-        //         for (let i = currentYear - 10; i <= currentYear + 10; i++) {
-        //             let option = document.createElement("option");
-        //             option.value = i;
-        //             option.textContent = i;
-        //             yearSelect.appendChild(option);
-        //         }
-        //     }
-        
-        //     function updateDays() {
-        //         populateDays(monthSelect.value, yearSelect.value);
-        //     }
-        
-        //     populateMonths();
-        //     populateYears();
-        
-        //     let today = new Date();
-        //     yearSelect.value = today.getFullYear();
-        //     monthSelect.value = today.getMonth() + 1;
-        //     populateDays(today.getMonth() + 1, today.getFullYear());
-        //     daySelect.value = today.getDate();
-        
-        //     monthSelect.addEventListener("change", updateDays);
-        //     yearSelect.addEventListener("change", updateDays);
-        // });
+       
         
 
         window.saveApplication = function () {
@@ -185,7 +107,6 @@
             let day = document.getElementById("daySelect").value;
             let month = document.getElementById("monthSelect").value;
             let year = document.getElementById("yearSelect").value;
-        
             let isValid = true; // ✅ Biến kiểm tra xem có lỗi hay không
         
             // ⛔ Nếu Subject trống, hiển thị cảnh báo và dừng lại
@@ -199,6 +120,7 @@
                 alert("Vui lòng chọn đầy đủ Ngày, Tháng, Năm di chuyển!");
                 isValid = false; // ❌ Không hợp lệ
             }
+
         
             // Nếu có lỗi, DỪNG LẠI NGAY (KHÔNG lưu vào localStorage, KHÔNG reset form)
             if (!isValid) return;
@@ -209,7 +131,7 @@
             let now = new Date();
             let currentYear = now.getFullYear();
             let currentMonth = String(now.getMonth() + 1).padStart(2, "0");
-            let appNumber = `AP.${currentYear}${currentMonth}.${String(applications.length + 1).padStart(4, "0")}`;
+            let appNumber = `AP.${currentYear}.${currentMonth}.${String(applications.length + 1).padStart(4, "0")}`;
         
             applications.push({
                 appNo: appNumber,
@@ -256,8 +178,6 @@
             console.log("✅ Form đã được reset!");
         }
         
-
-        
         function updateYourApplicationsTable() {
             let applications = JSON.parse(localStorage.getItem("yourApplications")) || [];
             let tableBody = document.getElementById("yourApplicationsTable");
@@ -265,64 +185,73 @@
             tableBody.innerHTML = "";
         
             applications.forEach((app, index) => {
-                let row = document.createElement("tr");
-        
                 let statusColor = app.status === "Approved" ? "green" :
-                                  app.status === "Rejected" ? "red" : "orange";
+                                  app.status === "Rejected" ? "red" :
+                                  "orange"; // Pending là cam
         
+                let approveButton = `
+                    <td>
+                        <button class="yourdraft__table--icon" onclick="approveApplication(${index})">
+                            <i class="fa-solid fa-check"></i>
+                        </button>
+                    </td>
+                `;
+        
+                let rejectButton = `
+                    <td>
+                        <button class="yourdraft__table--icon" onclick="rejectApplication(${index})">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                    </td>
+                `;
+        
+                // Nếu trạng thái là Pending, vô hiệu hóa nút Reset
+                let resetButton = `
+                    <td>
+                        <button class="yourdraft__table--icon ${app.status === "Pending" ? "disabled" : ""}" 
+                                onclick="${app.status === "Pending" ? "return false;" : `resetToPending(${index})`}">
+                            <i class="fa-solid fa-undo"></i>
+                        </button>
+                    </td>
+                `;
+        
+                let row = document.createElement("tr");
                 row.innerHTML = `
                     <td>${app.appNo}</td>
                     <td>${app.subject}</td>
                     <td>${app.transferDate}</td>
-                    <td>${app.status}</td>
+                    <td style="color: ${statusColor}; font-weight: bold;">${app.status}</td>
+                    ${approveButton}
+                    ${rejectButton}
+                    ${resetButton}
                     <td><button class="yourdraft__table--icon"><i class="fa-solid fa-file"></i></button></td>
                     <td><button class="yourdraft__table--icon"><i class="fa-solid fa-copy"></i></button></td>
                     <td><button class="yourdraft__table--icon"><i class="fa-solid fa-print"></i></button></td>
-                    <td><button class="yourdraft__table--icon" onclick="deleteApplication(${index})"><i class="fa-solid fa-trash"></i></button></td>
+                    <td>
+                        <button class="yourdraft__table--icon" onclick="deleteApplication(${index})">
+                            <i class="fa-solid fa-trash"></i>
+                        </button>
+                    </td>
                 `;
                 tableBody.appendChild(row);
             });
         }
-        
 
+        document.addEventListener("DOMContentLoaded", function () {
+            let today = new Date();
+            let day = today.getDate().toString().padStart(2, "0");
+            let month = (today.getMonth() + 1).toString().padStart(2, "0");
+            let year = today.getFullYear();
         
-     
+            document.getElementById("daySelect").value = day;
+            document.getElementById("monthSelect").value = month;
+            document.getElementById("yearSelect").value = year;
 
+            updateYourApplicationsTable(); // ✅ Hiển thị dữ liệu ngay khi mở trang
+        });
 
-        
-        
-        window.deleteApplication = function (index) {
-            let applications = JSON.parse(localStorage.getItem("yourApplications")) || [];
-            applications.splice(index, 1);
-            localStorage.setItem("yourApplications", JSON.stringify(applications));
-        
-            updateYourApplicationsTable();
-        };
-        
-        
+       
 
-        
-        
-        
-
-        
-
-        window.editApplication = function (index) {
-            let applications = JSON.parse(localStorage.getItem("yourApplications")) || [];
-            let newSubject = prompt("Nhập Subject mới:", applications[index].subject);
-        
-            if (newSubject && newSubject.trim() !== "") {
-                applications[index].subject = newSubject.trim();
-                localStorage.setItem("yourApplications", JSON.stringify(applications));
-        
-                // Hiển thị thông báo thành công
-                showNotification(`Đã cập nhật Subject thành: ${newSubject}`, "success");
-        
-                updateYourApplicationsTable();
-            }
-        };
-
-        
         window.deleteApplication = function (index) {
             let applications = JSON.parse(localStorage.getItem("yourApplications")) || [];
             let deletedApp = applications[index].subject;
@@ -331,13 +260,13 @@
             localStorage.setItem("yourApplications", JSON.stringify(applications));
         
             // Hiển thị thông báo cảnh báo
+            
             showNotification(`Đã xóa ứng dụng: ${deletedApp}`, "error");
         
             updateYourApplicationsTable();
         };
-        
 
-
+       
 
         function showNotification(message, type = "success") {
             let notification = document.getElementById("notification");
@@ -352,10 +281,46 @@
         }
 
 
+        
 
-        document.addEventListener("DOMContentLoaded", function () {
-            updateYourApplicationsTable(); // ✅ Hiển thị dữ liệu ngay khi mở trang
-        });
+        window.approveApplication = function (index) {
+            let applications = JSON.parse(localStorage.getItem("yourApplications")) || [];
+        
+            applications[index].status = "Approved"; // ✅ Chuyển thành "Approved"
+            localStorage.setItem("yourApplications", JSON.stringify(applications));
+        
+            showNotification(`✅ Đã duyệt : ${applications[index].subject}`, "success");
+            updateYourApplicationsTable();
+        };
+        
+        window.rejectApplication = function (index) {
+            let applications = JSON.parse(localStorage.getItem("yourApplications")) || [];
+        
+            applications[index].status = "Rejected"; // ❌ Chuyển thành "Rejected"
+            localStorage.setItem("yourApplications", JSON.stringify(applications));
+        
+            showNotification(`❌ Đã từ chối : ${applications[index].subject}`, "error");
+            updateYourApplicationsTable();
+        };
+
+        window.resetToPending = function (index) {
+            let applications = JSON.parse(localStorage.getItem("yourApplications")) || [];
+        
+            applications[index].status = "Pending"; // 🔄 Quay lại trạng thái Pending
+            localStorage.setItem("yourApplications", JSON.stringify(applications));
+        
+            showNotification(`🔄 Đã quay lại: ${applications[index].subject}`, "info");
+            updateYourApplicationsTable();
+        };
+
+        
+
+
+        
+        
+        
+
+
 
 
 
