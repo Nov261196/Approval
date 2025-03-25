@@ -161,9 +161,22 @@
                 </ul>
             </nav>
 
-            <nav class="sidebar-mobile">
-
-            </nav>
+            <div class="sidebar-mobile">
+                <button id="mobile-menu-btn" class="mobile-menu-button">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <div id="mobile-menu" class="mobile-menu-content">
+                    <button class="mobile-close" onclick="toggleMobileMenu()">&times;</button>
+                    <ul>
+                        <!-- <li><a href="#" onclick="showTab('main-home')">Home</a></li>
+                        <li><a href="#" onclick="showTab('main-yours-draft')">Your Applications</a></li>
+                        <li><a href="#" onclick="showTab('history-app')">History</a></li>
+                        <li><a href="#" onclick="showTab('options-app')">Options</a></li>
+                        <li><a href="#" onclick="showTab('change-password')">Change Password</a></li>
+                        <li><a href="#" onclick="logout()">Logout</a></li> -->
+                    </ul>
+                </div>
+            </div>
         </header>
 
         <div class="content">
