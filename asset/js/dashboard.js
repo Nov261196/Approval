@@ -328,8 +328,10 @@
 
         function toggleMobileMenu() {
             document.getElementById('mobile-menu').classList.toggle('show');
+            document.getElementById('mobile-menu-overlay').classList.toggle('show');
         }
         document.getElementById('mobile-menu-btn').addEventListener('click', toggleMobileMenu);
+        
 
 
 

@@ -161,22 +161,33 @@
                 </ul>
             </nav>
 
-            <div class="sidebar-mobile">
-                <button id="mobile-menu-btn" class="mobile-menu-button">
+
+            <nav class="sidebar-mobile">
+            <div id="mobile-menu-overlay" class="mobile-menu-overlay" onclick="toggleMobileMenu()"></div>
+
+                <button id="mobile-menu-btn" class="mobile-menu-open">
                     <i class="fa-solid fa-bars"></i>
                 </button>
                 <div id="mobile-menu" class="mobile-menu-content">
-                    <button class="mobile-close" onclick="toggleMobileMenu()">&times;</button>
+                    <button class="mobile-menu-close" onclick="toggleMobileMenu()">&times;</button>
                     <ul>
-                        <!-- <li><a href="#" onclick="showTab('main-home')">Home</a></li>
-                        <li><a href="#" onclick="showTab('main-yours-draft')">Your Applications</a></li>
-                        <li><a href="#" onclick="showTab('history-app')">History</a></li>
-                        <li><a href="#" onclick="showTab('options-app')">Options</a></li>
-                        <li><a href="#" onclick="showTab('change-password')">Change Password</a></li>
-                        <li><a href="#" onclick="logout()">Logout</a></li> -->
+                        <li><button class="btn" type="button" onclick="showTab('main-home')">Home</button></li>
+
+                        <li><button class="btn" type="button" id="" onclick="">New Applications</button>
+                            <ul class="mobile-sub-menu">
+                                <li><button class="1btn" type="button" onclick="showTab('administrator')">Administrator</button></li>
+                                <li><button class="1btn" type="button" onclick="showTab('accounting')">Accounting</button></li>
+                                <li><button class="1btn" type="button" onclick="showTab('human')">Human</button></li>
+                                <li><button class="1btn" type="button" onclick="showTab('operation')">Operation</button></li>
+                            </ul>
+                        </li>
+                        <li><button class="btn" type="button" onclick="showTab('history-app')">History</button></li>
+                        <li><button class="btn" type="button" onclick="showTab('options-app')">Options</button></li>
+                        <li><button class="btn" type="button" onclick="showTab('change-password')">Change Password</button></li>
+                        <li><button class="btn" type="button" onclick="logout()">Logout</button></li>
                     </ul>
                 </div>
-            </div>
+            </nav>
         </header>
 
         <div class="content">
@@ -560,7 +571,7 @@
                                             <option value="01">01</option>
                                             <option value="02">02</option>
                                             <option value="03">03</option>
-                                            <option value="03">04</option>
+                                            <option value="04">04</option>
                                             <option value="05">05</option>
                                             <option value="06">06</option>
                                             <option value="07">07</option>
