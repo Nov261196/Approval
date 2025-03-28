@@ -50,7 +50,7 @@ body {
 
 .btn:hover{
     background-color: rgb(129, 129, 129);
-    margin-left: 35px;
+    margin-left: 10px;
 
 }
  
@@ -135,25 +135,28 @@ body {
     transform: translateX(100%);
 }
 
+
 .mobile-menu-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
     opacity: 0;
+    background: rgba(0, 0, 0, 0.5);
     transition: opacity 0.3s ease-in-out;
-    z-index: 1001;
+    display: none;
 }
 
 .mobile-menu-overlay.show {
+    display: block;
     opacity:0.8;
 }
 
 .mobile-sub-menu{
     display: none;
 }
+
 
 
 

@@ -11,6 +11,7 @@
 <body>
     <div class="main">  
         <header class="">
+
             <nav id="sidebar" class="sidebar-menu">
                 <ul>
                     <li>
@@ -162,23 +163,23 @@
             </nav>
 
 
-            <nav class="sidebar-mobile">
-            <div id="mobile-menu-overlay" class="mobile-menu-overlay" onclick="toggleMobileMenu()"></div>
 
-                <button id="mobile-menu-btn" class="mobile-menu-open">
+            <nav class="sidebar-mobile">
+                <div id="mobile-menu-overlay" class="mobile-menu-overlay" onclick="toggleMobileMenu()"></div>
+                <button id="mobile-menu-btn" class="mobile-menu-open" onclick="toggleMobileMenu()">
                     <i class="fa-solid fa-bars"></i>
                 </button>
                 <div id="mobile-menu" class="mobile-menu-content">
-                    <button class="mobile-menu-close" onclick="toggleMobileMenu()">&times;</button>
+                    <button type="button" id="" class="mobile-menu-close" onclick="toggleMobileMenu()">&times;</button>
                     <ul>
                         <li><button class="btn" type="button" onclick="showTab('main-home')">Home</button></li>
 
                         <li><button class="btn" type="button" id="" onclick="">New Applications</button>
                             <ul class="mobile-sub-menu">
-                                <li><button class="1btn" type="button" onclick="showTab('administrator')">Administrator</button></li>
-                                <li><button class="1btn" type="button" onclick="showTab('accounting')">Accounting</button></li>
-                                <li><button class="1btn" type="button" onclick="showTab('human')">Human</button></li>
-                                <li><button class="1btn" type="button" onclick="showTab('operation')">Operation</button></li>
+                                <li><button class="mango" type="button" onclick="showTab('administrator')">Administrator</button></li>
+                                <li><button class="mango" type="button" onclick="showTab('accounting')">Accounting</button></li>
+                                <li><button class="mango" type="button" onclick="showTab('human')">Human</button></li>
+                                <li><button class="mango" type="button" onclick="showTab('operation')">Operation</button></li>
                             </ul>
                         </li>
                         <li><button class="btn" type="button" onclick="showTab('history-app')">History</button></li>
@@ -187,7 +188,9 @@
                         <li><button class="btn" type="button" onclick="logout()">Logout</button></li>
                     </ul>
                 </div>
+
             </nav>
+
         </header>
 
         <div class="content">
