@@ -164,7 +164,7 @@
 
 
 
-            <nav class="sidebar-mobile">
+            <nav id="sidemobile" class="sidebar-mobile">
                 <div id="mobile-menu-overlay" class="mobile-menu-overlay" onclick="toggleMobileMenu()"></div>
                 <button id="mobile-menu-btn" class="mobile-menu-open" onclick="toggleMobileMenu()">
                     <i class="fa-solid fa-bars"></i>
@@ -174,14 +174,19 @@
                     <ul>
                         <li><button class="btn" type="button" onclick="showTab('main-home')">Home</button></li>
 
-                        <li><button class="btn" type="button" id="" onclick="">New Applications</button>
+                        <li>
+                            <button id="" type="button" onclick="toggleSubMenu(this)" class="btn mobile-btn-app">
+                                New Application
+                                <i class="ti-angle-down mobile-icon-down"></i>
+                            </button>
                             <ul class="mobile-sub-menu">
-                                <li><button class="mango" type="button" onclick="showTab('administrator')">Administrator</button></li>
-                                <li><button class="mango" type="button" onclick="showTab('accounting')">Accounting</button></li>
-                                <li><button class="mango" type="button" onclick="showTab('human')">Human</button></li>
-                                <li><button class="mango" type="button" onclick="showTab('operation')">Operation</button></li>
+                                <li><button class="btn" type="button" onclick="showTab('administrator')">Administrator</button></li>
+                                <li><button class="btn" type="button" onclick="showTab('accounting')">Accounting</button></li>
+                                <li><button class="btn" type="button" onclick="showTab('human')">Human</button></li>
+                                <li><button class="btn" type="button" onclick="showTab('operation')">Operation</button></li>
                             </ul>
                         </li>
+
                         <li><button class="btn" type="button" onclick="showTab('history-app')">History</button></li>
                         <li><button class="btn" type="button" onclick="showTab('options-app')">Options</button></li>
                         <li><button class="btn" type="button" onclick="showTab('change-password')">Change Password</button></li>
@@ -194,12 +199,8 @@
         </header>
 
         <div class="content">
-            <div id="main-home" class="home__page main__box ">
-                <div class="home__header">
-                    <a href="#" class="">
-                        <!-- <img src="https://cdn.pixabay.com/photo/2023/03/25/10/00/flowers-7875532_1280.jpg" alt="Company Logo" class="home__logo"> -->
-                    </a>
-                </div>
+            <div id="main-home" class="main__box active ">
+                <div class="home__header"></div>
                 
                 
                 <div class="home__title">
@@ -212,43 +213,6 @@
                             <p>You have: <span id="pending-task-count">0</span> pending tasks.</p>
                             <p>You have: <span id="disapproved-count">0</span> Applications Disapproved.</p>
                             <a href="#" target="_blank" class="home__link">Click here to view Your Applications</a>
-                        </div>
-    
-    
-                        <div class="home__btn">
-                            <div class="home__menu">
-                                <h3 class="home__btn--title">ADM HR</h3>
-                                <div class="home__btn-list">
-                                    <button onclick="" id="" class="home__btn--click" >Finger Print</button>
-                                    <button onclick="" id="" class="home__btn--click">Check Salary</button>
-                                    <button onclick="" id="" class="home__btn--click">Annual Leave</button>
-                                    <button onclick="" id="" class="home__btn--click">Company Form</button>
-                                    <button onclick="" id="" class="home__btn--click">Evaluation</button>
-                                    <button onclick="" id="" class="home__btn--click">Overtime</button>
-                                    <button onclick="" id="" class="home__btn--click">Security Training</button>
-                                </div>
-                            </div>
-            
-                            <div class="home__menu">
-                                <h3 class="home__btn--title">Accounting</h3>
-                                <div class="home__btn-list">
-                                    <button onclick="" id="" class="home__btn--click">Tax Report</button>
-                                    <button onclick="" id="" class="home__btn--click">Financial Report</button>
-                                    <button onclick="" id="" class="home__btn--click">Invoice Processing</button>
-                                    <button onclick="" id="" class="home__btn--click">Budget Planning</button>
-                                </div>
-                            </div>
-                            
-                            <div class="home__menu">
-                                <h3 class="home__btn--title">Operation</h3>
-                                <div class="home__btn-list">
-                                    <button onclick="" id="" class="home__btn--click">Truck Repair</button>
-                                    <button onclick="" id="" class="home__btn--click">Inventory Check</button>
-                                    <button onclick="" id="" class="home__btn--click">Logistics Management</button>
-                                    <button onclick="" id="" class="home__btn--click">Safety Inspection</button>
-                                </div>
-                            </div>
-
                         </div>
                     </div>
                 </div>    
@@ -314,7 +278,7 @@
                     </div>
                 </div>
     
-                <!-- <div id="accounting" class="main__box ">
+                <div id="accounting" class="main__box ">
                     <h2>accounting</h2>
                     <div class="application__body">
                         <table >
@@ -474,7 +438,7 @@
                             </tr>
                         </table>
                     </div>
-                </div> -->
+                </div>
             </div>
 
            
@@ -605,17 +569,20 @@
                                     </td>
                                 </tr>
                             </table>
-                            <button class="assets__table--btn" id="" onclick="showTab('administrator')" >
-                                Back
-                            </button>
-                            <button class="assets__table--btn" id="next-btn" onclick="saveApplication();">
-                                Next
-                            </button>
+                            <div>
+                                <button class="assets__table--btn" id="" onclick="showTab('administrator')" >
+                                    Back
+                                </button>
+                                <button class="assets__table--btn" id="next-btn" onclick="saveApplication();">
+                                    Next
+                                </button>
+                            </div>
+                            
                     </div>
             </div>
 
 
-            <div id="main-yours-draft" class="main__box active ">
+            <div id="main-yours-draft" class="main__box  ">
                 <h2>Your Applications</h2>
                 <div class="yourdraft__page">
                     <div class="yourdraft__table" style="color: #fff;">

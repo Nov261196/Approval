@@ -16,6 +16,7 @@
 
         const toggleButton = document.getElementById('toggle-btn')
         const sidebar = document.getElementById('sidebar')
+        const mobilebar =document.getElementById('sidemobile')
 
         function toggleSidebar(){
         sidebar.classList.toggle('close')
@@ -23,10 +24,8 @@
 
 
         closeAllSubMenus();
-        if (sidebar.classList.contains('close')) {
-            // sidebar.style.opacity = "0.5";
+        if (sidebar.classList.contains('close') &&mobilebar.classList.contains('close')){
         } else {
-            // sidebar.style.opacity = "1"; 
         }
     }
 
@@ -39,8 +38,9 @@
         button.nextElementSibling.classList.toggle('show')
         button.classList.toggle('rotate')
 
-        if(sidebar.classList.contains('close')){
+        if(sidebar.classList.contains('close') && mobilebar.classList.contains('close')){
             sidebar.classList.toggle('close')
+            mobilebar.classList.toggle('close')
             toggleButton.classList.toggle('rotate')
         }
         }
@@ -331,6 +331,7 @@
             document.getElementById('mobile-menu-overlay').classList.toggle('show');
         }
 
+        
         
 
 
