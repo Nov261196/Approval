@@ -256,15 +256,15 @@
                             </tr>
                             <tr>
                                 <td>Fuel norm / Định mức nhiên liệu</td>
-                                <td><a href="#" onclick="showTab('main-')" class="application__btn--create">Create New</a></td>
+                                <td><a href="#" onclick="showTab('main-fuel')" class="application__btn--create">Create New</a></td>
                             </tr>
                             <tr>
                                 <td>Modify eApprove process / Thay đổi hệ thống eApprove</td>
-                                <td><a href="#" onclick="showTab('main-')" class="application__btn--create">Create New</a></td>
+                                <td><a href="#" onclick="showTab('main-Modify')" class="application__btn--create">Create New</a></td>
                             </tr>
                             <tr>
                                 <td>Purchase Goods And Repair / Mua sắm hàng hóa, sửa chữa</td>
-                                <td><a href="#" onclick="showTab('main-')" class="application__btn--create">Create New</a></td>
+                                <td><a href="#" onclick="showTab('main-purchase')" class="application__btn--create">Create New</a></td>
                             </tr>
                             <tr>
                                 <td>Software using application / Phê duyệt sử dụng phần mềm</td>
@@ -1093,36 +1093,64 @@
             </div>
 
 
-            <div id="main-entertaiment" class="main-box active">
+            <div id="main-entertaiment" class="main__box ">
                 <h2>Entertainment application / Đề xuất chi phí giao tế</h2>
                 <div class="asset__page">
                     <div class="section-header">Step 2: Fill in the Form</div>
-                    <table class="assets__table">
-                        <tr>
-                            <td><label>Applicant</label></td>
-                            <td><input type="text" value="" disabled></td>
-                        </tr>
-                        <tr>
-                            <td><label>Department</label></td>
-                            <td><input type="text" value="" disabled></td>
-                        </tr>
-                        <tr>
-                            <td><label>Subject <span class="required">*</span></label></td>
-                            <td><input type="text" id=""></td>
-                        </tr>
-                    </table>
-                    <div class="section-header">Step 3:Entertainment application / Đề xuất chi phí giao tế</div> 
+                            <table class="assets__table">
+                                <tr>
+                                    <td><label>Applicant</label></td>
+                                    <td><input type="text" value="" disabled></td>
+                                </tr>
+                                <tr>
+                                    <td><label>Department</label></td>
+                                    <td><input type="text" value="" disabled></td>
+                                </tr>
+                                <tr>
+                                    <td><label>Subject <span class="required">*</span></label></td>
+                                    <td><input type="text" id=""></td>
+                                </tr>
+                            </table>
+                    <div class="section-header">Step 3: Entertainment application / Đề xuất chi phí giao tế</div> 
                     <table class="assets__table" >
                         <tr>
-                            <td><label for="">Category - Loại chứng từ <span class="required">*</span></label></td>
+                            <td><label for="">Using date - Ngày giao tế<span class="required">*</span></label></td>
                             <td><input type="text" name="" id=""></td>
                         </tr>
                         <tr>
-                            <td><label for="">Number of copy / Số lượng bản <span class="required">*</span></label></td>
+                            <td><label for="">Place - Nơi giao tế<span class="required">*</span></label></td>
                             <td><input type="text" name="" id=""></td>
                         </tr>
                         <tr>
-                            <td><label for="">Content - Nội dung <span class="required">*</span></label></td>
+                            <td><label for="">Customer name - Tên khách hàng<span class="required">*</span></label></td>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="">Estimated turnover (if this is for new customer)  - Doanh thu dự kiến (nếu là khách hàng mới)<span class="required">*</span></label></td>
+                            <td><textarea name="" id=""></textarea></td>
+                        </tr>
+                        <tr>
+                            <td><label for="">Estimated profit (if this is for new customer) - Lợi nhuận dự kiến (nếu là khách hàng mới)<span class="required">*</span></label></td>
+                            <td><textarea name="" id=""></textarea></td>
+                        </tr>
+                        <tr>
+                            <td><label for="">Participants (including Sagawa employee & Customer) - Thành phần tham dự (bao gồm Sagawa và khách hàng)<span class="required">*</span></label></td>
+                            <td><textarea name="" id=""></textarea></td>
+                        </tr>
+                        <tr>
+                            <td><label for="">Purpose - Mục đích<span class="required">*</span></label></td>
+                            <td><textarea name="" id=""></textarea></td>
+                        </tr>
+                        <tr>
+                            <td><label for="">Expense (VND) - Chi phí<span class="required">*</span></label></td>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="">Amount on invoice / Statement - Số tiền trên chứng từ / Bảng kê<span class="required">*</span></label></td>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="">Reason for difference amount / Lý do số tiền chênh lệch<span class="required">*</span></label></td>
                             <td><textarea name="" id=""></textarea></td>
                         </tr>
                         <tr>
@@ -1130,7 +1158,7 @@
                             <td>
                                 <select class="assets__select">
                                     <option value="">---</option>
-                                    <option value="">Company Stamp Approval Process</option>
+                                    <option value="">Entertainment fee / Chi phí giao tế</option>
                                 </select>
                             </td>
                         </tr>
@@ -1148,12 +1176,266 @@
             </div>
 
 
+            <div id="main-fuel" class="main__box">
+                <h2>Fuel norm for vehicle application / Đề xuất phê duyệt định mức nhiên liệu cho phương tiện</h2>
+                <div class="asset__page">
+                    <div class="section-header">Step 2: Fill in the Form</div>
+                            <table class="assets__table">
+                                <tr>
+                                    <td><label>Applicant</label></td>
+                                    <td><input type="text" value="" disabled></td>
+                                </tr>
+                                <tr>
+                                    <td><label>Department</label></td>
+                                    <td><input type="text" value="" disabled></td>
+                                </tr>
+                                <tr>
+                                    <td><label>Subject <span class="required">*</span></label></td>
+                                    <td><input type="text" id=""></td>
+                                </tr>
+                            </table>
+                    <div class="section-header">Step 3: Fuel norm for vehicle application / Đề xuất phê duyệt định mức nhiên liệu cho phương tiện</div> 
+                    <table class="assets__table" >
+                        <tr>
+                            <td><label for="">Category / Loại phương tiện<span class="required">*</span></label></td>
+                            <td><input type="text" name="" id=""></td>
+                        </tr>
+                        <tr>
+                            <td><label for="">Number Plate / Biển số<span class="required">*</span></label></td>
+                            <td><input type="text" name="" id=""></td>
+                        </tr>
+                        <tr>
+                            <td><label for="">Trade mark / Nhãn hiệu<span class="required">*</span></label></td>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="">Year of manufacture / Năm sản xuất<span class="required">*</span></label></td>
+                            <td><input type="text" name="" id=""></td>
+                        </tr>
+                        <tr>
+                            <td><label for="">Status / Tình trạng<span class="required">*</span></label></td>
+                            <td><input type="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="">Norm / Định mức đề xuất<span class="required">*</span></label></td>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="">Current norm / Định mức hiện tại<span class="required">*</span></label></td>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="">Revised norm / Định mức thay đổi<span class="required">*</span></label></td>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="">Reason / Lý do<span class="required">*</span></label></td>
+                            <td><textarea name="" id=""></textarea></td>
+                        </tr>
+                        
+                        <tr>
+                            <td><label >Approval process</label></td>
+                            <td>
+                                <select class="assets__select">
+                                    <option value="">---</option>
+                                    <option value="">Fuel norm / Định mức nhiên liệu</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <div>
+                        <button class="assets__table--btn" id="" onclick="showTab('administrator')" >
+                            Back
+                        </button>
+                        <button class="assets__table--btn" id="" onclick="saveApplication();">
+                            Next
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="main-modify" class="main__box">
+                <h2>Modify eApprove application / Đề xuất chỉnh sửa hệ thống eApprove</h2>
+                <div class="asset__page">
+                    <div class="section-header">Step 2: Fill in the Form</div>
+                            <table class="assets__table">
+                                <tr>
+                                    <td><label>Applicant</label></td>
+                                    <td><input type="text" value="" disabled></td>
+                                </tr>
+                                <tr>
+                                    <td><label>Department</label></td>
+                                    <td><input type="text" value="" disabled></td>
+                                </tr>
+                                <tr>
+                                    <td><label>Subject <span class="required">*</span></label></td>
+                                    <td><input type="text" id=""></td>
+                                </tr>
+                            </table>
+                    <div class="section-header">Step 3: Modify eApprove application / Đề xuất chỉnh sửa hệ thống eApprove</div> 
+                    <table class="assets__table" >
+                        <tr>
+                            <td><label for="">Reason / Lý do <span class="required">*</span></label></td>
+                            <td><textarea name="" id=""></textarea></td>
+                        </tr>
+                        <tr>
+                            <td><label >Approval process</label></td>
+                            <td>
+                                <select class="assets__select">
+                                    <option value="">---</option>
+                                    <option value="">Modify eApprove process</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <div>
+                        <button class="assets__table--btn" id="" onclick="showTab('administrator')" >
+                            Back
+                        </button>
+                        <button class="assets__table--btn" id="" onclick="saveApplication();">
+                            Next
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="main-purchase" class="main__box">
+                <h2>Purchase goods and repair application / Đề xuất mua sắm, sửa chữa</h2>
+                <div class="asset__page">
+                    <div class="section-header">Step 2: Fill in the Form</div>
+                            <table class="assets__table">
+                                <tr>
+                                    <td><label>Applicant</label></td>
+                                    <td><input type="text" value="" disabled></td>
+                                </tr>
+                                <tr>
+                                    <td><label>Department</label></td>
+                                    <td><input type="text" value="" disabled></td>
+                                </tr>
+                                <tr>
+                                    <td><label>Subject <span class="required">*</span></label></td>
+                                    <td><input type="text" id=""></td>
+                                </tr>
+                            </table>
+                    <div class="section-header">Step 3: Purchase goods and repair application / Đề xuất mua sắm, sửa chữa </div> 
+                    <table class="assets__table" >
+                        <tr>
+                            <td><label for="">Equipment type - Loại thiết bị <span class="required">*</span></label></td>
+                            <td><textarea name="" id=""></textarea></td>
+                        </tr>
+                        <tr>
+                            <td><label for="">Description - Mô tả chi tiết <span class="required">*</span></label></td>
+                            <td><textarea name="" id=""></textarea></td>
+                        </tr>
+                        <tr>
+                            <td><label for="">Reason - Lý do <span class="required">*</span></label></td>
+                            <td><textarea name="" id=""></textarea></td>
+                        </tr>
+                        <tr>
+                            <td><label for="">Estimated Budget - Ngân sách dự toán <span class="required">*</span></label></td>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="">Amount on invoice/Statement - Số tiền trên chứng từ/Bảng kê<span class="required">*</span></label></td>
+                            <td><input type="text"></td>
+                        </tr>
+
+                        <tr>
+                            <td><label for="">Reason for difference amount / Lý do số tiền chênh lệch<span class="required">*</span></label></td>
+                            <td><textarea name="" id=""></textarea></td>
+                        </tr>
+
+                        <tr>
+                            <td><label >Approval process</label></td>
+                            <td>
+                                <select class="assets__select">
+                                    <option value="">---</option>
+                                    <option value="">Purchase Goods and Repair</option>
+                                    <option value="">Purchase Goods and Repair Relating IT (ink, computer equipment...)</option>
+
+                                </select>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <div>
+                        <button class="assets__table--btn" id="" onclick="showTab('administrator')" >
+                            Back
+                        </button>
+                        <button class="assets__table--btn" id="" onclick="saveApplication();">
+                            Next
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="main-software" class="main__box active ">
+                <h2>Software using application / Đề xuất phê duyệt sử dụng phần mềm</h2>
+                <div class="asset__page">
+                    <div class="section-header">Step 2: Fill in the Form</div>
+                            <table class="assets__table">
+                                <tr>
+                                    <td><label>Applicant</label></td>
+                                    <td><input type="text" value="" disabled></td>
+                                </tr>
+                                <tr>
+                                    <td><label>Department</label></td>
+                                    <td><input type="text" value="" disabled></td>
+                                </tr>
+                                <tr>
+                                    <td><label>Subject <span class="required">*</span></label></td>
+                                    <td><input type="text" id=""></td>
+                                </tr>
+                            </table>
+                    <div class="section-header">Step 3: Software using application / Đề xuất phê duyệt sử dụng phần mềm </div> 
+                    <table class="assets__table" >
+                        <tr>
+                            <td><label for="">Kind of software - Loại phần mềm <span class="required">*</span></label></td>
+                            <td><textarea name="" id=""></textarea></td>
+                        </tr>
+
+                        
+
+                        
+                    </table>
+                    <table class="assets__table">
+                        <div class="section-header">Step 3: Software using application / Đề xuất phê duyệt sử dụng phần mềm </div> 
 
 
 
 
 
 
+
+
+
+                        <tr>
+                            <td><label >Approval process</label></td>
+                            <td>
+                                <select class="assets__select">
+                                    <option value="">---</option>
+                                    <option value="">Software using application</option>
+
+                                </select>
+                            </td>
+                        </tr>
+                    </table>
+
+
+                    <div>
+                        <button class="assets__table--btn" id="" onclick="showTab('administrator')" >
+                            Back
+                        </button>
+                        <button class="assets__table--btn" id="" onclick="saveApplication();">
+                            Next
+                        </button>
+                    </div>
+                </div>
+            </div>
 
 
 
