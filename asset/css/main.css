@@ -85,9 +85,9 @@ html{
     /* border: 1px solid #e6e4e4; */
     background-color: #fff;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-    width: 461px; /* doi thanh 400px */
+    width: 400px; /* doi thanh 400px */
     border-radius: 6px;
-    height: 461px; /* doi thanh 315px */
+    height: 315px; /* doi thanh 315px */
 
 }
 
@@ -120,7 +120,7 @@ html{
 .header__body p{
     font-size: 16px;
     color: #333;
-    margin-top: 24px;
+    margin-top: 12px;
     text-align: center;
     font-weight: 600;
 }
@@ -132,7 +132,7 @@ html{
 /* Form login */
 .form__user{
     position: relative;
-    top: 20px;
+    top: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -161,8 +161,7 @@ html{
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    left: 90px;
-    line-height: 40px;
+    left: 60px;
     font-size: 1.4rem;
     color: #8d8b8b;
 }
@@ -171,8 +170,7 @@ html{
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    right: 90px;
-    line-height: 40px;
+    right: 60px;
     font-size: 1.4rem;
     color: #8d8b8b;
     cursor: pointer;
@@ -183,11 +181,9 @@ html{
 
 .form__checkbox{
     position: relative;
-    padding: 4px 32px;
-    margin-bottom: 12px;
-    top: 26px;
-    left: 81px;
-    cursor: pointer;
+    padding: 4px 26px;
+    top: 12px;
+    left: 52px;
     font-size: 1.4rem;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -199,6 +195,8 @@ html{
     font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 1.4rem;
     font-weight: 500;
+    cursor: pointer;
+
 }
 
 .form__checkbox--main .form__checkbox--input{
@@ -241,8 +239,8 @@ html{
   }
   
   .form__checkbox--main .checkmark:after {
-    left: 9px;
-    top: 5px;
+    left: 6px;
+    top: 2px;
     width: 5px;
     height: 10px;
     border: solid rgb(243, 248, 246);
@@ -257,7 +255,7 @@ html{
 /* btn */
 .form__btn{
     position: relative;
-    top: 30px;
+    top: 22px;
     display: flex;
     justify-content: center;
     align-items: center;

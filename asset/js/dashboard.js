@@ -152,7 +152,7 @@
         };
         
         function clearForm() {
-            const form = document.querySelector("#main-create");
+            const form = document.querySelector("#main-transfer, #main-delete"); 
             if (!form) return;
         
             const inputs = form.querySelectorAll("input");

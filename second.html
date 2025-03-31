@@ -10,14 +10,13 @@
 </head>
 <body>
     <div class="main">  
-        <header class="">
-
+        <header class="sidebar-wrap">
             <nav id="sidebar" class="sidebar-menu">
                 <ul>
                     <li>
                         <span class="sidebar-logo">
                             <button onclick="toggleSidebar()" id="toggle-btn" class="sidebar-toggle-btn">
-                                <span>SG SAGAWA</span> 
+                                <span>Mickey Mouse</span> 
                                 <i class="ti-angle-double-left left-icon "></i>
                             </button>
                         </span>
@@ -198,8 +197,9 @@
 
         </header>
 
+
         <div class="content">
-            <div id="main-home" class="main__box active ">
+            <div id="main-home" class=" main__box  ">
                 <div class="home__header"></div>
                 
                 
@@ -228,51 +228,51 @@
                         <table>
                             <tr>
                                 <td>Asset transfer / Chuyển giao tài sản</td>
-                                <td><a href="#" onclick="showTab('main-create')" class="application__btn--create">Create New</a></td>
+                                <td><a href="#" onclick="showTab('main-transfer')" class="application__btn--create">Create New</a></td>
                             </tr>
                             <tr>
                                 <td>Assets disposal / Thanh lý tài sản</td>
-                                <td><a href="#" class="application__btn--create">Create New</a></td>
+                                <td><a href="#" onclick="showTab('main-disposal')" class="application__btn--create">Create New</a></td>
                             </tr>
                             <tr>
                                 <td>Assets write-off / Xóa tài sản</td>
-                                <td><a href="#" class="application__btn--create">Create New</a></td>
+                                <td><a href="#" onclick="showTab('main-delete')" class="application__btn--create">Create New</a></td>
                             </tr>
                             <tr>
                                 <td>Business Trip Plan / Kế hoạch đi công tác</td>
-                                <td><a href="#" class="application__btn--create">Create New</a></td>
+                                <td><a href="#" onclick="showTab('main-trip')" class="application__btn--create">Create New</a></td>
                             </tr>
                             <tr>
                                 <td>Company stamp customer contract / Đóng dấu công ty hợp đồng khách hàng</td>
-                                <td><a href="#" class="application__btn--create">Create New</a></td>
+                                <td><a href="#" onclick="showTab('main-customer')" class="application__btn--create">Create New</a></td>
                             </tr>
                             <tr>
                                 <td>Company stamp on notice/ official letter/ other documents - Đóng dấu công ty dành cho thông báo/ công văn/ các loại văn bản chứng từ</td>
-                                <td><a href="#" class="application__btn--create">Create New</a></td>
+                                <td><a href="#" onclick="showTab('main-letter')" class="application__btn--create">Create New</a></td>
                             </tr>
                             <tr>
                                 <td>Entertainment application / Đề xuất chi phí giao tế</td>
-                                <td><a href="#" class="application__btn--create">Create New</a></td>
+                                <td><a href="#" onclick="showTab('main-entertaiment')" class="application__btn--create">Create New</a></td>
                             </tr>
                             <tr>
                                 <td>Fuel norm / Định mức nhiên liệu</td>
-                                <td><a href="#" class="application__btn--create">Create New</a></td>
+                                <td><a href="#" onclick="showTab('main-')" class="application__btn--create">Create New</a></td>
                             </tr>
                             <tr>
                                 <td>Modify eApprove process / Thay đổi hệ thống eApprove</td>
-                                <td><a href="#" class="application__btn--create">Create New</a></td>
+                                <td><a href="#" onclick="showTab('main-')" class="application__btn--create">Create New</a></td>
                             </tr>
                             <tr>
                                 <td>Purchase Goods And Repair / Mua sắm hàng hóa, sửa chữa</td>
-                                <td><a href="#" class="application__btn--create">Create New</a></td>
+                                <td><a href="#" onclick="showTab('main-')" class="application__btn--create">Create New</a></td>
                             </tr>
                             <tr>
                                 <td>Software using application / Phê duyệt sử dụng phần mềm</td>
-                                <td><a href="#" class="application__btn--create">Create New</a></td>
+                                <td><a href="#" onclick="showTab('main-')" class="application__btn--create">Create New</a></td>
                             </tr>
                             <tr>
                                 <td>Supplier / Sub-Contractor contract company stamp - Đóng dấu hợp đồng nhà cung cấp / nhà thầu phụ</td>
-                                <td><a href="#" class="application__btn--create">Create New</a></td>
+                                <td><a href="#" onclick="showTab('main-')" class="application__btn--create">Create New</a></td>
                             </tr>
                         </table>
                     </div>
@@ -443,8 +443,8 @@
 
            
 
-            <div id="main-create" class="main__box ">
-                    <h2>Asset transfer / Chuyển giao tài sản</h2>
+            <div id="main-transfer" class="main__box ">
+                <h2>Asset transfer / Chuyển giao tài sản</h2>
                     <div class="asset__page">
                         <div class="section-header">Step 2: Fill in the Form</div>
                             <table class="assets__table">
@@ -499,7 +499,7 @@
                                 <tr>
                                     <td><label >Date transfer / Ngày di chuyển</label></td>
                                     <td>
-                                        <select name="day" id="daySelect" class="assets__select">
+                                        <select name="day" id="1" class="assets__select">
                                             <option value="">Ngày</option>
                                             <option value="01">01</option>
                                             <option value="02">02</option>
@@ -578,10 +578,590 @@
                                 </button>
                             </div>
                             
+                    </div>             
+            </div>
+
+            <div id="main-disposal" class="main__box ">
+                <h2>Assets disposal / Thanh lý tài sản</h2>
+                    <div class="asset__page">
+                        <div class="section-header">Step 2: Fill in the Form</div>
+                            <table class="assets__table">
+                                <tr>
+                                    <td><label>Applicant</label></td>
+                                    <td><input type="text" value="" disabled></td>
+                                </tr>
+                                <tr>
+                                    <td><label>Department</label></td>
+                                    <td><input type="text" value="" disabled></td>
+                                </tr>
+                                <tr>
+                                    <td><label>Subject <span class="required">*</span></label></td>
+                                    <td><input type="text" id=""></td>
+                                </tr>
+                            </table>
+
+                        <div class="section-header">Step 3: Assets disposal application / Đề xuất thanh lý tài sản</div>
+                            <table class="assets__table">
+                                <tr>
+                                    <td><label>Asset Type / Loại tài sản <span class="required">*</span></label></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td><label>Asset Code / Mã tài sản <span class="required">*</span></label></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td><label>Current place / department / Bộ phận đang sử dụng<span class="required">*</span></label></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td><label>Current staff in charge / Nhân viên sử dụng<span class="required">*</span></label></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td><label>Reason of the disposal / Lý do thanh lý<span class="required">*</span></label></td>
+                                    <td><textarea name="" id=""></textarea></td>
+                                </tr>
+                            </table>
+                
+                        <div class="section-header">Step 4: Buyer's Information for disposal</div> 
+                            <table class="assets__table">
+                                <tr>
+                                    <td><label for="">Name / Tên người mua</label></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="">Address / Địa chỉ</label></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td><label>Tel/Fax / Điện thoại / Fax</label></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td><label>Email</label></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td><label>Estimated sale price/ Giá bán (inluding VAT)</label></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td><label >Approval process</label></td>
+                                    
+                                    <td>
+                                        <select class="assets__select">
+                                            <option value="">---</option>
+                                            <option value="">Asset disposal / Thanh lý tài sản</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                            </table>
+                            <div>
+                                <button class="assets__table--btn" id="" onclick="showTab('administrator')" >
+                                    Back
+                                </button>
+                                <button class="assets__table--btn" id="" onclick="saveApplication();">
+                                    Next
+                                </button>
+                            </div>
                     </div>
             </div>
 
 
+            <div id="main-delete" class="main__box ">
+                <h2>Assets write-off / Xóa tài sản</h2>
+                    <div class="asset__page">
+                        <div class="section-header">Step 2: Fill in the Form</div>
+                            <table class="assets__table">
+                                <tr>
+                                    <td><label>Applicant</label></td>
+                                    <td><input type="text" value="" disabled></td>
+                                </tr>
+                                <tr>
+                                    <td><label>Department</label></td>
+                                    <td><input type="text" value="" disabled></td>
+                                </tr>
+                                <tr>
+                                    <td><label>Subject <span class="required">*</span></label></td>
+                                    <td><input type="text" id=""></td>
+                                </tr>
+                            </table>
+
+                        
+                
+                        <div class="section-header">Step 4: Buyer's Information for disposal</div> 
+                            <table class="assets__table">
+                                    <tr>
+                                        <td><label>Asset Type / Loại tài sản <span class="required">*</span></label></td>
+                                        <td><input type="text"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label>Asset Code / Mã tài sản <span class="required">*</span></label></td>
+                                        <td><input type="text"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label>Current place / department / Bộ phận đang sử dụng<span class="required">*</span></label></td>
+                                        <td><input type="text"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label>Current staff in charge / Nhân viên sử dụng<span class="required">*</span></label></td>
+                                        <td><input type="text"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label>Reason of the disposal / Lý xóa tài sản<span class="required">*</span></label></td>
+                                        <td><textarea name="" id=""></textarea></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label >Approval process</label></td>
+                                        <td>
+                                            <select class="assets__select">
+                                                <option value="">---</option>
+                                                <option value="">Assets Write-off / Xóa tài sản</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                            </table>
+                            <div>
+                                <button class="assets__table--btn" id="" onclick="showTab('administrator')" >
+                                    Back
+                                </button>
+                                <button class="assets__table--btn" id="" onclick="saveApplication();">
+                                    Next
+                                </button>
+                        </div>
+                    </div>
+            </div>
+
+
+
+
+
+            <div id="main-trip" class="main__box ">
+                <h2>Business Trip Plan / Kế hoạch đi công tác</h2>
+                    <div class="asset__page">
+                        <div class="section-header">Step 2: Fill in the Form</div>
+                            <table class="assets__table">
+                                <tr>
+                                    <td><label>Applicant</label></td>
+                                    <td><input type="text" value="" disabled></td>
+                                </tr>
+                                <tr>
+                                    <td><label>Department</label></td>
+                                    <td><input type="text" value="" disabled></td>
+                                </tr>
+                                <tr>
+                                    <td><label>Subject <span class="required">*</span></label></td>
+                                    <td><input type="text" id=""></td>
+                                </tr>
+                            </table>
+
+                        
+                
+                        <div class="section-header">Step 3: Business trip plan application / Đề xuất kế hoạch công tác</div> 
+                            <table class="assets__table">
+                                    <tr>
+                                        <td><label >Date To / Ngày di chuyển</label></td>
+                                        <td>
+                                            <select name="day" id="" class="assets__select">
+                                                <option value="">Ngày</option>
+                                                <option value="01">01</option>
+                                                <option value="02">02</option>
+                                                <option value="03">03</option>
+                                                <option value="04">04</option>
+                                                <option value="05">05</option>
+                                                <option value="06">06</option>
+                                                <option value="07">07</option>
+                                                <option value="08">08</option>
+                                                <option value="09">09</option>
+                                                <option value="10">10</option>
+                                                <option value="11">11</option>
+                                                <option value="12">12</option>
+                                                <option value="13">13</option>
+                                                <option value="14">14</option>
+                                                <option value="15">15</option>
+                                                <option value="16">16</option>
+                                                <option value="17">17</option>
+                                                <option value="18">18</option>
+                                                <option value="19">19</option>
+                                                <option value="20">20</option>
+                                                <option value="21">21</option>
+                                                <option value="22">22</option>
+                                                <option value="23">23</option>
+                                                <option value="24">24</option>
+                                                <option value="25">25</option>
+                                                <option value="26">26</option>
+                                                <option value="27">27</option>
+                                                <option value="28">28</option>
+                                                <option value="29">29</option>
+                                                <option value="30">30</option>
+                                                <option value="31">31</option>
+                                            </select>
+                                            <select name="month" id="" class="assets__select">
+                                                <option value="">Tháng</option>
+                                                <option value="01">01</option>
+                                                <option value="02">02</option>
+                                                <option value="03">03</option>
+                                                <option value="04">04</option>
+                                                <option value="05">05</option>
+                                                <option value="06">06</option>
+                                                <option value="07">07</option>
+                                                <option value="08">08</option>
+                                                <option value="09">09</option>
+                                                <option value="10">10</option>
+                                                <option value="11">11</option>
+                                                <option value="12">12</option>
+                                            </select> 
+                                            <select name="years" id="" class="assets__select">
+                                                <option value="">Năm</option>
+                                                <option value="2024">2024</option>
+                                                <option value="2025">2025</option>
+                                                <option value="2026">2026</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label >Date Form / Ngày di chuyển</label></td>
+                                        <td>
+                                            <select name="day" id="" class="assets__select">
+                                                <option value="">Ngày</option>
+                                                <option value="01">01</option>
+                                                <option value="02">02</option>
+                                                <option value="03">03</option>
+                                                <option value="04">04</option>
+                                                <option value="05">05</option>
+                                                <option value="06">06</option>
+                                                <option value="07">07</option>
+                                                <option value="08">08</option>
+                                                <option value="09">09</option>
+                                                <option value="10">10</option>
+                                                <option value="11">11</option>
+                                                <option value="12">12</option>
+                                                <option value="13">13</option>
+                                                <option value="14">14</option>
+                                                <option value="15">15</option>
+                                                <option value="16">16</option>
+                                                <option value="17">17</option>
+                                                <option value="18">18</option>
+                                                <option value="19">19</option>
+                                                <option value="20">20</option>
+                                                <option value="21">21</option>
+                                                <option value="22">22</option>
+                                                <option value="23">23</option>
+                                                <option value="24">24</option>
+                                                <option value="25">25</option>
+                                                <option value="26">26</option>
+                                                <option value="27">27</option>
+                                                <option value="28">28</option>
+                                                <option value="29">29</option>
+                                                <option value="30">30</option>
+                                                <option value="31">31</option>
+                                            </select>
+                                            <select name="month" id="" class="assets__select">
+                                                <option value="">Tháng</option>
+                                                <option value="01">01</option>
+                                                <option value="02">02</option>
+                                                <option value="03">03</option>
+                                                <option value="04">04</option>
+                                                <option value="05">05</option>
+                                                <option value="06">06</option>
+                                                <option value="07">07</option>
+                                                <option value="08">08</option>
+                                                <option value="09">09</option>
+                                                <option value="10">10</option>
+                                                <option value="11">11</option>
+                                                <option value="12">12</option>
+                                            </select> 
+                                            <select name="years" id="" class="assets__select">
+                                                <option value="">Năm</option>
+                                                <option value="2024">2024</option>
+                                                <option value="2025">2025</option>
+                                                <option value="2026">2026</option>
+                                            </select>
+                                        </td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <td><label>Location / Địa điểm<span class="required">*</span></label></td>
+                                        <td><input type="text"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label for="">Purpose - Mục đích<span class="required">*</span></label></td>
+                                        <td><textarea name="" id=""></textarea></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label>Budget for air ticket / Chi phí vé máy bay<span class="required">*</span></label></td>
+                                        <td><input type="text"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label>Budget for hotel / Dự toán chi phí khách sạn<span class="required">*</span></label></td>
+                                        <td><input type="text"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label>Budget for trasportation / Chi phí đi lại (Taxi)<span class="required">*</span></label></td>
+                                        <td><input type="text"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label>Budget for allowance and others / Chi phí công tác và những phí khác<span class="required">*</span></label></td>
+                                        <td><input type="text"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label>Actual amount to be paid  / số tiền thực tế chi<span class="required">*</span></label></td>
+                                        <td><input type="text"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label>Amount on invoice - Statement / Số tiền trên chứng từ / Bảng kê<span class="required">*</span></label></td>
+                                        <td><input type="text"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label>Reason for difference amount / Lý do số tiền chênh lệch<span class="required">*</span></label></td>
+                                        <td><textarea name="" id=""></textarea></td>
+                                    </tr>
+                                   
+                
+                                    <tr>
+                                        <td><label for="">Schedule details - Lịch công tác	</label></td>
+                                        <td><textarea name="" id=""></textarea></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="">Advance or not - Tạm ứng / Không tạm ứng</label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label >Approval process</label></td>
+                                        <td>
+                                            <select class="assets__select">
+                                                <option value="">---</option>
+                                                <option value="">Advance Cash Payment</option>
+                                                <option value="">Bank Transfer Payment</option>
+
+                                            </select>
+                                        </td>
+                                    </tr>
+                            </table>
+                            <div>
+                                <button class="assets__table--btn" id="" onclick="showTab('administrator')" >
+                                    Back
+                                </button>
+                                <button class="assets__table--btn" id="" onclick="saveApplication();">
+                                    Next
+                                </button>
+                        </div>
+                    </div>
+            </div>
+
+
+
+
+            <div id="main-customer" class="main__box">
+                <h2>Company stamp customer contract / Đóng dấu công ty hợp đồng khách hàng</h2>
+                    <div class="asset__page">
+                        <div class="section-header">Step 2: Fill in the Form</div>
+                            <table class="assets__table">
+                                <tr>
+                                    <td><label>Applicant</label></td>
+                                    <td><input type="text" value="" disabled></td>
+                                </tr>
+                                <tr>
+                                    <td><label>Department</label></td>
+                                    <td><input type="text" value="" disabled></td>
+                                </tr>
+                                <tr>
+                                    <td><label>Subject <span class="required">*</span></label></td>
+                                    <td><input type="text" id=""></td>
+                                </tr>
+                            </table>
+
+                        
+                
+                        <div class="section-header">Step 3: Company stamp customer contract application Đề xuất xin đóng dấu công ty hợp đồng khách hàng</div> 
+                        <table class="assets__table" >
+                            <tr>
+                                <td><label for="">Tình trạng hợp đồng - Contract status<span class="required">*</span></label></td>
+                                <td><input type="checkbox" name="" id=""></td>
+                            </tr>
+                            <tr>
+                                <td><label for="">Customer name<span class="required">*</span></label></td>
+                                <td><input type="text" name="" id=""></td>
+                            </tr>
+                            <tr>
+                                <td><label for="">Tình trạng pháp lý / Legal status<span class="required">*</span></label></td>
+                                <td><input type="checkbox" name="" id=""></td>
+                            </tr>
+                            <tr>
+                                <td><label for="">Điều khoản thanh toán / Payment terms<span class="required">*</span></label></td>
+                                <td><input type="checkbox" name="" id=""></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td><textarea name="" id=""></textarea></td>
+                            </tr>
+                            <tr>
+                                <td><label for="">Loại dịch vụ  / Type of service<span class="required">*</span></label></td>
+                                <td><input type="checkbox" name="" id=""></td>
+                            </tr>
+                            <tr>
+                                <td>Kiểm tra chống khủng bố (Vui lòng đăng nhập vào đường dẫn bên dưới, hoàn thành việc kiểm tra và in bảng xác nhận đính kèm vào đề xuất) /SDN checking - Please login the below link, complete the checking and print out the confirmation to attach with the application
+                                   <a href="https://sanctionssearch.ofac.treas.gov/">https://sanctionssearch.ofac.treas.gov/</a></td>
+                            </tr>
+                            <tr>
+                                <td><label for="">Content / Nội Dung<span class="required">*</span></label></td>
+                                <td><textarea name="" id=""></textarea></td>
+                            </tr>
+                            <tr>
+                                <td><label for="">Những vấn đề cần được phê duyệt khác /Other approval contents in contract <span class="required">*</span></label></td>
+                                <td><textarea name="" id=""></textarea></td>
+                            </tr>
+                            <tr>
+                                <td><label >Approval process</label></td>
+                                <td>
+                                    <select class="assets__select">
+                                        <option value="">---</option>
+                                        <option value="">Company stamp customer contract - Đóng dấu công ty hợp đồng khách hàng</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </table>
+
+                        
+
+                        <div>
+                            <button class="assets__table--btn" id="" onclick="showTab('administrator')" >
+                                Back
+                            </button>
+                            <button class="assets__table--btn" id="" onclick="saveApplication();">
+                                Next
+                            </button>
+                        </div>
+                    </div>
+            </div>
+
+            <div id="main-letter" class="main__box ">
+                <h2>Company stamp application / Đề xuất đóng dấu công ty</h2>
+                <div class="asset__page">
+                    <div class="section-header">Step 2: Fill in the Form</div>
+                            <table class="assets__table">
+                                <tr>
+                                    <td><label>Applicant</label></td>
+                                    <td><input type="text" value="" disabled></td>
+                                </tr>
+                                <tr>
+                                    <td><label>Department</label></td>
+                                    <td><input type="text" value="" disabled></td>
+                                </tr>
+                                <tr>
+                                    <td><label>Subject <span class="required">*</span></label></td>
+                                    <td><input type="text" id=""></td>
+                                </tr>
+                            </table>
+                    <div class="section-header">Step 3: Company stamp application / Đề xuất đóng dấu công ty</div> 
+                    <table class="assets__table" >
+                        <tr>
+                            <td><label for="">Category - Loại chứng từ <span class="required">*</span></label></td>
+                            <td><input type="text" name="" id=""></td>
+                        </tr>
+                        <tr>
+                            <td><label for="">Number of copy / Số lượng bản <span class="required">*</span></label></td>
+                            <td><input type="text" name="" id=""></td>
+                        </tr>
+                        <tr>
+                            <td><label for="">Content - Nội dung <span class="required">*</span></label></td>
+                            <td><textarea name="" id=""></textarea></td>
+                        </tr>
+                        <tr>
+                            <td><label >Approval process</label></td>
+                            <td>
+                                <select class="assets__select">
+                                    <option value="">---</option>
+                                    <option value="">Company Stamp Approval Process</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <div>
+                        <button class="assets__table--btn" id="" onclick="showTab('administrator')" >
+                            Back
+                        </button>
+                        <button class="assets__table--btn" id="" onclick="saveApplication();">
+                            Next
+                        </button>
+                    </div>
+        
+                </div>
+            </div>
+
+
+            <div id="main-entertaiment" class="main-box active">
+                <h2>Entertainment application / Đề xuất chi phí giao tế</h2>
+                <div class="asset__page">
+                    <div class="section-header">Step 2: Fill in the Form</div>
+                    <table class="assets__table">
+                        <tr>
+                            <td><label>Applicant</label></td>
+                            <td><input type="text" value="" disabled></td>
+                        </tr>
+                        <tr>
+                            <td><label>Department</label></td>
+                            <td><input type="text" value="" disabled></td>
+                        </tr>
+                        <tr>
+                            <td><label>Subject <span class="required">*</span></label></td>
+                            <td><input type="text" id=""></td>
+                        </tr>
+                    </table>
+                    <div class="section-header">Step 3:Entertainment application / Đề xuất chi phí giao tế</div> 
+                    <table class="assets__table" >
+                        <tr>
+                            <td><label for="">Category - Loại chứng từ <span class="required">*</span></label></td>
+                            <td><input type="text" name="" id=""></td>
+                        </tr>
+                        <tr>
+                            <td><label for="">Number of copy / Số lượng bản <span class="required">*</span></label></td>
+                            <td><input type="text" name="" id=""></td>
+                        </tr>
+                        <tr>
+                            <td><label for="">Content - Nội dung <span class="required">*</span></label></td>
+                            <td><textarea name="" id=""></textarea></td>
+                        </tr>
+                        <tr>
+                            <td><label >Approval process</label></td>
+                            <td>
+                                <select class="assets__select">
+                                    <option value="">---</option>
+                                    <option value="">Company Stamp Approval Process</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <div>
+                        <button class="assets__table--btn" id="" onclick="showTab('administrator')" >
+                            Back
+                        </button>
+                        <button class="assets__table--btn" id="" onclick="saveApplication();">
+                            Next
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!-- your app -->
             <div id="main-yours-draft" class="main__box  ">
                 <h2>Your Applications</h2>
                 <div class="yourdraft__page">
